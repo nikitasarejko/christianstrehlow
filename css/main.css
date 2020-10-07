@@ -1,5 +1,191 @@
+@font-face {
+    font-family: 'Public Sans';
+    src: url(/fonts/PublicSans-Regular.woff2), url(/fonts/PublicSans-Regular.woff);
+}
+
+:root {
+    --font-dark: #232323;
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Public Sans';
+    font-kerning: normal;
+    font-size: 2rem;
+    line-height: 1.5;
+}
+
+header.header {
+    width: 100%;
+}
+
+nav.menu-desktop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: .6vw;
+    display: flex;
+    justify-content: space-between;
+    z-index: 666;
+}
+
+nav.menu-desktop a {
+    text-decoration: none;
+    color: var(--font-dark);
+}
+
+nav.menu-desktop div.menu-desktop__right a {
+    margin-left: 4rem;
+}
+
 section.hero {
     display: flex;
     width: 100%;
-    min-height: 100vh;
+}
+
+div.hero__left {
+    width: 60vw;
+    height: 100vh;
+    padding: .6vw;
+}
+
+div.hero__left h1.hero__left__headline {
+    font-size: 4.8rem;
+    line-height: 1.2;
+    max-width: 120rem;
+}
+
+div.hero__right,
+div.cv__portrait {
+    width: 40vw;
+    height: 100vh;
+}
+
+div.hero__right img {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 40vw;
+    height: 100vh;
+    object-fit: cover;
+    padding: .6vw;
+    z-index: -3;
+}
+
+h2.headline span {
+    margin-right: .8rem;
+    font-size: 4.8rem;
+    opacity: .15;
+}
+
+h2.headline {
+    font-size: 4.8rem;
+    margin-bottom: 1.6rem;
+}
+
+section.cv {
+    display: flex;
+    padding: .6vw;
+}
+
+section.cv div.cv__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 59.4vw;
+}
+
+section.cv div.cv__wrapper div.cv__cell {
+    display: flex;
+    padding: .6vw;
+    border-top: 1px solid var(--font-dark);
+    /* border-left: 1px solid var(--font-dark);
+    border-right: 1px solid var(--font-dark); */
+}
+
+section.cv div.cv__wrapper div.cv__right div.cv__cell:last-of-type {
+    border-bottom: 1px solid var(--font-dark);
+}
+
+section.cv div.cv__wrapper div.cv__cell span {
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-right: 1rem;
+    margin-top: .2rem;
+}
+
+section.cv div.cv__wrapper div.cv__cell p {
+    font-size: 1.6rem;
+    line-height: 1.35;
+}
+
+section.cv div.cv__portrait img {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 40vw;
+    height: 100vh;
+    object-fit: cover;
+    padding: .6vw;
+    z-index: -2;
+    opacity: 0;
+}
+
+section.kompetenzen {
+    display: flex;
+    padding: .6vw;
+}
+
+section.kompetenzen div.kompetenzen__wrapper {
+    width: 59.4vw;
+}
+
+section.kompetenzen div.kompetenzen__wrapper div.kompetenzen__rows {
+    display: flex;
+}
+
+.kompetenzen__left {
+    flex: 1;
+}
+
+.kompetenzen__right {
+    flex: 1;
+}
+
+section.kompetenzen div.kompetenzen__wrapper div.kompetenzen__cell {
+    display: flex;
+    padding: .6vw 0 .6vw 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    /* border-left: 1px solid var(--font-dark);
+    border-right: 1px solid var(--font-dark); */
+}
+
+section.kompetenzen div.kompetenzen__wrapper div.kompetenzen__cell p {
+    font-size: 1.6rem;
+    line-height: 1.35;
+}
+
+section.kompetenzen div.kompetenzen__wrapper div.kompetenzen__rows div.kompetenzen__left {
+    margin-right: 2.4rem;
+}
+
+section.kompetenzen div.kompetenzen__portrait img {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 40vw;
+    height: 100vh;
+    object-fit: cover;
+    padding: .6vw;
+    z-index: -1;
+    opacity: 0;
 }
