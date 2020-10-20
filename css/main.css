@@ -21,6 +21,7 @@ body {
     font-kerning: normal;
     font-size: 2rem;
     line-height: 1.5;
+    background-color: #ffffff;
 }
 
 header.header {
@@ -33,10 +34,14 @@ nav.menu-desktop {
     left: 0;
     width: 100%;
     background-color: white;
-    padding: .6vw;
+    padding: 1.2vw;
     display: flex;
     justify-content: space-between;
     z-index: 666;
+}
+
+nav.menu-desktop div.menu-desktop__left img {
+    height: 2.4rem;
 }
 
 nav.menu-desktop a {
@@ -56,52 +61,91 @@ section.hero {
 div.hero__left {
     width: 60vw;
     height: 100vh;
-    padding: .6vw;
+    padding: 1.2vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-div.hero__left h1.hero__left__headline {
-    font-size: 4.8rem;
+div.hero__left div.hero__left__content {
+    padding-top: 8vw;
+}
+
+div.hero__left div.hero__left__content p.hero__left__title {
+    font-size: 1.2rem;
+    line-height: 1.35;
+    text-transform: uppercase;
+    opacity: .25;
+    margin-bottom: 1.6rem;
+    margin-left: .25rem;
+}
+
+div.hero__left div.hero__left__content h1.hero__left__headline {
+    font-size: 3.6rem;
     line-height: 1.2;
-    max-width: 120rem;
+    max-width: 80rem;
+    margin-bottom: 2.4rem;
+}
+
+div.hero__left div.hero__left__content h4.hero__left__subline {
+    font-size: 2.4rem;
+    line-height: 1.35;
+    max-width: 80rem;
+}
+
+div.hero__left p.hero__left__scroll {
+    font-size: 1.4rem;
+    text-transform: uppercase;
 }
 
 div.hero__right,
-div.cv__portrait {
+div.cv__portrait,
+div.kompetenzen__portrait {
     width: 40vw;
     height: 100vh;
-}
-
-div.hero__right img {
     position: fixed;
     right: 0;
     top: 0;
+}
+
+div.hero__right img {
     width: 40vw;
     height: 100vh;
     object-fit: cover;
-    padding: .6vw;
+    padding: 1.2vw;
     z-index: -3;
 }
 
-h2.headline span {
-    margin-right: .8rem;
-    font-size: 4.8rem;
-    opacity: .15;
+p.chapter {
+    font-size: 1.2rem;
+    line-height: 1.35;
+    opacity: .2;
+    margin-left: .25rem;
+}
+
+p.copy {
+    font-size: 1.4rem;
+    line-height: 1.35;
+    margin-top: -.8rem;
+    margin-bottom: 3.2rem;
+    max-width: 80rem;
 }
 
 h2.headline {
     font-size: 4.8rem;
-    margin-bottom: 1.6rem;
 }
 
 section.cv {
     display: flex;
-    padding: .6vw;
+    padding: 1.2vw;
+    margin-bottom: 12rem;
 }
 
 section.cv div.cv__wrapper {
     display: flex;
     flex-direction: column;
-    width: 59.4vw;
+    width: 58.8vw;
 }
 
 section.cv div.cv__wrapper div.cv__cell {
@@ -128,6 +172,17 @@ section.cv div.cv__wrapper div.cv__cell p {
     line-height: 1.35;
 }
 
+section.cv div.cv__wrapper div.cv__logos  {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    padding-top: 4rem;
+}
+
+section.cv div.cv__wrapper div.cv__logos img {
+    max-width: 12rem;
+}
+
 section.cv div.cv__portrait img {
     position: fixed;
     right: 0;
@@ -135,18 +190,19 @@ section.cv div.cv__portrait img {
     width: 40vw;
     height: 100vh;
     object-fit: cover;
-    padding: .6vw;
+    padding: 1.2vw;
     z-index: -2;
     opacity: 0;
 }
 
 section.kompetenzen {
     display: flex;
-    padding: .6vw;
+    padding: 1.2vw;
+    margin-bottom: 12rem;
 }
 
 section.kompetenzen div.kompetenzen__wrapper {
-    width: 59.4vw;
+    width: 58.8vw;
 }
 
 section.kompetenzen div.kompetenzen__wrapper div.kompetenzen__rows {
@@ -161,10 +217,24 @@ section.kompetenzen div.kompetenzen__wrapper div.kompetenzen__rows {
     flex: 1;
 }
 
+section.kompetenzen div.kompetenzen__wrapper h3.kompetenzen__headline {
+    margin-bottom: .8rem;
+}
+
+section.kompetenzen div.kompetenzen__wrapper h3.kompetenzen__headline span.dot {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: var(--font-dark);
+    margin-right: .6rem;
+    margin-top: .125rem;
+    display: inline-block;
+}
+
 section.kompetenzen div.kompetenzen__wrapper div.kompetenzen__cell {
     display: flex;
-    padding: .6vw 0 .6vw 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    padding: .6vw;
+    border-top: 1px solid var(--font-dark);
     /* border-left: 1px solid var(--font-dark);
     border-right: 1px solid var(--font-dark); */
 }
@@ -185,7 +255,7 @@ section.kompetenzen div.kompetenzen__portrait img {
     width: 40vw;
     height: 100vh;
     object-fit: cover;
-    padding: .6vw;
+    padding: 1.2vw;
     z-index: -1;
     opacity: 0;
 }
