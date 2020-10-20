@@ -181,6 +181,7 @@ section.cv div.cv__wrapper div.cv__logos  {
 
 section.cv div.cv__wrapper div.cv__logos img {
     max-width: 12rem;
+    mix-blend-mode: darken;
 }
 
 section.cv div.cv__portrait img {
