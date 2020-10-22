@@ -1,25 +1,32 @@
-const tl = gsap.timeline({
+const tlHero = gsap.timeline({
     scrollTrigger: {
       trigger: ".cv__wrapper",
       start: "center bottom",
       end: "center top",
-      toggleActions: "play play play reverse",
+      toggleActions: "play none none reverse",
       markers: true
     }
   });
-  tl.to(".cv__portrait img", { opacity: 1, duration: 1 }, 0)
-  tl.from("div.cv__wrapper p.chapter", { y: 200, opacity: 0, duration: 1 }, 0)
-  tl.from("div.cv__wrapper h2.headline", { y: 200, opacity: 0, duration: 1 }, 0)
-  tl.from("div.cv__wrapper p.copy", { y: 200, opacity: 0, duration: 1 }, 0)
-  tl.from(".cv__cell", { y:"100%", opacity: 0, stagger: 0.1 }, 1)
-  tl.from(".cv__logos img", { y:"100%", opacity: 0, stagger: 0.2 }, 2)
+  tlHero.to(".cv__portrait img", { opacity: 1, duration: 1 }, 0)
+  tlHero.to("p.hero__left__scroll", { y: "-200%", opacity: 0, duration: 1 }, 0)
+  tlHero.from("div.cv__wrapper p.chapter", { y: 200, opacity: 0, duration: 1 }, 0)
+  tlHero.from("div.cv__wrapper h2.headline", { y: 200, opacity: 0, duration: 1 }, 0)
+  tlHero.from("div.cv__wrapper p.copy", { y: 200, opacity: 0, duration: 1 }, 0)
+  tlHero.from(".cv__cell", { y:"100%", opacity: 0, stagger: 0.1 }, 1)
+  tlHero.from(".cv__logos img", { y:"100%", opacity: 0, stagger: 0.2 }, 2)
+
+const tlHeroImg = gsap.timeline({
+  scrollTrigger: {
+    trigger: ,
+  }
+})
 
   const tl2 = gsap.timeline({
     scrollTrigger: {
       trigger: ".kompetenzen__wrapper",
       start: "center bottom",
       end: "center top",
-      toggleActions: "play play play reverse",
+      toggleActions: "play none none reverse",
       markers: true
     }
   });
