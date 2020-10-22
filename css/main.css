@@ -38,6 +38,7 @@ nav.menu-desktop {
     display: flex;
     justify-content: space-between;
     z-index: 666;
+    overflow: hidden;
 }
 
 nav.menu-desktop div.menu-desktop__left img {
@@ -47,6 +48,8 @@ nav.menu-desktop div.menu-desktop__left img {
 nav.menu-desktop a {
     text-decoration: none;
     color: var(--font-dark);
+    display: inline-block;
+    overflow: hidden;
 }
 
 nav.menu-desktop div.menu-desktop__right a {
@@ -82,16 +85,16 @@ div.hero__left div.hero__left__content p.hero__left__title {
 }
 
 div.hero__left div.hero__left__content h1.hero__left__headline {
-    font-size: 3.6rem;
+    font-size: 4.8rem;
     line-height: 1.2;
-    max-width: 80rem;
+    max-width: 120rem;
     margin-bottom: 2.4rem;
 }
 
 div.hero__left div.hero__left__content h4.hero__left__subline {
-    font-size: 2.4rem;
+    font-size: 3.2rem;
     line-height: 1.35;
-    max-width: 80rem;
+    max-width: 120rem;
 }
 
 div.hero__left p.hero__left__scroll {
@@ -107,6 +110,7 @@ div.kompetenzen__portrait {
     position: fixed;
     right: 0;
     top: 0;
+    overflow: hidden;
 }
 
 div.hero__right img {
@@ -115,6 +119,8 @@ div.hero__right img {
     object-fit: cover;
     padding: 1.2vw;
     z-index: -3;
+    opacity: 0;
+    transform: translate(0%, 100%);
 }
 
 p.chapter {
@@ -193,13 +199,14 @@ section.cv div.cv__portrait img {
     object-fit: cover;
     padding: 1.2vw;
     z-index: -2;
-    opacity: 0;
+    opacity: 1;
+    transform: translateX(100%);
 }
 
 section.kompetenzen {
     display: flex;
     padding: 1.2vw;
-    margin-bottom: 12rem;
+    margin-bottom: 50vh;
 }
 
 section.kompetenzen div.kompetenzen__wrapper {
@@ -258,5 +265,6 @@ section.kompetenzen div.kompetenzen__portrait img {
     object-fit: cover;
     padding: 1.2vw;
     z-index: -1;
-    opacity: 0;
+    opacity: 1;
+    transform: translateX(100%);
 }
