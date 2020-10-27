@@ -1,7 +1,7 @@
 const tlHero = gsap.timeline({ defaults: { duration: 1, ease: Power4.easeOut } })
 
 tlHero
-  .from("img.logo", { opacity: 0, y: "300%", delay: 1.5 }, 0)
+  .from("img.logo", { opacity: 0, y: "300%", delay: 1 }, 0)
   .from(".menu-desktop__right a", { opacity: 0, y: 25, stagger: 0.15, delay: 0.25 }, 1)
   .from(".hero__left__content", { opacity: 0, y: 200, duration: 1.5, delay: 0.75  }, 1)
   .to(".hero__right img", { opacity: 1, y: 0, duration: 1.5, delay: 0.75 }, 1)

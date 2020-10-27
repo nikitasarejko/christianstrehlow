@@ -33,7 +33,7 @@ nav.menu-desktop {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: white;
+    background-color: transparent;
     padding: 1.2vw;
     display: flex;
     justify-content: space-between;
@@ -106,7 +106,8 @@ div.hero__right,
 div.cv__portrait,
 div.kompetenzen__portrait {
     width: 40vw;
-    height: 100vh;
+    height: 94vh;
+    margin-top: 6vh;
     position: fixed;
     right: 0;
     top: 0;
@@ -115,7 +116,7 @@ div.kompetenzen__portrait {
 
 div.hero__right img {
     width: 40vw;
-    height: 100vh;
+    height: 100%;
     object-fit: cover;
     padding: 1.2vw;
     z-index: -3;
@@ -191,11 +192,8 @@ section.cv div.cv__wrapper div.cv__logos img {
 }
 
 section.cv div.cv__portrait img {
-    position: fixed;
-    right: 0;
-    top: 0;
     width: 40vw;
-    height: 100vh;
+    height: 100%;
     object-fit: cover;
     padding: 1.2vw;
     z-index: -2;
@@ -257,14 +255,42 @@ section.kompetenzen div.kompetenzen__wrapper div.kompetenzen__rows div.kompetenz
 }
 
 section.kompetenzen div.kompetenzen__portrait img {
-    position: fixed;
-    right: 0;
-    top: 0;
     width: 40vw;
-    height: 100vh;
+    height: 100%;
     object-fit: cover;
     padding: 1.2vw;
     z-index: -1;
     opacity: 1;
     transform: translateX(100%);
+}
+
+@media only screen and (max-width: 102.4rem) {
+
+    div.hero__left div.hero__left__content h1.hero__left__headline {
+        font-size: 3.2rem;
+        line-height: 1.25;
+        max-width: 96rem;
+        margin-bottom: 1.6rem;
+    }
+
+    div.hero__left div.hero__left__content h4.hero__left__subline {
+        font-size: 2.4rem;
+        line-height: 1.4;
+        max-width: 96rem;
+    }
+
+    div.hero__left p.hero__left__scroll {
+        font-size: 1.2rem;
+    }
+
+    h2.headline {
+        font-size: 3.6rem;
+        margin-bottom: .8rem;
+    }
+
+    section.cv div.cv__wrapper div.cv__cell p {
+        font-size: 1.5rem;
+        line-height: 1.35;
+    }
+
 }
