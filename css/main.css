@@ -104,7 +104,8 @@ div.hero__left p.hero__left__scroll {
 
 div.hero__right,
 div.cv__portrait,
-div.kompetenzen__portrait {
+div.kompetenzen__portrait,
+div.referenzen__portrait {
     width: 40vw;
     height: 94vh;
     margin-top: 6vh;
@@ -255,6 +256,16 @@ section.kompetenzen div.kompetenzen__wrapper div.kompetenzen__rows div.kompetenz
 }
 
 section.kompetenzen div.kompetenzen__portrait img {
+    width: 40vw;
+    height: 100%;
+    object-fit: cover;
+    padding: 1.2vw;
+    z-index: -1;
+    opacity: 1;
+    transform: translateX(100%);
+}
+
+section.referenzen div.referenzen__portrait img {
     width: 40vw;
     height: 100%;
     object-fit: cover;
