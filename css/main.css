@@ -107,8 +107,8 @@ div.cv__portrait,
 div.kompetenzen__portrait,
 div.referenzen__portrait {
     width: 40vw;
-    height: 94vh;
-    margin-top: 6vh;
+    height: 96vh;
+    margin-top: 4vh;
     position: fixed;
     right: 0;
     top: 0;
@@ -120,7 +120,7 @@ div.hero__right img {
     height: 100%;
     object-fit: cover;
     padding: 1.2vw;
-    z-index: -3;
+    z-index: -4;
     opacity: 0;
     transform: translate(0%, 100%);
 }
@@ -184,11 +184,11 @@ section.cv div.cv__wrapper div.cv__logos  {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
-    padding-top: 4rem;
+    padding-top: 6.4rem;
 }
 
 section.cv div.cv__wrapper div.cv__logos img {
-    max-width: 12rem;
+    max-width: 24rem;
     mix-blend-mode: darken;
 }
 
@@ -197,7 +197,7 @@ section.cv div.cv__portrait img {
     height: 100%;
     object-fit: cover;
     padding: 1.2vw;
-    z-index: -2;
+    z-index: -3;
     opacity: 1;
     transform: translateX(100%);
 }
@@ -205,7 +205,7 @@ section.cv div.cv__portrait img {
 section.kompetenzen {
     display: flex;
     padding: 1.2vw;
-    margin-bottom: 50vh;
+    min-height: 80vh;
 }
 
 section.kompetenzen div.kompetenzen__wrapper {
@@ -260,9 +260,62 @@ section.kompetenzen div.kompetenzen__portrait img {
     height: 100%;
     object-fit: cover;
     padding: 1.2vw;
-    z-index: -1;
+    z-index: -2;
     opacity: 1;
     transform: translateX(100%);
+}
+
+section.referenzen {
+    display: flex;
+    padding: 1.2vw;
+    margin-bottom: 64rem;
+}
+
+section.referenzen div.referenzen__content {
+    color: #F1ECE7;
+    width: 58.8vw;
+}
+
+section.referenzen div.referenzen__content div.referenzen__rows div.referenzen__cell {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #F1ECE7;
+}
+
+section.referenzen div.referenzen__content div.referenzen__rows div.referenzen__cell:last-child {
+    border-bottom: 1px solid #F1ECE7;
+}
+
+section.referenzen div.referenzen__content div.referenzen__rows div.referenzen__cell p {
+    font-size: 1.6rem;
+    line-height: 1.35;
+}
+
+section.referenzen div.referenzen__content div.referenzen__rows div.referenzen__cell a {
+    font-size: 1.6rem;
+    line-height: 1.35;
+    text-decoration: none;
+    color: #F1ECE7;
+}
+
+section.referenzen div.referenzen__content div.referenzen__rows div.referenzen__cell div.referenzen__cell__left {
+    display: flex;
+}
+
+section.referenzen div.referenzen__content div.referenzen__rows div.referenzen__cell div.referenzen__cell__left div.referenzen__cell__client {
+    padding-top: .6vw;
+    padding-right: 2.4rem;
+    padding-bottom: .6vw;
+    border-right: 1px solid #F1ECE7;
+}
+
+section.referenzen div.referenzen__content div.referenzen__rows div.referenzen__cell div.referenzen__cell__left div.referenzen__cell__location {
+    padding: .6vw 2.4rem;
+}
+
+section.referenzen div.referenzen__content div.referenzen__rows div.referenzen__cell div.referenzen__cell__right div.referenzen__cell__website {
+    padding-top: .6vw;
+    padding-bottom: .6vw;
 }
 
 section.referenzen div.referenzen__portrait img {
@@ -276,6 +329,19 @@ section.referenzen div.referenzen__portrait img {
 }
 
 @media only screen and (max-width: 102.4rem) {
+
+    div.hero__right,
+    div.cv__portrait,
+    div.kompetenzen__portrait,
+    div.referenzen__portrait {
+        width: 40vw;
+        height: 94vh;
+        margin-top: 6vh;
+        position: fixed;
+        right: 0;
+        top: 0;
+        overflow: hidden;
+}
 
     div.hero__left div.hero__left__content h1.hero__left__headline {
         font-size: 3.2rem;
@@ -299,9 +365,18 @@ section.referenzen div.referenzen__portrait img {
         margin-bottom: .8rem;
     }
 
+    section.cv div.cv__wrapper div.cv__logos  {
+        padding-top: 4rem;
+    }
+
     section.cv div.cv__wrapper div.cv__cell p {
         font-size: 1.5rem;
         line-height: 1.35;
+    }
+    
+    section.cv div.cv__wrapper div.cv__logos img {
+        max-width: 12rem;
+        mix-blend-mode: darken;
     }
 
 }

@@ -9,9 +9,10 @@ tlHero
 const tlCVImg = gsap.timeline({
   scrollTrigger: {
     trigger: "section.cv",
-    start: "top bottom",
+    start: "top center",
     end:"center center",
-    scrub: true
+    scrub: true,
+    markers: true
   }
 });
 
@@ -37,7 +38,7 @@ const tlKompetenzenImg = gsap.timeline({
   scrollTrigger: {
     trigger: "section.kompetenzen",
     start: "top center",
-    end: "bottom center",
+    end: "center center",
     toggleActions: "play none none reverse",
     scrub: true
   }
@@ -60,3 +61,27 @@ const tlKompetenzen = gsap.timeline({
   tlKompetenzen.from("div.kompetenzen__wrapper p.copy", { y: 200, opacity: 0, duration: 1 }, 0)
   tlKompetenzen.from("div.kompetenzen__wrapper h3.kompetenzen__headline", { y: 200, opacity: 0, duration: 1 }, 1)
   tlKompetenzen.from(".kompetenzen__cell", { y:"100%", opacity: 0, stagger: 0.1 }, 2)
+
+  const tlReferenzenImg = gsap.timeline({
+    scrollTrigger: {
+      trigger: "section.referenzen",
+      start: "top center",
+      end: "center center",
+      toggleActions: "play none none reverse",
+      scrub: true,
+    }
+  })
+
+tlReferenzenImg
+    .to(".referenzen__portrait img", { x: 0 })
+
+const tlReferenzen = gsap.timeline({
+  scrollTrigger: {
+    trigger: "section.referenzen",
+    start: "top center",
+    end: "center center",
+    toggleActions: "play none none reverse"
+  }
+})
+
+tlReferenzen.to("body", { backgroundColor: "#161616", duration: 0.25 }, 0)
