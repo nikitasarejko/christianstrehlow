@@ -11,8 +11,7 @@ const tlCVImg = gsap.timeline({
     trigger: "section.cv",
     start: "top center",
     end:"center center",
-    scrub: true,
-    markers: true
+    scrub: true
   }
 });
 
@@ -55,7 +54,7 @@ const tlKompetenzen = gsap.timeline({
       toggleActions: "play none none reverse",
     }
   });
-  tlKompetenzen.to("body", { backgroundColor: "#F1ECE7", duration: 0.25 }, 0)
+  tlKompetenzen.to("section.wrapper", { backgroundColor: "#F1ECE7", duration: 0.25 }, 0)
   tlKompetenzen.from("div.kompetenzen__wrapper p.chapter", { y: 200, opacity: 0, duration: 1 }, 0)
   tlKompetenzen.from("div.kompetenzen__wrapper h2.headline", { y: 200, opacity: 0, duration: 1 }, 0)
   tlKompetenzen.from("div.kompetenzen__wrapper p.copy", { y: 200, opacity: 0, duration: 1 }, 0)
@@ -69,6 +68,7 @@ const tlKompetenzen = gsap.timeline({
       end: "center center",
       toggleActions: "play none none reverse",
       scrub: true,
+      markers: true
     }
   })
 
@@ -80,8 +80,24 @@ const tlReferenzen = gsap.timeline({
     trigger: "section.referenzen",
     start: "top center",
     end: "center center",
-    toggleActions: "play none none reverse"
+    toggleActions: "play none none reverse",
+    scrub: true
   }
 })
 
-tlReferenzen.to("body", { backgroundColor: "#161616", duration: 0.25 }, 0)
+tlReferenzen.to("section.wrapper", { backgroundColor: "#c1bdb9" }, 0)
+
+const tlFooter = gsap.timeline({
+  scrollTrigger: {
+    trigger: "section.referenzen",
+    start: "bottom center",
+    end: "bottom 300px", 
+    toggleActions: "play none none reverse",
+  }
+})
+
+tlFooter
+  .to(".referenzen__portrait img", { y: "-100vh", duration: 1 }, 0)
+  .to(".kompetenzen__portrait img", { y: "-100vh", duration: 1, delay: 0.15 }, 0)
+  .to(".cv__portrait img", { y: "-100vh", duration: 1, delay: 0.3 }, 0)
+  .to(".hero__right img", { y: "-100vh", duration: 1, delay: 0.45 }, 0)

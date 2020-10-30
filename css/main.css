@@ -22,6 +22,8 @@ body {
     font-size: 2rem;
     line-height: 1.5;
     background-color: #ffffff;
+
+    padding-bottom: 100vh;
 }
 
 header.header {
@@ -54,6 +56,12 @@ nav.menu-desktop a {
 
 nav.menu-desktop div.menu-desktop__right a {
     margin-left: 4rem;
+}
+
+section.wrapper {
+    position: relative;
+    z-index: 1;
+    background-color: #ffffff;
 }
 
 section.hero {
@@ -268,22 +276,22 @@ section.kompetenzen div.kompetenzen__portrait img {
 section.referenzen {
     display: flex;
     padding: 1.2vw;
-    margin-bottom: 64rem;
 }
 
 section.referenzen div.referenzen__content {
-    color: #F1ECE7;
+    color: var(--font-dark);
     width: 58.8vw;
+    padding-bottom: 12rem;
 }
 
 section.referenzen div.referenzen__content div.referenzen__rows div.referenzen__cell {
     display: flex;
     justify-content: space-between;
-    border-top: 1px solid #F1ECE7;
+    border-top: 1px solid var(--font-dark);
 }
 
 section.referenzen div.referenzen__content div.referenzen__rows div.referenzen__cell:last-child {
-    border-bottom: 1px solid #F1ECE7;
+    border-bottom: 1px solid var(--font-dark);
 }
 
 section.referenzen div.referenzen__content div.referenzen__rows div.referenzen__cell p {
@@ -295,7 +303,7 @@ section.referenzen div.referenzen__content div.referenzen__rows div.referenzen__
     font-size: 1.6rem;
     line-height: 1.35;
     text-decoration: none;
-    color: #F1ECE7;
+    color: var(--font-dark);
 }
 
 section.referenzen div.referenzen__content div.referenzen__rows div.referenzen__cell div.referenzen__cell__left {
@@ -306,7 +314,7 @@ section.referenzen div.referenzen__content div.referenzen__rows div.referenzen__
     padding-top: .6vw;
     padding-right: 2.4rem;
     padding-bottom: .6vw;
-    border-right: 1px solid #F1ECE7;
+    border-right: 1px solid var(--font-dark);
 }
 
 section.referenzen div.referenzen__content div.referenzen__rows div.referenzen__cell div.referenzen__cell__left div.referenzen__cell__location {
@@ -326,6 +334,28 @@ section.referenzen div.referenzen__portrait img {
     z-index: -1;
     opacity: 1;
     transform: translateX(100%);
+}
+
+footer.footer {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: -666;
+    background-color: violet;
+    display: flex;
+}
+
+footer.footer div.footer__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer.footer div.footer__content div.footer__content__left,
+footer.footer div.footer__content div.footer__content__right {
+    width: 50vw;
 }
 
 @media only screen and (max-width: 102.4rem) {
