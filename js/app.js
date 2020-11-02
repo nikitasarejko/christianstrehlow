@@ -11,12 +11,12 @@ const tlCVImg = gsap.timeline({
     trigger: "section.cv",
     start: "top center",
     end:"center center",
-    scrub: true
+    toggleActions: "play none none reverse"
   }
 });
 
 tlCVImg
-  .to(".cv__portrait img", { x: 0 })
+  .to(".cv__portrait img", { x: 0, duration: 1 })
 
 const tlCV = gsap.timeline({
     scrollTrigger: {
@@ -38,13 +38,12 @@ const tlKompetenzenImg = gsap.timeline({
     trigger: "section.kompetenzen",
     start: "top center",
     end: "center center",
-    toggleActions: "play none none reverse",
-    scrub: true
+    toggleActions: "play none none reverse"
   }
 });
 
 tlKompetenzenImg
-  .to(".kompetenzen__portrait img", { x: 0 })
+  .to(".kompetenzen__portrait img", { x: 0, duration: 1 })
 
 const tlKompetenzen = gsap.timeline({
     scrollTrigger: {
@@ -54,7 +53,7 @@ const tlKompetenzen = gsap.timeline({
       toggleActions: "play none none reverse",
     }
   });
-  tlKompetenzen.to("section.wrapper", { backgroundColor: "#F1ECE7", duration: 0.25 }, 0)
+  tlKompetenzen.to("section.wrapper", { backgroundColor: "#F1ECE7", duration: 1 }, 0)
   tlKompetenzen.from("div.kompetenzen__wrapper p.chapter", { y: 200, opacity: 0, duration: 1 }, 0)
   tlKompetenzen.from("div.kompetenzen__wrapper h2.headline", { y: 200, opacity: 0, duration: 1 }, 0)
   tlKompetenzen.from("div.kompetenzen__wrapper p.copy", { y: 200, opacity: 0, duration: 1 }, 0)
@@ -66,26 +65,23 @@ const tlKompetenzen = gsap.timeline({
       trigger: "section.referenzen",
       start: "top center",
       end: "center center",
-      toggleActions: "play none none reverse",
-      scrub: true,
-      markers: true
+      toggleActions: "play none none reverse"
     }
   })
 
 tlReferenzenImg
-    .to(".referenzen__portrait img", { x: 0 })
+    .to(".referenzen__portrait img", { x: 0, duration: 1 })
 
 const tlReferenzen = gsap.timeline({
   scrollTrigger: {
     trigger: "section.referenzen",
     start: "top center",
     end: "center center",
-    toggleActions: "play none none reverse",
-    scrub: true
+    toggleActions: "play none none reverse"
   }
 })
 
-tlReferenzen.to("section.wrapper", { backgroundColor: "#c1bdb9" }, 0)
+tlReferenzen.to("section.wrapper", { backgroundColor: "#c1bdb9", duration: 1 }, 0)
 
 const tlFooter = gsap.timeline({
   scrollTrigger: {
@@ -101,3 +97,4 @@ tlFooter
   .to(".kompetenzen__portrait img", { y: "-100vh", duration: 1, delay: 0.15 }, 0)
   .to(".cv__portrait img", { y: "-100vh", duration: 1, delay: 0.3 }, 0)
   .to(".hero__right img", { y: "-100vh", duration: 1, delay: 0.45 }, 0)
+  .to(".menu-desktop__right a", { color: "#ffffff" }, 1)
