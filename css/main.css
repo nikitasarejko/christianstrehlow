@@ -368,6 +368,34 @@ footer.footer div.footer__content div.footer__content__right {
     width: 50vw;
 }
 
+footer.footer div.footer__content div.footer__content__right {
+    padding-left: 2.4rem;
+}
+
+footer.footer div.footer__content div.footer__content__right h4.small-headline {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: .2px;
+    margin-bottom: .2rem;
+}
+
+footer.footer div.footer__content div.footer__content__right p {
+    margin-bottom: 2.4rem;
+    font-size: 1.8rem;
+    line-height: 1.35;
+}
+
+footer.footer div.footer__content div.footer__content__right a {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity .3s ease-out;
+}
+
+footer.footer div.footer__content div.footer__content__right a:hover {
+    opacity: .6;
+}
+
 footer.footer div.footer__links  {
     display: flex;
     justify-content: space-between;
