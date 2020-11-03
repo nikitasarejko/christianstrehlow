@@ -167,6 +167,10 @@ tlReferenzenImg
   })
 
 const tlReferenzen = gsap.timeline({
+  defaults: {
+    ease: Power4.easeOut,
+    duration: 1
+  },
   scrollTrigger: {
     trigger: "section.referenzen",
     start: "top center",
@@ -175,10 +179,20 @@ const tlReferenzen = gsap.timeline({
   }
 })
 
-tlReferenzen.to("section.wrapper", {
-  backgroundColor: "#c1bdb9",
-  duration: 1
-}, 0)
+tlReferenzen
+  .to("section.wrapper", {
+    backgroundColor: "#c1bdb9",
+    duration: 1
+  }, 0)
+  .from("div.referenzen__content p.chapter.chapter-dark", { opacity: 0, y: 200, duration: 1 }, 0)
+  .from("div.referenzen__content h2.headline", { opacity: 0, y: 200, duration: 1 }, 0)
+  .from("div.referenzen__content p.copy", { opacity: 0, y: 200, duration: 1 }, 0)
+  .from("div.referenzen__cell", {
+    opacity: 0,
+    y: "100%",
+    stagger: 0.1,
+    duration: 1
+  }, 1)
 
 
 

@@ -85,29 +85,29 @@ div.hero__left div.hero__left__content {
 }
 
 div.hero__left div.hero__left__content p.hero__left__title {
-    font-size: 1.2rem;
+    font-size: 1.125rem;
     line-height: 1.35;
     text-transform: uppercase;
     opacity: .25;
-    margin-bottom: 1.6rem;
+    margin-bottom: 2.4rem;
     margin-left: .25rem;
 }
 
 div.hero__left div.hero__left__content h1.hero__left__headline {
-    font-size: 4.8rem;
-    line-height: 1.2;
+    font-size: 5.852rem;
+    line-height: 1.1;
     max-width: 120rem;
     margin-bottom: 2.4rem;
 }
 
 div.hero__left div.hero__left__content h4.hero__left__subline {
-    font-size: 3.2rem;
+    font-size: 3.247rem;
     line-height: 1.35;
     max-width: 120rem;
 }
 
 div.hero__left p.hero__left__scroll {
-    font-size: 1.4rem;
+    font-size: 1.266rem;
     text-transform: uppercase;
 }
 
@@ -139,18 +139,20 @@ p.chapter {
     line-height: 1.35;
     opacity: .2;
     margin-left: .25rem;
-}
-
-p.copy {
-    font-size: 1.4rem;
-    line-height: 1.35;
-    margin-top: -.8rem;
-    margin-bottom: 3.2rem;
-    max-width: 80rem;
+    margin-bottom: 2.4rem;
 }
 
 h2.headline {
-    font-size: 4.8rem;
+    font-size: 5.202rem;
+    margin-bottom: .8rem;
+}
+
+p.copy {
+    font-size: 1.802rem;
+    line-height: 1.35;
+    margin-top: -.8rem;
+    margin-bottom: 4.8rem;
+    max-width: 120rem;
 }
 
 section.cv {
@@ -186,8 +188,8 @@ section.cv div.cv__wrapper div.cv__cell span {
 }
 
 section.cv div.cv__wrapper div.cv__cell p {
-    font-size: 1.6rem;
-    line-height: 1.35;
+    font-size: 2.281rem;
+    line-height: 1.25;
 }
 
 section.cv div.cv__wrapper div.cv__logos  {
@@ -236,29 +238,30 @@ section.kompetenzen div.kompetenzen__wrapper div.kompetenzen__rows {
 }
 
 section.kompetenzen div.kompetenzen__wrapper h3.kompetenzen__headline {
+    font-size: 2.887rem;
     margin-bottom: .8rem;
 }
 
 section.kompetenzen div.kompetenzen__wrapper h3.kompetenzen__headline span.dot {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.8rem;
+    height: 1.8rem;
     border-radius: 50%;
     background-color: var(--font-dark);
-    margin-right: .6rem;
+    margin-right: 1.2rem;
     margin-top: .125rem;
     display: inline-block;
 }
 
 section.kompetenzen div.kompetenzen__wrapper div.kompetenzen__cell {
     display: flex;
-    padding: .6vw;
+    padding: .4vw .6vw;
     border-top: 1px solid var(--font-dark);
     /* border-left: 1px solid var(--font-dark);
     border-right: 1px solid var(--font-dark); */
 }
 
 section.kompetenzen div.kompetenzen__wrapper div.kompetenzen__cell p {
-    font-size: 1.6rem;
+    font-size: 2.281rem;
     line-height: 1.35;
 }
 
@@ -286,6 +289,10 @@ section.referenzen div.referenzen__content {
     width: 58.8vw;
     padding-bottom: 12rem;
     padding-top: 4.8rem;
+}
+
+section.referenzen div.referenzen__content p.chapter.chapter-dark {
+    opacity: .5;
 }
 
 section.referenzen div.referenzen__content div.referenzen__rows div.referenzen__cell {
