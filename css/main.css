@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
+@keyframes showImage {
+    0% {
+        opacity: 0;
+        transform: translate(0, 24px) scale(0.95);
+        clip-path: polygon(100% 0%, 100% 0, 100% 100%, 100% 100%);
+    } 
+    100% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+        clip-path: polygon(100% 0%, 0 0, 0 100%, 100% 100%);
+    }
+}
+
 :root {
     --font-dark: #232323;
 }
@@ -63,7 +76,17 @@ section.hero h1 {
 section.hero figure {
     grid-column: 1 / span 2;
     position: relative;
+    height: 0;
+    padding-top: 133%;
 }
+
+section.hero figure img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+} 
 
 div.sticky-nav {
     width: 100%;
@@ -301,6 +324,10 @@ section.referenzen div.referenzen__portrait img {
     opacity: 1;
     transform: translateX(100%);
 }
+
+section figure.in-view img {
+    animation: showImage 1s 0.4s both cubic-bezier(0.68,-0.55,0.27,1.55);
+}	
 
 footer.footer {
     height: 100vh;

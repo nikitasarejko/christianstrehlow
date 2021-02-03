@@ -28,3 +28,22 @@ window.addEventListener('scroll', function () {
 })
 
 changeScroll()
+
+// INTERSECTION OBSERVER
+const figures = document.querySelectorAll('figure')
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.intersectionRatio > 0.1) {
+      entry.target.classList.add('in-view')
+    } else {
+    }
+  })
+}, {
+  threshold: [0.0, 0.1, 1.0]
+})
+
+figures.forEach(figure => {
+  observer.observe(figure)
+})
+
