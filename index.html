@@ -4,27 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
     <title>Christian Strehlow - Sachverständiger</title>
 </head>
 
-<body>
+<body data-barba="wrapper" class="is-loading">
 
-    <section class="wrapper">
+    <section class="wrapper" data-barba="container" data-barba-namespace="home">
+        
+        <div class="wiper"></div>
 
         <section class="hero">
 
-            <p>Christian<br>Strehlow</p>
+            <div class="headline">
+                <p>Christian<br>Strehlow</p>   
+            </div>
 
-            <h1>ist ein Spezialist auf dem Gebiet der Sanitär- und Heizungstechnik. Seine Kompetenz basiert auf profunder Fachkenntnis, jahrelanger Berufserfahrung und regelmäßiger Weiterbildung. Namhafte Auftraggeber wissen seine Kompetenz und sein Fingerspitzengefühl zu schätzen.</h1>
+            <div class="subheadline">
+                <h1  data-splitting>ist ein Spezialist auf dem Gebiet der Sanitär- und Heizungstechnik. Seine Kompetenz basiert auf profunder Fachkenntnis, jahrelanger Berufserfahrung und regelmäßiger Weiterbildung. Namhafte Auftraggeber wissen seine Kompetenz und sein Fingerspitzengefühl zu schätzen.</h1>
+            </div>
 
             <figure>
                 <img src="img/DSC1439.jpg" alt="Portrait Foto von Christian Strehlow">
             </figure>
 
         </section>
-        
+
         <div class="sticky-nav">
             <nav>About</nav>
             <nav>Kompetenzen</nav>
@@ -34,15 +42,20 @@
         </div>
 
         <section class="about" id="about">
-            
-            <p>Über<br>mich</p>
-            
-            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium sed assumenda exercitationem necessitatibus accusamus nulla dolorem provident maxime deserunt harum, rerum hic minima magnam.</h2>
-            
-            <figure>
+
+            <div class="section-headline textwrapper">
+                <p>Über<br>mich</p>
+            </div>
+
+            <div class="section-subheadline textwrapper">
+                <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium sed assumenda exercitationem necessitatibus accusamus nulla dolorem provident maxime deserunt harum, rerum hic minima magnam.</h2>
+            </div>
+
+
+            <figure class="animate">
                 <img src="img/DSC1240.jpg" alt="Christian Strehlow Foto">
             </figure>
-            
+
             <ul>
                 <li>
                     <span>2018</span>
@@ -93,19 +106,23 @@
                     <p>Installateur Heizung Sanitär</p>
                 </li>
             </ul>
-            
+
         </section>
 
         <section class="kompetenzen" id="kompetenzen">
-            
-            <p>Kompetenzen</p>
-           
-            <h2>Laudantium sed assumenda exercitationem necessitatibus accusamus nulla dolorem provident maxime deserunt harum, rerum hic minima magnam. Pariatur perspiciatis ipsum hic voluptatum laboriosam</h2> 
-            
-            <figure>
+
+            <div class="headline textwrapper">
+                <p>Kompetenzen</p>
+            </div>
+
+            <div class="subheadline textwrapper">
+                <h2>Laudantium sed assumenda exercitationem necessitatibus accusamus nulla dolorem provident maxime deserunt harum, rerum hic minima magnam. Pariatur perspiciatis ipsum hic voluptatum laboriosam</h2>
+            </div>
+
+            <figure class="animate">
                 <img src="img/DSC1271.jpg" alt="Christan Strehlow Foto">
             </figure>
-            
+
             <div class="table-left">
                 <h4>Sachverständigen Leistungen</h4>
                 <ul>
@@ -124,177 +141,158 @@
                     <li>Festlegung von Probenahmestellen für Trinkwasseruntersuchungen</li>
                 </ul>
             </div>
-            
+
         </section>
 
-        <section class="referenzen" id="referenzen">
-            <div class="referenzen__content">
-                <p class="chapter chapter-dark">03</p>
-                <h2 class="headline">Referenzen</h2>
-                <p class="copy">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium sed assumenda
-                    exercitationem necessitatibus accusamus nulla dolorem provident maxime deserunt harum, rerum hic
-                    minima
-                    magnam. Pariatur perspiciatis ipsum hic voluptatum laboriosam!</p>
+        <section class="termine" id="termine">
 
-                <div class="referenzen__rows">
-                    <div class="referenzen__cell">
-                        <div class="referenzen__cell__left">
-                            <div class="referenzen__cell__client">
-                                <p>HGR Premium</p>
-                            </div>
-                            <div class="referenzen__cell__location">
-                                <p>18609 Ostseebad Binz</p>
-                            </div>
-                        </div>
-                        <div class="referenzen__cell__right">
-                            <div class="referenzen__cell__website"><a href="#">Website</a></div>
-                        </div>
+            <p>Termine</p>
+
+            <h2>Dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo.</h2>
+
+            <figure class="animate">
+                <img src="img/DSC1388.jpg" alt="Christan Strehlow Foto">
+            </figure>
+
+            <div class="termine-table">
+                <div class="termine-table__cell">
+                    <p>Datum</p>
+                    <p>Ort</p>
+                    <p>Titel</p>
+                    <p>Präsentation</p>
+                </div>
+                <div class="termine-table__cell">
+                    <div class="datum">01. April 2021</div>
+                    <div class="ort">Webinar</div>
+                    <div class="name">Gefährdungsanalyse nach TrinkwV §16</div>
+                    <div class="download">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="#000000" viewBox="0 0 256 256">
+                            <rect width="256" height="256" fill="none"></rect>
+                            <path d="M200,224.00005H55.99219a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8L152,32l56,56v128A8,8,0,0,1,200,224.00005Z" fill="none" stroke="#636363" stroke-linecap="butt" stroke-linejoin="round" stroke-width="16"></path>
+                            <polyline points="152 32 152 88 208.008 88" fill="none" stroke="#636363" stroke-linecap="butt" stroke-linejoin="round" stroke-width="16"></polyline>
+                            <polyline points="100 156 128 184 156 156" fill="none" stroke="#636363" stroke-linecap="butt" stroke-linejoin="round" stroke-width="16"></polyline>
+                            <line x1="128" y1="120" x2="128" y2="184" fill="none" stroke="#636363" stroke-linecap="butt" stroke-linejoin="round" stroke-width="16"></line>
+                        </svg>
+                        Download
                     </div>
-
-                    <div class="referenzen__cell">
-                        <div class="referenzen__cell__left">
-                            <div class="referenzen__cell__client">
-                                <p>MEDIAN Kliniken GmbH</p>
-                            </div>
-                            <div class="referenzen__cell__location">
-                                <p>14089 Berlin</p>
-                            </div>
-                        </div>
-                        <div class="referenzen__cell__right">
-                            <div class="referenzen__cell__website"><a href="#">Website</a></div>
-                        </div>
+                </div>
+                <div class="termine-table__cell">
+                    <div class="datum">15. Mai 2021</div>
+                    <div class="ort">Friedrichstr. 44, 10969 Berlin</div>
+                    <div class="name">Festlegung von Probenahmestellen für Trinkwasseruntersuchungen</div>
+                    <div class="download">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="#000000" viewBox="0 0 256 256">
+                            <rect width="256" height="256" fill="none"></rect>
+                            <path d="M200,224.00005H55.99219a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8L152,32l56,56v128A8,8,0,0,1,200,224.00005Z" fill="none" stroke="#636363" stroke-linecap="butt" stroke-linejoin="round" stroke-width="16"></path>
+                            <polyline points="152 32 152 88 208.008 88" fill="none" stroke="#636363" stroke-linecap="butt" stroke-linejoin="round" stroke-width="16"></polyline>
+                            <polyline points="100 156 128 184 156 156" fill="none" stroke="#636363" stroke-linecap="butt" stroke-linejoin="round" stroke-width="16"></polyline>
+                            <line x1="128" y1="120" x2="128" y2="184" fill="none" stroke="#636363" stroke-linecap="butt" stroke-linejoin="round" stroke-width="16"></line>
+                        </svg>
+                        Download
                     </div>
-
-                    <div class="referenzen__cell">
-                        <div class="referenzen__cell__left">
-                            <div class="referenzen__cell__client">
-                                <p>MEDIAN Kliniken GmbH</p>
-                            </div>
-                            <div class="referenzen__cell__location">
-                                <p>15366 Hoppegarten</p>
-                            </div>
-                        </div>
-                        <div class="referenzen__cell__right">
-                            <div class="referenzen__cell__website"><a href="#">Website</a></div>
-                        </div>
-                    </div>
-
-                    <div class="referenzen__cell">
-                        <div class="referenzen__cell__left">
-                            <div class="referenzen__cell__client">
-                                <p>Bezirksamt Pankow von Berlin - Abt. Jugend und Facility Management
-                                </p>
-                            </div>
-                            <div class="referenzen__cell__location">
-                                <p>13187 Berlin</p>
-                            </div>
-                        </div>
-                        <div class="referenzen__cell__right">
-                            <div class="referenzen__cell__website"><a href="#">Website</a></div>
-                        </div>
-                    </div>
-
-                    <div class="referenzen__cell">
-                        <div class="referenzen__cell__left">
-                            <div class="referenzen__cell__client">
-                                <p>Mary Deiters Immobilien GmbH</p>
-                            </div>
-                            <div class="referenzen__cell__location">
-                                <p>10781 Berlin</p>
-                            </div>
-                        </div>
-                        <div class="referenzen__cell__right">
-                            <div class="referenzen__cell__website"><a href="#">Website</a></div>
-                        </div>
-                    </div>
-
-                    <div class="referenzen__cell">
-                        <div class="referenzen__cell__left">
-                            <div class="referenzen__cell__client">
-                                <p>SoHo House Berlin</p>
-                            </div>
-                            <div class="referenzen__cell__location">
-                                <p>10119 Berlin</p>
-                            </div>
-                        </div>
-                        <div class="referenzen__cell__right">
-                            <div class="referenzen__cell__website"><a href="#">Website</a></div>
-                        </div>
-                    </div>
-
-                    <div class="referenzen__cell">
-                        <div class="referenzen__cell__left">
-                            <div class="referenzen__cell__client">
-                                <p>Fladeé & Peters GmbH</p>
-                            </div>
-                            <div class="referenzen__cell__location">
-                                <p>10719 Berlin</p>
-                            </div>
-                        </div>
-                        <div class="referenzen__cell__right">
-                            <div class="referenzen__cell__website"><a href="#">Website</a></div>
-                        </div>
-                    </div>
-
-                    <div class="referenzen__cell">
-                        <div class="referenzen__cell__left">
-                            <div class="referenzen__cell__client">
-                                <p>GFG Hausverwaltungsgesellschaft mbH</p>
-                            </div>
-                            <div class="referenzen__cell__location">
-                                <p>10713 Berlin</p>
-                            </div>
-                        </div>
-                        <div class="referenzen__cell__right">
-                            <div class="referenzen__cell__website"><a href="#">Website</a></div>
-                        </div>
-                    </div>
-
-                    <div class="referenzen__cell">
-                        <div class="referenzen__cell__left">
-                            <div class="referenzen__cell__client">
-                                <p>Harry Gerlach Wohnungsunternehmen GmbH</p>
-                            </div>
-                            <div class="referenzen__cell__location">
-                                <p>10713 Berlin</p>
-                            </div>
-                        </div>
-                        <div class="referenzen__cell__right">
-                            <div class="referenzen__cell__website"><a href="#">Website</a></div>
-                        </div>
+                </div>
+                <div class="termine-table__cell">
+                    <div class="datum">27. August 2021</div>
+                    <div class="ort">Webinar</div>
+                    <div class="name">Qualitätsüberwachung: Qualitätssicherung, Bauabnahmen, Instandhaltungscheck</div>
+                    <div class="download">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="#000000" viewBox="0 0 256 256">
+                            <rect width="256" height="256" fill="none"></rect>
+                            <path d="M200,224.00005H55.99219a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8L152,32l56,56v128A8,8,0,0,1,200,224.00005Z" fill="none" stroke="#636363" stroke-linecap="butt" stroke-linejoin="round" stroke-width="16"></path>
+                            <polyline points="152 32 152 88 208.008 88" fill="none" stroke="#636363" stroke-linecap="butt" stroke-linejoin="round" stroke-width="16"></polyline>
+                            <polyline points="100 156 128 184 156 156" fill="none" stroke="#636363" stroke-linecap="butt" stroke-linejoin="round" stroke-width="16"></polyline>
+                            <line x1="128" y1="120" x2="128" y2="184" fill="none" stroke="#636363" stroke-linecap="butt" stroke-linejoin="round" stroke-width="16"></line>
+                        </svg>
+                        Download
                     </div>
                 </div>
             </div>
-            <div class="referenzen__portrait">
-                <img src="img/maeva-vigier-AURdnwzsrkQ-unsplash.jpg" alt="Referenzen Image">
-            </div>
+
+        </section>
+        
+        <section class="referenzen" id="referenzen">
+
+            <p>Referenzen</p>
+
+            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium sed assumenda exercitationem necessitatibus accusamus nulla dolorem provident maxime deserunt harum, rerum hic minima magnam.</h2>
+
+            <figure class="animate">
+                <img src="img/DSC1360.jpg" alt="Christian Strehlow Foto">
+            </figure>
+
+            <ul>
+                <li>
+                    <span>18609 Ostseebad Binz</span>
+                    <p>HGR Premium</p>
+                </li>
+                <li>
+                    <span>14089 Berlin</span>
+                    <p>MEDIAN Kliniken GmbH</p>
+                </li>
+                <li>
+                    <span>15366 Hoppegarten</span>
+                    <p>MEDIAN Kliniken GmbH</p>
+                </li>
+                <li>
+                    <span>13187 Berlin</span>
+                    <p>Bezirksamt Pankow von Berlin - Abt. Jugend und Facility Management</p>
+                </li>
+                <li>
+                    <span>10781 Berlin</span>
+                    <p>Mary Deiters Immobilien GmbH</p>
+                </li>
+                <li>
+                    <span>10119 Berlin</span>
+                    <p>Soho House Berlin</p>
+                </li>
+                <li>
+                    <span>10719 Berlin</span>
+                    <p>Fladeé & Peters GmbH</p>
+                </li>
+                <li>
+                    <span>10713 Berlin</span>
+                    <p>GFG Hausverwaltungsgesellschaft mbH</p>
+                </li>
+                <li>
+                    <span>10713 Berlin</span>
+                    <p>Harry Gerlach Wohnungsunternehmen GmbH</p>
+                </li>
+            </ul>
+
         </section>
 
     </section>
 
     <footer class="footer">
         <div class="footer__content">
-            <div class="footer__content__left">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9711.699592546558!2d13.3901202!3d52.5166982!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4cc277ab16bf9e14!2sChristian+Strehlow+Sachverst%C3%A4ndiger!5e0!3m2!1sde!2sde!4v1460137750892" width="1200" height="900" style="border:0" allowfullscreen=""></iframe>
-            </div>
             <div class="footer__content__right">
-                <h4 class="small-headline">Geschäftsstelle</h4>
-                <p>Unter den Linden 21<br>10117 Berlin</p>
-                <h4 class="small-headline">Telefon</h4>
-                <p>+49 177 649 49 49</p>
-                <h4 class="small-headline">E-Mail</h4>
-                <p><a href="mailto:info@sv-strehlow.de">info@sv-strehlow.de</a></p>
-                <h4 class="small-headline">USt-IdNr</h4>
-                <p>DE298023339</p>
+                <div class="footer__content__cell">
+                    <h4 class="small-headline">Geschäftsstelle</h4>
+                    <p>Unter den Linden 21<br>10117 Berlin</p>
+                </div>
+                <div class="footer__content__cell">
+                    <h4 class="small-headline">Telefon</h4>
+                    <p>+49 177 649 49 49</p>
+                </div>
+                <div class="footer__content__cell">
+                    <h4 class="small-headline">E-Mail</h4>
+                    <a href="mailto:info@sv-strehlow.de">info@sv-strehlow.de</a>
+                </div>
+                <div class="footer__content__cell">
+                    <h4 class="small-headline">USt-IdNr</h4>
+                    <p>DE298023339</p>
+                </div>
             </div>
-        </div>
-        <div class="footer__links">
-            <p>&copy; 2020 Christian Strehlow</p>
-            <p><a href="https://www.facebook.com/Strehlow.SV"><img src="/img/SVG/facebook-circular-logo.svg"></a></p>
+            <div class="footer__content__left">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9711.699592546558!2d13.3901202!3d52.5166982!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4cc277ab16bf9e14!2sChristian+Strehlow+Sachverst%C3%A4ndiger!5e0!3m2!1sde!2sde!4v1460137750892" width="100%" height="900" style="border:0" allowfullscreen=""></iframe>
+            </div>
         </div>
     </footer>
     <div id="kontakt"></div>
 
+
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>

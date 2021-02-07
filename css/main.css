@@ -13,6 +13,17 @@
     }
 }
 
+@keyframes showText {
+    0% {
+        opacity: 0;
+        transform: translate(0, 100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0%);
+    }
+}
+
 :root {
     --font-dark: #232323;
 }
@@ -38,39 +49,71 @@ body {
     padding-bottom: 100vh;
 }
 
+body.is-loading {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
 section.wrapper {
     position: relative;
-    z-index: 1;
+    z-index: 777;
     background-color: #ffffff;
+}
+
+div.wiper {
+    background-color: #000000;
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+}
+
+div.textwrapper {
+    height: 101%;
+    overflow: hidden;
 }
 
 section.hero {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    row-gap: 15vh;
+    row-gap: 7.5vh;
     width: 100%;
     padding: 1.2vw;
-    padding-top: 17.5vh;
-    margin-bottom: 160px;
+    padding-top: 12.5vh;
+    margin-bottom: 12rem;
 }
 
-section.hero p {
-    grid-column: 1 / span 2;
+section.hero div.headline {
+    grid-column: 1 / span 3;
+    height: 100%;
+    overflow: hidden;
+}
+
+section.hero div.headline p {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
-    font-size: 90px;
-    line-height: 90px;
-    letter-spacing: -0.05em;
+    font-size: 19.003rem;
+    line-height: 0.82;
+    letter-spacing: -0.075em;
+    margin-top: 1.5rem;
 }
 
-section.hero h1 {
+section.hero div.subheadline {
     grid-column: 4 / span 3;
     grid-row: 2;
+    height: 100%;
+    overflow: hidden;
+}
+
+section.hero div.subheadline h1 {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
-    font-size: 28px;
-    line-height: 36px;
-    letter-spacing: -0.025em;
+    font-size: 4.11rem;
+    line-height: 1.125;
+    letter-spacing: -0.0375em;
 }
 
 section.hero figure {
@@ -78,6 +121,7 @@ section.hero figure {
     position: relative;
     height: 0;
     padding-top: 133%;
+    overflow: hidden;
 }
 
 section.hero figure img {
@@ -86,6 +130,7 @@ section.hero figure img {
     left: 0;
     object-fit: cover;
     width: 100%;
+    clip-path: polygon(100% 0%, 100% 0, 100% 100%, 100% 100%);
 } 
 
 div.sticky-nav {
@@ -95,14 +140,14 @@ div.sticky-nav {
     position: sticky;
     top: 0;
     left: 0;
-    padding: 1.2vw;
+    padding: 0.6vw 1.2vw;
     background-color: #fff;
     border-bottom: 1px solid rgba(0, 0, 0, 1);
     z-index: 666;
 }
 
 div.sticky-nav nav {
-    font-size: 21px;
+    font-size: 2.1rem;
 }
 
 section.about {
@@ -117,29 +162,38 @@ section.about {
     padding-bottom: 120px;
 }
 
-section.about p {
-    font-size: 90px;
-    line-height: 90px;
-    letter-spacing: -0.05em;
-    
+section.about div.section-headline {
     grid-column: 1 / span 2;
 }
 
-section.about h2 {
+section.about div.section-headline p {
+    font-size: 15.014rem;
+    line-height: 0.85;
+    letter-spacing: -0.05em;
+    margin-top: 1.5rem;
+    transform: translate(0, 100%);
+}
+
+section.about div.section-subheadline {
     grid-column: 4 / span 3;
     grid-row: 2;
+}
+
+section.about div.section-subheadline h2 {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
-    font-size: 21px;
-    line-height: 27px;
-    letter-spacing: -0.025em;
+    font-size: 2.887rem;
+    line-height: 1.15;
+    letter-spacing: -0.035em;
+    transform: translate(0, 100%);
 }
 
 section.about figure {
     grid-column: 1 / span 2;
     grid-row: 3;
     
-    padding-top: 64px;
+    height: 0;
+    padding-top: 133%;
     position: relative
 }
 
@@ -154,27 +208,33 @@ section.about ul {
     grid-column: 4 / span 4;
     grid-row: 3;
     
-    padding-top: 120px;
+    padding-top: 12rem;
 }
 
 section.about ul li {
-    display: flex;
+    display: grid;
+    grid-template-columns: 0.5fr 3fr;
 }
 
 section.about ul li span,
 section.about ul li p {
-    font-size: 27px;
-    line-height: 36px;
+    font-size: 3.653rem;
+    line-height: 1.25;
 }
 
 section.about ul li span {
-    margin-right: 40px;
+    grid-column: 1;
+    letter-spacing: -0.05em;
+}
+
+section.about ul li p {
+    grid-column: 2;
 }
 
 section.kompetenzen {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-gap: 24px;
+    grid-gap: 2.4rem;
     padding: 1.2vw;
     background-color: #EAEAEA;
     color: #131212;
@@ -183,31 +243,37 @@ section.kompetenzen {
     padding-bottom: 120px;
 }
 
-section.kompetenzen p {
-    font-size: 90px;
-    line-height: 90px;
-    letter-spacing: -0.05em;
-    
-    grid-column: 1 / span 2;
+section.kompetenzen div.headline {
+    grid-column: 1 / span 3;
 }
 
-section.kompetenzen h2 {
+section.kompetenzen div.headline p {
+    font-size: 15.014rem;
+    line-height: 0.8;
+    letter-spacing: -0.05em;
+}
+
+section.kompetenzen div.subheadline {
     grid-column: 1 / span 3;
     grid-row: 2;
+}
+
+section.kompetenzen div.subheadline h2 {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
-    font-size: 21px;
-    line-height: 27px;
-    letter-spacing: -0.025em;
+    font-size: 2.887rem;
+    line-height: 1.15;
+    letter-spacing: -0.035em;
     
-    padding-top: 120px;
+    padding-top: 8rem;
 }
 
 section.kompetenzen figure {
     grid-column: 5 / span 1;
     grid-row: 2;
     
-    padding-top: 60px;
+    padding-top: 100%;
+    height: 0;
     position: relative
 }
 
@@ -220,147 +286,258 @@ section.kompetenzen figure img {
 
 section.kompetenzen div.table-left {
     grid-column: 1 / span 3;
-    grid-row: 3;
-    padding-top: 120px;
+    grid-row: 4;
+    padding-top: 12rem;
+    padding-bottom: 8rem;
 }
 
 section.kompetenzen div.table-right {
     grid-column: 4 / span 3;
-    grid-row: 3;
-    padding-top: 120px;
+    grid-row: 4;
+    padding-top: 12rem;
+    padding-bottom: 8rem;
 }
 
 section.kompetenzen div h4 {
-    font-size: 18px;
-    margin-bottom: 24px;
+    font-size: 1.802rem;
+    margin-bottom: 2.4rem;
     font-weight: 500;
 }
 
 section.kompetenzen div h4::before {
     content: '';
-    width: 14px;
-    height: 14px;
+    width: 1.4rem;
+    height: 1.4rem;
     background-color: black;
     border-radius: 7px;
-    margin-right: 8px;
+    margin-right: .8rem;
     display: inline-block;
 }
 
 section.kompetenzen div ul li {
-    font-size: 32px;
-    line-height: 36px;
+    font-size: 2.887rem;
+    line-height: 1.275;
     font-weight: 500;
-    padding-bottom: 16px;
-    padding-top: 16px;
+    letter-spacing: -0.025em;
+    padding-bottom: 1.6rem;
+    padding-top: 1.6rem;
     border-top: 1px solid black;
 }
 
-section.referenzen {
-    display: flex;
+section.kompetenzen div ul li:last-child {
+    border-bottom: 1px solid black;
+}
+
+section.termine {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 2.4rem;
     padding: 1.2vw;
+    background-color: #000000;;
+    color: #636363;
+    
+    padding-top: 12.5vh;
+    padding-bottom: 120px;
 }
 
-section.referenzen div.referenzen__content {
-    color: var(--font-dark);
-    width: 58.8vw;
-    padding-bottom: 12rem;
-    padding-top: 4.8rem;
+section.termine p {
+    font-size: 15.014rem;
+    line-height: 0.8;
+    letter-spacing: -0.05em;
+    
+    grid-column: 1 / span 2;
 }
 
-section.referenzen div.referenzen__content p.chapter.chapter-dark {
-    opacity: .5;
+section.termine h2 {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 2.887rem;
+    line-height: 1.15;
+    letter-spacing: -0.035em;
+    
+    padding-top: 8rem;
 }
 
-section.referenzen div.referenzen__content div.referenzen__rows div.referenzen__cell {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    justify-content: space-between;
-    border-top: 1px solid var(--font-dark);
+section.termine figure {
+    grid-column: 5 / span 1;
+    grid-row: 2;
+    
+    padding-top: 100%;
+    height: 0;
+    position: relative
 }
 
-section.referenzen div.referenzen__content div.referenzen__rows div.referenzen__cell:last-child {
-    border-bottom: 1px solid var(--font-dark);
+section.termine figure img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
-section.referenzen div.referenzen__content div.referenzen__rows div.referenzen__cell p {
-    font-size: 1.6rem;
-    line-height: 1;
+section.termine div.termine-table {
+    grid-column: 1 / span 4;
+    grid-row: 3;
+    margin-right: 2.4rem;
+    margin-bottom: 8rem;
 }
 
-section.referenzen div.referenzen__content div.referenzen__rows div.referenzen__cell a {
-    font-size: 1.6rem;
-    line-height: 1;
-    text-decoration: none;
-    color: var(--font-dark);
+section.termine div.termine-table__cell {
+    display: grid;
+    grid-template-columns: 0.75fr 0.75fr 3fr 1fr;
+    align-items: start;
+    
+    margin-bottom: .8rem;
+    line-height: 1.15;
 }
-
-section.referenzen div.referenzen__content div.referenzen__rows div.referenzen__cell div.referenzen__cell__left {
-    display: flex;
-}
-
-section.referenzen div.referenzen__content div.referenzen__rows div.referenzen__cell div.referenzen__cell__left div.referenzen__cell__client {
-    padding-top: .6vw;
+section.termine div.termine-table__cell div {
     padding-right: 2.4rem;
-    padding-bottom: .6vw;
-    border-right: 1px solid var(--font-dark);
 }
 
-section.referenzen div.referenzen__content div.referenzen__rows div.referenzen__cell div.referenzen__cell__left div.referenzen__cell__location {
-    padding: .6vw 2.4rem;
+section.termine div.termine-table__cell div.download {
+    display: inline-flex;
+    align-items: center;
 }
 
-section.referenzen div.referenzen__content div.referenzen__rows div.referenzen__cell div.referenzen__cell__right div.referenzen__cell__website {
-    padding-top: .6vw;
-    padding-bottom: .6vw;
+section.termine div.termine-table__cell div.download svg {
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-right: .8rem;
+    fill: currentColor;
 }
 
-section.referenzen div.referenzen__portrait img {
-    width: 40vw;
-    height: 100%;
-    object-fit: cover;
+section.termine div.termine-table__cell p {
+    font-size: 1.266rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    grid-column: span 1;
+    margin-bottom: 2.4rem;
+    letter-spacing: 0;
+}
+
+section.referenzen {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 24px;
     padding: 1.2vw;
-    z-index: -1;
-    opacity: 1;
-    transform: translateX(100%);
+    background-color: #fff;
+    color: #000;
+    
+    padding-top: 12.5vh;
+    padding-bottom: 6.4rem;
+}
+
+section.referenzen p {
+    font-size: 15.014rem;
+    line-height: 0.85;
+    letter-spacing: -0.05em;
+    
+    grid-column: 1 / span 2;
+}
+
+section.referenzen h2 {
+    grid-column: 4 / span 2;
+    grid-row: 2;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 2.887rem;
+    line-height: 1.15;
+    letter-spacing: -0.035em;
+}
+
+section.referenzen figure {
+    grid-column: 1 / span 2;
+    grid-row: 3;
+    
+    height: 0;
+    padding-top: 133%;
+    position: relative
+}
+
+section.referenzen figure img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+section.referenzen ul {
+    grid-column: 4 / span 4;
+    grid-row: 3;
+    
+    padding-top: 12rem;
+}
+
+section.referenzen ul li {
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+}
+
+section.referenzen ul li span,
+section.referenzen ul li p {
+    font-size: 3.653rem;
+    line-height: 1.25;
+}
+
+section.referenzen ul li span {
+    grid-column: 1;
+    letter-spacing: -0.05em;
+}
+
+section.referenzen ul li p {
+    grid-column: 2;
 }
 
 section figure.in-view img {
     animation: showImage 1s 0.4s both cubic-bezier(0.68,-0.55,0.27,1.55);
-}	
+}
+
+section div.textwrapper.in-view p {
+    animation: showText 1s 0.4s both cubic-bezier(0.08,0.82,0.17,1);
+}
+
+section div.textwrapper.in-view h2 {
+    animation: showText 1s 0.4s both cubic-bezier(0.08,0.82,0.17,1);
+}
 
 footer.footer {
     height: 100vh;
     width: 100vw;
-    padding: 1.2vw;
     position: fixed;
     bottom: 0;
     left: 0;
-    z-index: -666;
-    background-color: var(--font-dark);
+    z-index: 666;
+    background-color: #000;
     display: flex;
     flex-direction: column;
 }
 
 footer.footer div.footer__content {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     height: 100vh;
+    width: 100vw;
     color: #ffffff;
 }
 
-footer.footer div.footer__content div.footer__content__left,
-footer.footer div.footer__content div.footer__content__right {
-    width: 50vw;
+footer.footer div.footer__content div.footer__content__left {
+    width: 100vw;
 }
 
 footer.footer div.footer__content div.footer__content__right {
-    padding-left: 2.4rem;
+    padding: 1.2vw;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap
 }
 
 footer.footer div.footer__content div.footer__content__right h4.small-headline {
     font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
     letter-spacing: .2px;
     margin-bottom: .2rem;
@@ -368,12 +545,15 @@ footer.footer div.footer__content div.footer__content__right h4.small-headline {
 
 footer.footer div.footer__content div.footer__content__right p {
     margin-bottom: 2.4rem;
-    font-size: 1.8rem;
+    font-size: 3.653rem;
     line-height: 1.35;
 }
 
-footer.footer div.footer__content div.footer__content__right a {
+footer.footer div.footer__content div.footer__content__right div.footer__content__cell a {
     color: #ffffff;
+    margin-bottom: 2.4rem;
+    font-size: 3.653rem;
+    line-height: 1.35;
     text-decoration: none;
     cursor: pointer;
     transition: opacity .3s ease-out;

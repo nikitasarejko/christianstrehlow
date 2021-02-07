@@ -15,7 +15,7 @@ const changeScroll = function () {
     const images = caption.querySelectorAll('img')
     
     images.forEach((image, index) => {
-      const speed = 0.2 + (0.75 * index)
+      const speed = 0.35 + (0.75 * index)
       image.style.top = (diff * speed) + 'px'
     })
   })
@@ -30,7 +30,8 @@ window.addEventListener('scroll', function () {
 changeScroll()
 
 // INTERSECTION OBSERVER
-const figures = document.querySelectorAll('figure')
+const figures = document.querySelectorAll('figure.animate')
+const textWrappers = document.querySelectorAll('div.textwrapper')
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -40,10 +41,83 @@ const observer = new IntersectionObserver(entries => {
     }
   })
 }, {
-  threshold: [0.0, 0.1, 1.0]
+  threshold: [0.05, 0.25, 1.0]
 })
 
 figures.forEach(figure => {
   observer.observe(figure)
 })
 
+textWrappers.forEach(textWrapper => {
+  observer.observe(textWrapper)
+})
+
+// GSAP SCROLLTRIGGER
+const tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: "section.about ul",
+    start: "top center"
+  }
+})
+
+tl.from("section.about ul li", { yPercent: 25, rotation: "-2.5deg", stagger: 0.075, opacity: 0, duration: 0.25 })
+
+Splitting()
+
+// PAGE TRANSITIONS
+const enterOnceIndex = function(container) {
+  const bodyTag = document.querySelector('body');
+  const wiper = document.querySelector('div.wiper');
+  const title = document.querySelector('section.hero div.headline p');
+  const introText = document.querySelectorAll('section.hero h1 span.word');
+  const heroImg = document.querySelector('section.hero figure img')
+
+  const timeline = gsap.timeline({
+    defaults: {
+      duration: 1,
+      delay: 0.2,
+      ease: 'circ.out',
+    },
+  });
+
+  timeline
+    .set(bodyTag, { opacity: 0 }, 0)
+    .set(heroImg, { clipPath: "polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)", yPercent: 15 }, 0)
+    .to(bodyTag, { opacity: 1, duration: 0.25 }, 1)
+    .to(wiper, { height: "100%", duration: 0.75 }, 2)
+    .set(wiper, { top: 0, bottom: "none" }, 3)
+    .to(wiper, { height: "0%", duration: 1 }, 4)
+    .to(heroImg, { clipPath: "polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)", yPercent: 0, duration: 1, delay: 1.2 }, 4)
+    .from(title, { y: 200, opacity: 0, delay: 0.8 }, 4)
+    .from(introText, { yPercent: 100, opacity: 0, delay: 1, stagger: 0.015, duration: 2, onComplete: () => document.querySelector('body').classList.remove('is-loading') }, 4)
+    .set(wiper, { clearProps: "all" }, 5)
+
+  return timeline;
+  
+};
+
+barba.hooks.enter(() => {
+  // window.scrollTo({
+  // 	top: 0,
+  // 	behavior: 'smooth',
+  // });
+  window.scrollTo(0, 0);
+  runScripts();
+});
+
+barba.init({
+  transitions: [
+    {
+      name: 'home',
+      to: {
+        namespace: ['home'],
+      },
+      once({ next }) {
+        enterOnceIndex(next.container);
+        console.log('first enter of the page');
+      },
+    },
+  ],
+  views: [],
+  debug: true,
+});
