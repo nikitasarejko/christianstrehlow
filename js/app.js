@@ -53,14 +53,25 @@ textWrappers.forEach(textWrapper => {
 })
 
 // GSAP SCROLLTRIGGER
-const tl = gsap.timeline({
+const tlAbout = gsap.timeline({
   scrollTrigger: {
     trigger: "section.about ul",
     start: "top center"
   }
 })
 
-tl.from("section.about ul li", { yPercent: 25, rotation: "-2.5deg", stagger: 0.075, opacity: 0, duration: 0.25 })
+tlAbout
+  .from("section.about ul li", { yPercent: 25, rotation: "-2.5deg", stagger: 0.075, opacity: 0, duration: 0.25 })
+
+const tlReferenzen = gsap.timeline({
+  scrollTrigger: {
+    trigger: "div.table",
+    start: "top center"
+  }
+})
+
+tlReferenzen
+  .from("div.table-column *", { yPercent: 25, rotation: "-0.75deg", stagger: 0.075, opacity: 0, duration: 0.25 })
 
 Splitting()
 
@@ -84,13 +95,13 @@ const enterOnceIndex = function(container) {
     .set(bodyTag, { opacity: 0 }, 0)
     .set(heroImg, { clipPath: "polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)", yPercent: 15 }, 0)
     .to(bodyTag, { opacity: 1, duration: 0.25 }, 1)
-    .to(wiper, { height: "100%", duration: 0.75 }, 2)
-    .set(wiper, { top: 0, bottom: "none" }, 3)
-    .to(wiper, { height: "0%", duration: 1 }, 4)
-    .to(heroImg, { clipPath: "polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)", yPercent: 0, duration: 1, delay: 1.2 }, 4)
-    .from(title, { y: 200, opacity: 0, delay: 0.8 }, 4)
-    .from(introText, { yPercent: 100, opacity: 0, delay: 1, stagger: 0.015, duration: 2, onComplete: () => document.querySelector('body').classList.remove('is-loading') }, 4)
-    .set(wiper, { clearProps: "all" }, 5)
+    .to(wiper, { height: "100%", duration: 0.75 }, 1)
+    .set(wiper, { top: 0, bottom: "none", duration: 0 }, 2)
+    .to(wiper, { height: "0%", duration: 0.75 }, 3)
+    .to(heroImg, { clipPath: "polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)", yPercent: 0, duration: 1, delay: 1.2 }, 3)
+    .from(title, { y: 200, opacity: 0, delay: 0.8 }, 3)
+    .from(introText, { yPercent: 100, opacity: 0, delay: 1, stagger: 0.015, duration: 2, onComplete: () => document.querySelector('body').classList.remove('is-loading') }, 3)
+    .set(wiper, { clearProps: "all" }, 4)
 
   return timeline;
   

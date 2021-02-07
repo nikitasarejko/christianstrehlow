@@ -72,7 +72,7 @@ div.wiper {
 }
 
 div.textwrapper {
-    height: 101%;
+    height: 125%;
     overflow: hidden;
 }
 
@@ -146,8 +146,10 @@ div.sticky-nav {
     z-index: 666;
 }
 
-div.sticky-nav nav {
-    font-size: 2.1rem;
+div.sticky-nav nav a {
+    font-size: 2.027rem;
+    text-decoration: none;
+    color: #000000;
 }
 
 section.about {
@@ -284,21 +286,17 @@ section.kompetenzen figure img {
     width: 100%;
 }
 
-section.kompetenzen div.table-left {
-    grid-column: 1 / span 3;
-    grid-row: 4;
-    padding-top: 12rem;
-    padding-bottom: 8rem;
+section.kompetenzen div.table {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 8rem;
+    grid-column-gap: 4rem;
+    margin-top: 4rem;
 }
 
-section.kompetenzen div.table-right {
-    grid-column: 4 / span 3;
-    grid-row: 4;
-    padding-top: 12rem;
-    padding-bottom: 8rem;
-}
-
-section.kompetenzen div h4 {
+section.kompetenzen div.table div.table-column h4 {
+    font-family: 'Poppins', sans-serif;
     font-size: 1.802rem;
     margin-bottom: 2.4rem;
     font-weight: 500;
