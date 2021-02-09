@@ -89,6 +89,8 @@ Splitting()
 const enterOnceIndex = function(container) {
   const bodyTag = document.querySelector('body');
   const wiper = document.querySelector('div.wiper');
+  const wiperLogo = document.querySelector('svg.logo-large');
+  const wiperText = document.querySelector('div.wiper__text p');
   const title = document.querySelector('section.hero div.headline p');
   const introText = document.querySelectorAll('section.hero h1 span.word');
   const heroImg = document.querySelector('section.hero figure img')
@@ -105,13 +107,17 @@ const enterOnceIndex = function(container) {
     .set(bodyTag, { opacity: 0 }, 0)
     .set(heroImg, { clipPath: "polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)", yPercent: 15 }, 0)
     .to(bodyTag, { opacity: 1, duration: 0.25 }, 1)
-    .to(wiper, { height: "100%", duration: 0.75 }, 1)
-    .set(wiper, { top: 0, bottom: "none", duration: 0 }, 2)
-    .to(wiper, { height: "0%", duration: 0.75 }, 3)
-    .to(heroImg, { clipPath: "polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)", yPercent: 0, duration: 1, delay: 1.2 }, 3)
-    .from(title, { y: 200, opacity: 0, delay: 0.8 }, 3)
-    .from(introText, { yPercent: 100, opacity: 0, delay: 1, stagger: 0.015, duration: 2, onComplete: () => document.querySelector('body').classList.remove('is-loading') }, 3)
-    .set(wiper, { clearProps: "all" }, 4)
+    .to(wiper, { height: "100%", duration: 1.25 }, 1)
+    .from(wiperLogo, { yPercent: 100, opacity: 0, delay: 0.4 }, 1)
+    .to(wiperText, { y: 0, opacity: 1, delay: 0.8 }, 1)
+    .to(wiperLogo, { yPercent: -100, opacity: 0, delay: 1.6 }, 2)
+    .to(wiperText, { y: "-100%", opacity: 0, delay: 1.6 }, 2)
+    .set(wiper, { top: 0, bottom: "none", duration: 0 }, 3)
+    .to(wiper, { height: "0%", duration: 0.75 }, 4)
+    .to(heroImg, { clipPath: "polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)", yPercent: 0, duration: 1, delay: 1.2 }, 4)
+    .from(title, { y: 200, opacity: 0, delay: 0.8 }, 4)
+    .from(introText, { yPercent: 100, opacity: 0, delay: 1, stagger: 0.015, duration: 2, onComplete: () => document.querySelector('body').classList.remove('is-loading') }, 4)
+    .set(wiper, { clearProps: "all" }, 5)
 
   return timeline;
   
