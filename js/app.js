@@ -72,6 +72,16 @@ const tlReferenzen = gsap.timeline({
 
 tlReferenzen
   .from("div.table-column *", { yPercent: 25, rotation: "-0.75deg", stagger: 0.075, opacity: 0, duration: 0.25 })
+  
+const tlTermine = gsap.timeline({
+  scrollTrigger: {
+    trigger: "div.termine-table",
+    start: "top center"
+  }
+})
+
+tlTermine
+  .from("div.termine-table__cell", { yPercent: 25, rotation: "-0.75deg", stagger: 0.075, opacity: 0, duration: 0.25 })
 
 Splitting()
 

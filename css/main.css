@@ -25,7 +25,8 @@
 }
 
 :root {
-    --font-dark: #232323;
+    --font-dark: #1A1A21;
+    --anthrazit: #575763;
 }
 
 * {
@@ -62,7 +63,7 @@ section.wrapper {
 }
 
 div.wiper {
-    background-color: #000000;
+    background-color: var(--font-dark);
     height: 0%;
     width: 100%;
     position: fixed;
@@ -79,7 +80,7 @@ div.textwrapper {
 section.hero {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    row-gap: 7.5vh;
+    grid-row-gap: 7.5vh;
     width: 100%;
     padding: 1.2vw;
     padding-top: 12.5vh;
@@ -98,6 +99,7 @@ section.hero div.headline p {
     font-size: 19.003rem;
     line-height: 0.82;
     letter-spacing: -0.075em;
+    color: var(--font-dark);
     margin-top: 1.5rem;
 }
 
@@ -114,6 +116,7 @@ section.hero div.subheadline h1 {
     font-size: 4.11rem;
     line-height: 1.125;
     letter-spacing: -0.0375em;
+    color: var(--font-dark);
 }
 
 section.hero figure {
@@ -157,7 +160,7 @@ section.about {
     grid-template-columns: repeat(6, 1fr);
     grid-gap: 24px;
     padding: 1.2vw;
-    background-color: #000000;
+    background-color: #1A1A21;
     color: #fff;
     
     padding-top: 12.5vh;
@@ -239,10 +242,10 @@ section.kompetenzen {
     grid-gap: 2.4rem;
     padding: 1.2vw;
     background-color: #EAEAEA;
-    color: #131212;
+    color: var(--font-dark);
     
     padding-top: 12.5vh;
-    padding-bottom: 120px;
+    padding-bottom: 12rem;
 }
 
 section.kompetenzen div.headline {
@@ -253,6 +256,9 @@ section.kompetenzen div.headline p {
     font-size: 15.014rem;
     line-height: 0.8;
     letter-spacing: -0.05em;
+    
+    transform: translate(0, 100%);
+    opacity: 0;
 }
 
 section.kompetenzen div.subheadline {
@@ -307,7 +313,7 @@ section.kompetenzen div h4::before {
     width: 1.4rem;
     height: 1.4rem;
     background-color: black;
-    border-radius: 7px;
+    border-radius: .7rem;
     margin-right: .8rem;
     display: inline-block;
 }
@@ -331,31 +337,38 @@ section.termine {
     grid-template-columns: repeat(6, 1fr);
     grid-gap: 2.4rem;
     padding: 1.2vw;
-    background-color: #000000;;
-    color: #636363;
+    background-color: var(--anthrazit);
+    color: #f6f6f6;
     
     padding-top: 12.5vh;
     padding-bottom: 120px;
 }
 
-section.termine p {
-    font-size: 15.014rem;
-    line-height: 0.8;
-    letter-spacing: -0.05em;
-    
+section.termine div.headline {
     grid-column: 1 / span 2;
 }
 
-section.termine h2 {
+section.termine div.headline p {
+    font-size: 15.014rem;
+    line-height: 0.8;
+    letter-spacing: -0.05em;
+    margin-top: 1.5rem;
+    transform: translate(0, 100%);
+}
+
+section.termine div.subheadline {
     grid-column: 1 / span 2;
     grid-row: 2;
+    padding-top: 8rem;
+}
+
+section.termine div.subheadline h2 {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-size: 2.887rem;
     line-height: 1.15;
     letter-spacing: -0.035em;
-    
-    padding-top: 8rem;
+    transform: translate(0, 100%);
 }
 
 section.termine figure {
@@ -364,7 +377,8 @@ section.termine figure {
     
     padding-top: 100%;
     height: 0;
-    position: relative
+    position: relative;
+    z-index: 1;
 }
 
 section.termine figure img {
@@ -386,11 +400,15 @@ section.termine div.termine-table__cell {
     grid-template-columns: 0.75fr 0.75fr 3fr 1fr;
     align-items: start;
     
-    margin-bottom: .8rem;
     line-height: 1.15;
+    border-bottom: 1px solid #ffffff;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
 }
 section.termine div.termine-table__cell div {
     padding-right: 2.4rem;
+    font-size: 2.027rem;
+    font-weight: 500;
 }
 
 section.termine div.termine-table__cell div.download {
@@ -406,12 +424,21 @@ section.termine div.termine-table__cell div.download svg {
 }
 
 section.termine div.termine-table__cell p {
-    font-size: 1.266rem;
+    font-size: 1.802rem;
     font-weight: 500;
-    text-transform: uppercase;
     grid-column: span 1;
     margin-bottom: 2.4rem;
     letter-spacing: 0;
+}
+
+section.termine div.termine-table__cell p::before {
+    content: '';
+    display: inline-flex;
+    width: 1.4rem;
+    height: 1.4rem;
+    background-color: #ffffff;
+    border-radius: .7rem;
+    margin-right: .8rem;
 }
 
 section.referenzen {
@@ -426,17 +453,25 @@ section.referenzen {
     padding-bottom: 6.4rem;
 }
 
-section.referenzen p {
+section.referenzen div.headline {    
+    grid-column: 1 / span 3;
+}
+
+section.referenzen div.headline p {
     font-size: 15.014rem;
     line-height: 0.85;
     letter-spacing: -0.05em;
     
-    grid-column: 1 / span 2;
+    transform: translate(0, 100%);
+    opacity: 0;
 }
 
-section.referenzen h2 {
+section.referenzen div.subheadline {
     grid-column: 4 / span 2;
     grid-row: 2;
+}
+
+section.referenzen div.subheadline h2 {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-size: 2.887rem;
@@ -476,6 +511,7 @@ section.referenzen ul li span,
 section.referenzen ul li p {
     font-size: 3.653rem;
     line-height: 1.25;
+    letter-spacing: -0.025em;
 }
 
 section.referenzen ul li span {
@@ -572,94 +608,138 @@ footer.footer div.footer__links p {
     letter-spacing: .2px;
 }
 
-@media only screen and (max-width: 102.4rem) {
-
-    div.hero__right,
-    div.cv__portrait,
-    div.kompetenzen__portrait,
-    div.referenzen__portrait {
-        width: 40vw;
-        height: 94vh;
-        margin-top: 6vh;
-        position: fixed;
-        right: 0;
-        top: 0;
-        overflow: hidden;
+@media screen and (max-width: 1440px) {
+    
+    section.hero div.headline p {
+        font-size: 11.863rem;
     }
-
-    div.hero__left div.hero__left__content p.hero__left__title {
-        margin-bottom: 1.6rem;
+    
+    section.hero div.subheadline h1 {
+        font-size: 2.887rem;
     }
-
-    div.hero__left div.hero__left__content h1.hero__left__headline {
-        font-size: 3.247rem;
-        line-height: 1.25;
-        max-width: 96rem;
-        margin-bottom: 1.6rem;
-    }
-
-    div.hero__left div.hero__left__content h4.hero__left__subline {
-        font-size: 2.281rem;
-        line-height: 1.4;
-        max-width: 96rem;
-    }
-
-    div.hero__left p.hero__left__scroll {
-        font-size: 1.2rem;
-    }
-
-    h2.headline {
-        font-size: 3.653rem;
-        margin-bottom: .8rem;
-    }
-
-    p.copy {
+    
+    div.sticky-nav nav a {
         font-size: 1.602rem;
-        margin-bottom: 2.4rem;
     }
-
-    section.cv div.cv__wrapper div.cv__logos {
+    
+    section.about div.section-headline p {
+        font-size: 9.373rem;
+    }
+    
+    section.about div.section-subheadline h2 {
+        font-size: 2.027rem;
+        line-height: 1.25;
+    }
+    
+    section.about ul li span,
+    section.about ul li p {
+        font-size: 2.281rem;
+    }
+    
+    section.about ul {
+        padding-top: 6.4rem;
+    }
+    
+    section.kompetenzen div.headline p {
+        font-size: 9.373rem;
+    }
+    
+    section.kompetenzen div.subheadline h2 {
+        font-size: 2.027rem;
         padding-top: 4rem;
     }
-
-    section.cv div.cv__wrapper div.cv__cell p {
-        font-size: 1.802rem;
-        line-height: 1.35;
+    
+    section.kompetenzen figure {
+        z-index: 1;
     }
-
-    section.cv div.cv__wrapper div.cv__logos img {
-        max-width: 12rem;
-        mix-blend-mode: darken;
+    
+    section.kompetenzen div.table {
+        grid-column-gap: 2.4rem;
     }
-
-    p.chapter {
+    
+    section.kompetenzen div.table div.table-column h4 {
+        font-size: 1.424rem;
         margin-bottom: 1.6rem;
     }
-
-    section.kompetenzen div.kompetenzen__wrapper h3.kompetenzen__headline span.dot {
-        width: 1.5rem;
-        height: 1.5rem;
-        margin-right: .8rem;
+    
+    section.kompetenzen div h4::before {
+        width: 1.2rem;
+        height: 1.2rem;
+        transform: translateY(1px);
+        background-color: var(--font-dark);
     }
-
-    section.kompetenzen div.kompetenzen__wrapper h3.kompetenzen__headline {
+    
+    section.kompetenzen div ul li {
+        font-size: 1.802rem;
+        padding-top: .8rem;
+        padding-bottom: .8rem;
+    }
+    
+    section.termine div.headline p {
+        font-size: 9.373rem;
+    }
+    
+    section.termine div.subheadline {
+        padding-top: 4rem;
+        grid-column: 1 / span 3;
+    }
+    
+    section.termine div.subheadline h2 {
         font-size: 2.027rem;
+        line-height: 1.25;
     }
-
-    section.kompetenzen div.kompetenzen__wrapper div.kompetenzen__cell p {
+    
+    section.termine div.termine-table {
+        grid-column: 1 / -1;
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }
+    
+    section.termine div.termine-table__cell {
+        grid-template-columns: 0.75fr 1.25fr 2.5fr 1fr;
+        line-height: 1.35;
+        padding-top: 1.2rem;
+        padding-bottom: 1.2rem;
+    }
+    
+    section.termine div.termine-table__cell p {
+        font-size: 1.424rem;
+        margin-bottom: 1.6rem;
+    }
+    
+    section.termine div.termine-table__cell p::before {
+        width: 1.2rem;
+        height: 1.2rem;
+        border-radius: .6rem;
+        transform: translateY(1px);
+    }
+    
+    section.termine div.termine-table__cell div {
         font-size: 1.602rem;
     }
-
-    section.referenzen div.referenzen__content div.referenzen__rows div.referenzen__cell p {
-        font-size: 1.802rem;
+    
+    section.termine div.termine-table__cell div.download svg {
+        width: 2.1rem;
+        height: 2.1rem;
     }
-
-    section.referenzen div.referenzen__content div.referenzen__rows div.referenzen__cell div.referenzen__cell__left div.referenzen__cell__client {
-        padding-right: 1.6rem;
+    
+    section.referenzen div.headline p {
+        font-size: 9.373rem;
     }
-
-    section.referenzen div.referenzen__content div.referenzen__rows div.referenzen__cell div.referenzen__cell__left div.referenzen__cell__location {
-        padding: .6vw 1.6rem;
+    
+    section.referenzen div.subheadline h2 {
+        font-size: 2.027rem;
+        line-height: 1.25;
     }
-
+    
+    section.referenzen ul {
+        padding-top: 6.4rem;
+    }
+    
+    section.referenzen ul li span,
+    section.referenzen ul li p {
+        font-size: 2.281rem;
+        line-height: 1.35;
+    }
+    
 }
