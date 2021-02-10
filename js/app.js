@@ -63,14 +63,14 @@ const tlAbout = gsap.timeline({
 tlAbout
   .from("section.about ul li", { yPercent: 25, rotation: "-2.5deg", stagger: 0.075, opacity: 0, duration: 0.25 })
 
-const tlReferenzen = gsap.timeline({
+const tlKompetenzen = gsap.timeline({
   scrollTrigger: {
     trigger: "div.table",
     start: "top center"
   }
 })
 
-tlReferenzen
+tlKompetenzen
   .from("div.table-column *", { yPercent: 25, rotation: "-0.75deg", stagger: 0.075, opacity: 0, duration: 0.25 })
   
 const tlTermine = gsap.timeline({
@@ -82,6 +82,16 @@ const tlTermine = gsap.timeline({
 
 tlTermine
   .from("div.termine-table__cell", { yPercent: 25, rotation: "-0.75deg", stagger: 0.075, opacity: 0, duration: 0.25 })
+  
+const tlReferenzen = gsap.timeline({
+  scrollTrigger: {
+    trigger: "section.referenzen ul",
+    start: "top center"
+  }
+})
+
+tlReferenzen
+  .from("section.referenzen ul li", { yPercent: 25, rotation: "-0.75deg", stagger: 0.075, opacity: 0, duration: 0.25 })
 
 Splitting()
 

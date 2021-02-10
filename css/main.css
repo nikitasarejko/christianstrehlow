@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 @keyframes showImage {
     0% {
@@ -156,7 +156,7 @@ section.hero div.subheadline {
 section.hero div.subheadline h1 {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
-    font-size: 4.11rem;
+    font-size: 4.624rem;
     line-height: 1.125;
     letter-spacing: -0.0375em;
     color: var(--font-dark);
@@ -208,13 +208,13 @@ div.sticky-nav div.sticky-nav__right a {
 section.about {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-gap: 24px;
+    grid-gap: 2.4rem;
     padding: 1.2vw;
     background-color: #1A1A21;
     color: #fff;
     
     padding-top: 12.5vh;
-    padding-bottom: 120px;
+    padding-bottom: 12rem;
 }
 
 section.about div.section-headline {
@@ -319,7 +319,7 @@ section.kompetenzen div.subheadline {
 section.kompetenzen div.subheadline h2 {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
-    font-size: 2.887rem;
+    font-size: 3.653rem;
     line-height: 1.15;
     letter-spacing: -0.035em;
     
@@ -332,7 +332,8 @@ section.kompetenzen figure {
     
     padding-top: 100%;
     height: 0;
-    position: relative
+    position: relative;
+    z-index: 1;
 }
 
 section.kompetenzen figure img {
@@ -407,7 +408,7 @@ section.termine div.headline p {
 }
 
 section.termine div.subheadline {
-    grid-column: 1 / span 2;
+    grid-column: 1 / span 3;
     grid-row: 2;
     padding-top: 8rem;
 }
@@ -415,7 +416,7 @@ section.termine div.subheadline {
 section.termine div.subheadline h2 {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
-    font-size: 2.887rem;
+    font-size: 3.653rem;
     line-height: 1.15;
     letter-spacing: -0.035em;
     transform: translate(0, 100%);
@@ -439,8 +440,9 @@ section.termine figure img {
 }
 
 section.termine div.termine-table {
-    grid-column: 1 / span 4;
+    grid-column: 1 / -1;
     grid-row: 3;
+    margin-top: 6.4rem;
     margin-right: 2.4rem;
     margin-bottom: 8rem;
 }
@@ -457,8 +459,10 @@ section.termine div.termine-table__cell {
 }
 section.termine div.termine-table__cell div {
     padding-right: 2.4rem;
-    font-size: 2.027rem;
-    font-weight: 500;
+    font-size: 2.887rem;
+    line-height: 1.25;
+    font-weight: 400;
+    letter-spacing: -0.0075em;
 }
 
 section.termine div.termine-table__cell div.download {
@@ -467,10 +471,11 @@ section.termine div.termine-table__cell div.download {
 }
 
 section.termine div.termine-table__cell div.download svg {
-    width: 2.4rem;
-    height: 2.4rem;
-    margin-right: .8rem;
+    width: 2.7rem;
+    height: 2.7rem;
+    margin-right: 1.2rem;
     fill: currentColor;
+    transform: translateY(-1px);
 }
 
 section.termine div.termine-table__cell p {
@@ -527,6 +532,9 @@ section.referenzen div.subheadline h2 {
     font-size: 2.887rem;
     line-height: 1.15;
     letter-spacing: -0.035em;
+    
+    transform: : translate(0, 100%);
+    opacity: 0;
 }
 
 section.referenzen figure {
@@ -607,11 +615,19 @@ footer.footer div.footer__content {
     color: #ffffff;
 }
 
-footer.footer div.footer__content div.footer__content__left {
+footer.footer div.footer__content div.footer__content__bottom {
     width: 100vw;
 }
 
-footer.footer div.footer__content div.footer__content__right {
+footer.footer div.footer__content div.footer__content__top {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+footer.footer div.footer__content div.footer__content__top div.footer__content__top__top {
     padding: 1.2vw;
     width: 100%;
     display: flex;
@@ -619,21 +635,31 @@ footer.footer div.footer__content div.footer__content__right {
     flex-wrap: wrap
 }
 
-footer.footer div.footer__content div.footer__content__right h4.small-headline {
-    font-size: 1.2rem;
+footer.footer div.footer__content div.footer__content__top div.footer__content__top__top h4.small-headline {
+    font-size: 1.424rem;
     font-family: 'Poppins', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: .2px;
-    margin-bottom: .2rem;
+    letter-spacing: 0.0075em;
+    margin-bottom: 1.6rem;
 }
 
-footer.footer div.footer__content div.footer__content__right p {
+footer.footer div.footer__content div.footer__content__top div.footer__content__top__top h4.small-headline::before {
+    content: '';
+    display: inline-block;
+    background-color: #fff;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: .6rem;
+    margin-right: .8rem;
+    transform: translateY(1px);
+}
+
+footer.footer div.footer__content div.footer__content__top div.footer__content__top__top p {
     margin-bottom: 2.4rem;
     font-size: 3.653rem;
-    line-height: 1.35;
+    line-height: 1.15;
 }
 
-footer.footer div.footer__content div.footer__content__right div.footer__content__cell a {
+footer.footer div.footer__content div.footer__content__top div.footer__content__top__top div.footer__content__cell a {
     color: #ffffff;
     margin-bottom: 2.4rem;
     font-size: 3.653rem;
@@ -643,19 +669,35 @@ footer.footer div.footer__content div.footer__content__right div.footer__content
     transition: opacity .3s ease-out;
 }
 
-footer.footer div.footer__content div.footer__content__right a:hover {
+footer.footer div.footer__content div.footer__content__top div.footer__content__top__top a:hover {
     opacity: .6;
 }
 
-footer.footer div.footer__links {
+footer.footer div.footer__content div.footer__content__top div.footer__content__top__bottom {
+    padding: 1.2vw;
+    width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap
 }
 
-footer.footer div.footer__links p {
-    color: #ffffff;
-    font-size: 1.2rem;
-    letter-spacing: .2px;
+footer.footer div.footer__content div.footer__content__top div.footer__content__top__bottom p,
+footer.footer div.footer__content div.footer__content__top div.footer__content__top__bottom a {
+    font-size: 1.125rem;
+    font-weight: 500;
+    opacity: .4;
+}
+
+footer.footer div.footer__content div.footer__content__top div.footer__content__top__bottom a {
+    text-decoration: none;
+    color: #fff;
+    transition: opacity .5s ease;
+}
+
+footer.footer div.footer__content div.footer__content__top div.footer__content__top__bottom a:hover {
+    opacity: 1;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 1440px) {
@@ -790,6 +832,73 @@ footer.footer div.footer__links p {
     section.referenzen ul li p {
         font-size: 2.281rem;
         line-height: 1.35;
+    }
+    
+}
+
+@media only screen and (max-width: 808px) {
+    
+    section.hero {
+        padding: 2.4vw;
+        padding-top: 5vh;
+        grid-row-gap: 1.6rem;
+        margin-bottom: 8rem;
+    }
+    
+    section.hero div.headline {
+        grid-column: 1 / -1;
+    }
+    
+    section.hero div.headline p {
+        font-size: 7.406rem;
+    }
+    
+    section.hero div.subheadline {
+        grid-column: 1 / -1;
+        height: 105%;
+    }
+    
+    section.hero div.subheadline h1 {
+        font-size: 2.027rem;
+    }
+    
+    section.hero figure {
+        grid-column: 4 / -1;
+        margin-top: 4rem;
+        padding-top: 150%;
+    }
+    
+    section.about {
+        padding: 2.4vw;
+        padding-top: 5vh;
+        padding-bottom: 6.4rem;
+    }
+    
+    section.about div.section-headline {
+        grid-column: 1 / -1;
+    }
+    
+    section.about div.section-headline p {
+        font-size: 6.583rem;
+    }
+    
+    section.about div.section-subheadline {
+        grid-column: 1 / -1;
+    }
+    
+    section.about figure {
+        grid-column: 3 / -1;
+        z-index: 1;
+    }
+    
+    section.about ul {
+        grid-column: 1 / -1;
+        grid-row: 4;
+    }
+    
+    section.about ul li span,
+    section.about ul li p {
+        font-size: 1.802rem;
     }
     
 }
