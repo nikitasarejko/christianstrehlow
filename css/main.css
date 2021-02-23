@@ -501,8 +501,8 @@ section.referenzen {
     grid-template-columns: repeat(6, 1fr);
     grid-gap: 24px;
     padding: 1.2vw;
-    background-color: #fff;
-    color: #000;
+    background-color: var(--font-dark);
+    color: #fff;
     
     padding-top: 12.5vh;
     padding-bottom: 6.4rem;
