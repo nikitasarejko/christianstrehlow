@@ -1,136 +1,167 @@
-let currentScroll = 0
-let aimScroll = 0
+let currentScroll = 0;
+let aimScroll = 0;
 
 const changeScroll = function () {
-  
-  currentScroll = currentScroll + (aimScroll - currentScroll) * 0.09
-  
-  const figcaptions = document.querySelectorAll('figure')
-  figcaptions.forEach(caption => {
-    const box = caption.getBoundingClientRect()
-    const midY = box.y + box.height / 2
-    const midScreen = window.innerHeight / 2
-    const diff = midY - midScreen
-    
-    const images = caption.querySelectorAll('img')
-    
-    images.forEach((image, index) => {
-      const speed = 0.35 + (0.75 * index)
-      image.style.top = (diff * speed) + 'px'
-    })
-  })
-  
-  requestAnimationFrame(changeScroll)
-}
+  currentScroll = currentScroll + (aimScroll - currentScroll) * 0.09;
 
-window.addEventListener('scroll', function () {
-  aimScroll = window.pageYOffset
-})
+  const figcaptions = document.querySelectorAll("figure");
+  figcaptions.forEach((caption, index) => {
+    const box = caption.getBoundingClientRect();
+    const midY = box.y + box.height / 2;
+    const midScreen = window.innerHeight / 2;
+    const diff = midY - midScreen;
 
-changeScroll()
+    const images = caption.querySelectorAll("img");
+
+    images.forEach((image) => {
+      const speed = 0.35 + 0.25 * (index / 4);
+      image.style.top = diff * speed + "px";
+    });
+  });
+
+  requestAnimationFrame(changeScroll);
+};
+
+window.addEventListener("scroll", function () {
+  aimScroll = window.pageYOffset;
+});
+
+changeScroll();
 
 // INTERSECTION OBSERVER
-const figures = document.querySelectorAll('figure.animate')
-const textWrappers = document.querySelectorAll('div.textwrapper')
+const figures = document.querySelectorAll("figure.animate");
+const textWrappers = document.querySelectorAll("div.textwrapper");
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.intersectionRatio > 0.1) {
-      entry.target.classList.add('in-view')
-    } else {
-    }
-  })
-}, {
-  threshold: [0.05, 0.25, 1.0]
-})
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.intersectionRatio > 0.1) {
+        entry.target.classList.add("in-view");
+      } else {
+      }
+    });
+  },
+  {
+    threshold: [0.05, 0.25, 1.0],
+  }
+);
 
-figures.forEach(figure => {
-  observer.observe(figure)
-})
+figures.forEach((figure) => {
+  observer.observe(figure);
+});
 
-textWrappers.forEach(textWrapper => {
-  observer.observe(textWrapper)
-})
+textWrappers.forEach((textWrapper) => {
+  observer.observe(textWrapper);
+});
 
 // GSAP SCROLLTRIGGER
 const tlAbout = gsap.timeline({
   scrollTrigger: {
     trigger: "section.about ul",
-    start: "top center"
-  }
-})
+    start: "top center",
+  },
+});
 
-tlAbout
-  .from("section.about ul li", { yPercent: 25, rotation: "-2.5deg", stagger: 0.075, opacity: 0, duration: 0.25 })
+tlAbout.from("section.about ul li", {
+  yPercent: 25,
+  rotation: "-2.5deg",
+  stagger: 0.075,
+  opacity: 0,
+  duration: 0.25,
+});
 
 const tlKompetenzen = gsap.timeline({
   scrollTrigger: {
     trigger: "div.table",
-    start: "top center"
-  }
-})
+    start: "top center",
+  },
+});
 
-tlKompetenzen
-  .from("div.table-column *", { yPercent: 25, rotation: "-0.75deg", stagger: 0.075, opacity: 0, duration: 0.25 })
-  
-const tlTermine = gsap.timeline({
-  scrollTrigger: {
-    trigger: "div.termine-table",
-    start: "top center"
-  }
-})
+tlKompetenzen.from("div.table-column *", {
+  yPercent: 25,
+  rotation: "-0.75deg",
+  stagger: 0.075,
+  opacity: 0,
+  duration: 0.25,
+});
 
-tlTermine
-  .from("div.termine-table__cell", { yPercent: 25, rotation: "-0.75deg", stagger: 0.075, opacity: 0, duration: 0.25 })
-  
 const tlReferenzen = gsap.timeline({
   scrollTrigger: {
     trigger: "section.referenzen ul",
-    start: "top center"
-  }
-})
+    start: "top center",
+  },
+});
 
-tlReferenzen
-  .from("section.referenzen ul li", { yPercent: 25, rotation: "-0.75deg", stagger: 0.075, opacity: 0, duration: 0.25 })
+tlReferenzen.from("section.referenzen ul li", {
+  yPercent: 25,
+  rotation: "-0.75deg",
+  stagger: 0.075,
+  opacity: 0,
+  duration: 0.25,
+});
 
-Splitting()
+Splitting();
 
 // PAGE TRANSITIONS
-const enterOnceIndex = function(container) {
-  const bodyTag = document.querySelector('body');
-  const wiper = document.querySelector('div.wiper');
-  const wiperLogo = document.querySelector('svg.logo-large');
-  const wiperText = document.querySelector('div.wiper__text p');
-  const title = document.querySelector('section.hero div.headline p');
-  const introText = document.querySelectorAll('section.hero h1 span.word');
-  const heroImg = document.querySelector('section.hero figure img')
+const enterOnceIndex = function (container) {
+  const bodyTag = document.querySelector("body");
+  const wiper = document.querySelector("div.wiper");
+  const wiperText = document.querySelector("div.wiper__text p");
+  const title = document.querySelector("section.hero div.headline p");
+  const introText = document.querySelectorAll("section.hero h1 span.word");
+  const heroImg = document.querySelector("section.hero figure img");
 
   const timeline = gsap.timeline({
     defaults: {
       duration: 1,
       delay: 0.2,
-      ease: 'circ.out',
+      ease: "circ.out",
     },
   });
 
   timeline
     .set(bodyTag, { opacity: 0 }, 0)
-    .set(heroImg, { clipPath: "polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)", yPercent: 15 }, 0)
+    .set(
+      heroImg,
+      {
+        clipPath: "polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)",
+        yPercent: 15,
+      },
+      0
+    )
     .to(bodyTag, { opacity: 1, duration: 0.25 }, 1)
     .to(wiper, { height: "100%", duration: 1.25 }, 1)
-    .from(wiperLogo, { yPercent: 100, opacity: 0, delay: 0.4 }, 1)
     .to(wiperText, { y: 0, opacity: 1, delay: 0.8 }, 1)
-    .to(wiperLogo, { yPercent: -100, opacity: 0, delay: 1.6 }, 2)
     .to(wiperText, { y: "-100%", opacity: 0, delay: 1.6 }, 2)
     .set(wiper, { top: 0, bottom: "none", duration: 0 }, 3)
     .to(wiper, { height: "0%", duration: 0.75 }, 4)
-    .to(heroImg, { clipPath: "polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)", yPercent: 0, duration: 1, delay: 1.2 }, 4)
+    .to(
+      heroImg,
+      {
+        clipPath: "polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)",
+        yPercent: 0,
+        duration: 1,
+        delay: 1.2,
+      },
+      4
+    )
     .from(title, { y: 200, opacity: 0, delay: 0.8 }, 4)
-    .from(introText, { yPercent: 100, opacity: 0, delay: 1, stagger: 0.015, duration: 2, onComplete: () => document.querySelector('body').classList.remove('is-loading') }, 4)
-    .set(wiper, { clearProps: "all" }, 5)
+    .from(
+      introText,
+      {
+        yPercent: 100,
+        opacity: 0,
+        delay: 1,
+        stagger: 0.015,
+        duration: 2,
+        onComplete: () =>
+          document.querySelector("body").classList.remove("is-loading"),
+      },
+      4
+    )
+    .set(wiper, { clearProps: "all" }, 5);
 
   return timeline;
-  
 };
 
 barba.hooks.enter(() => {
@@ -145,13 +176,13 @@ barba.hooks.enter(() => {
 barba.init({
   transitions: [
     {
-      name: 'home',
+      name: "home",
       to: {
-        namespace: ['home'],
+        namespace: ["home"],
       },
       once({ next }) {
         enterOnceIndex(next.container);
-        console.log('first enter of the page');
+        console.log("first enter of the page");
       },
     },
   ],
