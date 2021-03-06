@@ -318,6 +318,12 @@ section.auszeichnungen {
   padding-bottom: 7.5vh;
 }
 
+section.auszeichnungen figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 section.auszeichnungen figure img {
   width: 75%;
   opacity: 0;
@@ -795,6 +801,7 @@ footer.footer div.footer__content__bottom iframe {
 
   section.about {
     padding-top: 7.5vh;
+    padding-bottom: 7.5vh;
   }
 
   section.about div.section-headline p {
@@ -806,8 +813,8 @@ footer.footer div.footer__content__bottom iframe {
   }
 
   section.auszeichnungen {
-    padding-top: 4.5vh;
-    padding-bottom: 4.5vh;
+    padding-top: 6.5vh;
+    padding-bottom: 6.5vh;
   }
 
   section.auszeichnungen figure img {
@@ -816,6 +823,7 @@ footer.footer div.footer__content__bottom iframe {
 
   section.kompetenzen {
     padding-top: 7.5vh;
+    padding-bottom: 7.5vh;
   }
 
   section.kompetenzen div.headline p {
@@ -828,6 +836,7 @@ footer.footer div.footer__content__bottom iframe {
 
   section.referenzen {
     padding-top: 7.5vh;
+    padding-bottom: 7.5vh;
   }
 
   section.referenzen ul {
@@ -912,12 +921,12 @@ footer.footer div.footer__content__bottom iframe {
   }
 
   section.auszeichnungen {
-    padding-top: 2.5vh;
-    padding-bottom: 2.5vh;
+    padding-top: 7.5vh;
+    padding-bottom: 7.5vh;
   }
 
   section.auszeichnungen figure img {
-    width: 33.333%;
+    width: 50%;
   }
 
   section.kompetenzen div.headline p {
@@ -995,6 +1004,47 @@ footer.footer div.footer__content__bottom iframe {
     div.footer__content__top__top
     p {
     font-size: 2.566rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  section.hero div.headline p {
+    font-size: 9.373rem;
+  }
+
+  section.hero div.subheadline h1 {
+    font-size: 2.566rem;
+    line-height: 1.15;
+  }
+
+  section.about div.section-headline p {
+    font-size: 7.406rem;
+  }
+
+  div.sticky-nav div.sticky-nav__left a,
+  div.sticky-nav div.sticky-nav__right a {
+    font-size: 1.602rem;
+  }
+
+  div.sticky-nav div.sticky-nav__right a {
+    padding-left: 4rem;
+  }
+
+  section.about ul li span,
+  section.about ul li p {
+    font-size: 1.602rem;
+  }
+
+  section.kompetenzen {
+    grid-gap: 1.6rem;
+  }
+
+  section.kompetenzen div.headline p {
+    font-size: 7.406rem;
+  }
+
+  section.kompetenzen div.subheadline h2 {
+    font-size: 1.602rem;
   }
 }
 
