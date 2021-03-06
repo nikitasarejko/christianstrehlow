@@ -202,19 +202,22 @@ div.sticky-nav {
   background-color: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 1);
   z-index: 666;
+  overflow: hidden;
 }
 
 div.sticky-nav div.sticky-nav__left a {
+  display: inline-block;
   font-size: 2.027rem;
   text-decoration: none;
   color: var(--font-dark);
 }
 
 div.sticky-nav div.sticky-nav__right a {
+  display: inline-block;
   font-size: 2.027rem;
   text-decoration: none;
   color: var(--font-dark);
-  padding-left: 4rem;
+  padding-left: 4.8rem;
 }
 
 section.about {
@@ -226,7 +229,7 @@ section.about {
   color: #fff;
 
   padding-top: 12.5vh;
-  padding-bottom: 12rem;
+  padding-bottom: 8rem;
 }
 
 section.about div.section-headline {
@@ -315,12 +318,6 @@ section.auszeichnungen {
   padding-bottom: 7.5vh;
 }
 
-section.auszeichnungen figure {
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-}
-
 section.auszeichnungen figure img {
   width: 75%;
   opacity: 0;
@@ -341,7 +338,7 @@ section.kompetenzen {
 }
 
 section.kompetenzen div.headline {
-  grid-column: 1 / span 3;
+  grid-column: 1 / span 4;
 }
 
 section.kompetenzen div.headline p {
@@ -432,11 +429,11 @@ section.kompetenzen div ul li {
   letter-spacing: -0.025em;
   padding-bottom: 1.6rem;
   padding-top: 1.6rem;
-  border-top: 1px solid black;
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 section.kompetenzen div ul li:last-child {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 section.referenzen {
@@ -631,7 +628,7 @@ footer.footer
   color: var(--anthrazit);
   margin-bottom: 2.4rem;
   font-size: 3.653rem;
-  line-height: 1.35;
+  line-height: 1.15;
   text-decoration: none;
   cursor: pointer;
   transition: opacity 0.3s ease-out;
@@ -695,7 +692,190 @@ footer.footer div.footer__content__bottom iframe {
   width: 100vw;
 }
 
+@media screen and (max-width: 1920px) {
+  section.hero {
+    margin-bottom: 4.8rem;
+  }
+
+  section.hero div.headline p {
+    font-size: 15.014rem;
+  }
+
+  section.hero div.subheadline h1 {
+    font-size: 3.653rem;
+  }
+
+  div.sticky-nav div.sticky-nav__left a,
+  div.sticky-nav div.sticky-nav__right a {
+    font-size: 1.802rem;
+  }
+
+  section.about div.section-headline p {
+    font-size: 13.346rem;
+  }
+
+  section.about div.section-subheadline h2 {
+    font-size: 2.281rem;
+  }
+
+  section.about ul li span,
+  section.about ul li p {
+    font-size: 2.281rem;
+  }
+
+  section.kompetenzen div.headline p {
+    font-size: 13.346rem;
+  }
+
+  section.kompetenzen div.subheadline h2 {
+    font-size: 2.281rem;
+  }
+
+  section.kompetenzen div.table {
+    margin-top: 1.6rem;
+  }
+
+  section.kompetenzen div.table div.table-column h4 {
+    margin-bottom: 1.6rem;
+  }
+
+  section.kompetenzen div ul li {
+    font-size: 2.281rem;
+    padding: 1vh 0;
+  }
+
+  section.referenzen {
+    padding-bottom: 4rem;
+  }
+
+  section.referenzen div.headline p {
+    font-size: 13.346rem;
+  }
+
+  section.referenzen ul li span,
+  section.referenzen ul li p {
+    font-size: 2.281rem;
+  }
+
+  footer.footer
+    div.footer__content
+    div.footer__content__top
+    div.footer__content__top__top
+    p {
+    font-size: 3.247rem;
+  }
+
+  footer.footer
+    div.footer__content
+    div.footer__content__top
+    div.footer__content__top__top
+    div.footer__content__cell
+    a {
+    font-size: 3.247rem;
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  section.hero {
+    padding-top: 7.5vh;
+    grid-row-gap: 5vh;
+  }
+
+  section.hero div.headline {
+    grid-column: 1 / span 4;
+  }
+
+  section.hero div.headline p {
+    font-size: 13.346rem;
+  }
+
+  section.hero div.subheadline h1 {
+    font-size: 3.247rem;
+  }
+
+  section.about {
+    padding-top: 7.5vh;
+  }
+
+  section.about div.section-headline p {
+    font-size: 10.545rem;
+  }
+
+  section.about ul {
+    padding-top: 6.4rem;
+  }
+
+  section.auszeichnungen {
+    padding-top: 4.5vh;
+    padding-bottom: 4.5vh;
+  }
+
+  section.auszeichnungen figure img {
+    width: 50%;
+  }
+
+  section.kompetenzen {
+    padding-top: 7.5vh;
+  }
+
+  section.kompetenzen div.headline p {
+    font-size: 10.545rem;
+  }
+
+  section.kompetenzen div.subheadline h2 {
+    padding-top: 4rem;
+  }
+
+  section.referenzen {
+    padding-top: 7.5vh;
+  }
+
+  section.referenzen ul {
+    padding-top: 6.4rem;
+  }
+
+  footer.footer
+    div.footer__content
+    div.footer__content__top
+    div.footer__content__top__top
+    h4.small-headline {
+    font-size: 1.266rem;
+  }
+
+  footer.footer
+    div.footer__content
+    div.footer__content__top
+    div.footer__content__top__top
+    p,
+  footer.footer
+    div.footer__content
+    div.footer__content__top
+    div.footer__content__top__top
+    a {
+    font-size: 2.887rem;
+  }
+
+  footer.footer
+    div.footer__content
+    div.footer__content__top
+    div.footer__content__top__top
+    h4.small-headline::before {
+    width: 1rem;
+    height: 1rem;
+    transform: none;
+    border-radius: 0.5rem;
+  }
+}
+
 @media screen and (max-width: 1440px) {
+  div.wiper div.wiper__content div.wiper__text p {
+    font-size: 4.11rem;
+  }
+
+  section.hero {
+    margin-bottom: 2.4rem;
+  }
+
   section.hero div.headline p {
     font-size: 11.863rem;
   }
@@ -708,22 +888,36 @@ footer.footer div.footer__content__bottom iframe {
     font-size: 1.602rem;
   }
 
+  section.about {
+    grid-gap: 1.6rem;
+  }
+
   section.about div.section-headline p {
     font-size: 9.373rem;
   }
 
   section.about div.section-subheadline h2 {
-    font-size: 2.027rem;
+    font-size: 1.802rem;
     line-height: 1.25;
   }
 
   section.about ul li span,
   section.about ul li p {
-    font-size: 2.281rem;
+    font-size: 2.027rem;
+    line-height: 1.25;
   }
 
   section.about ul {
-    padding-top: 6.4rem;
+    padding-top: 4.8rem;
+  }
+
+  section.auszeichnungen {
+    padding-top: 2.5vh;
+    padding-bottom: 2.5vh;
+  }
+
+  section.auszeichnungen figure img {
+    width: 33.333%;
   }
 
   section.kompetenzen div.headline p {
@@ -731,8 +925,8 @@ footer.footer div.footer__content__bottom iframe {
   }
 
   section.kompetenzen div.subheadline h2 {
-    font-size: 2.027rem;
-    padding-top: 4rem;
+    font-size: 1.802rem;
+    padding-top: 2.4rem;
   }
 
   section.kompetenzen figure {
@@ -741,6 +935,7 @@ footer.footer div.footer__content__bottom iframe {
 
   section.kompetenzen div.table {
     grid-column-gap: 2.4rem;
+    margin-top: 0;
   }
 
   section.kompetenzen div.table div.table-column h4 {
@@ -761,71 +956,45 @@ footer.footer div.footer__content__bottom iframe {
     padding-bottom: 0.8rem;
   }
 
-  section.termine div.headline p {
-    font-size: 9.373rem;
-  }
-
-  section.termine div.subheadline {
-    padding-top: 4rem;
-    grid-column: 1 / span 3;
-  }
-
-  section.termine div.subheadline h2 {
-    font-size: 2.027rem;
-    line-height: 1.25;
-  }
-
-  section.termine div.termine-table {
-    grid-column: 1 / -1;
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-  }
-
-  section.termine div.termine-table__cell {
-    grid-template-columns: 0.75fr 1.25fr 2.5fr 1fr;
-    line-height: 1.35;
-    padding-top: 1.2rem;
-    padding-bottom: 1.2rem;
-  }
-
-  section.termine div.termine-table__cell p {
-    font-size: 1.424rem;
-    margin-bottom: 1.6rem;
-  }
-
-  section.termine div.termine-table__cell p::before {
-    width: 1.2rem;
-    height: 1.2rem;
-    border-radius: 0.6rem;
-    transform: translateY(1px);
-  }
-
-  section.termine div.termine-table__cell div {
-    font-size: 1.602rem;
-  }
-
-  section.termine div.termine-table__cell div.download svg {
-    width: 2.1rem;
-    height: 2.1rem;
-  }
-
   section.referenzen div.headline p {
     font-size: 9.373rem;
   }
 
   section.referenzen div.subheadline h2 {
-    font-size: 2.027rem;
+    font-size: 1.802rem;
     line-height: 1.25;
   }
 
   section.referenzen ul {
-    padding-top: 6.4rem;
+    padding-top: 4rem;
   }
 
   section.referenzen ul li span,
   section.referenzen ul li p {
-    font-size: 2.281rem;
-    line-height: 1.35;
+    font-size: 2.027rem;
+    line-height: 1.25;
+  }
+
+  footer.footer
+    div.footer__content
+    div.footer__content__top
+    div.footer__content__top__top
+    h4.small-headline {
+    margin-bottom: 0.8rem;
+  }
+
+  footer.footer
+    div.footer__content
+    div.footer__content__top
+    div.footer__content__top__top
+    div.footer__content__cell
+    a,
+  footer.footer
+    div.footer__content
+    div.footer__content__top
+    div.footer__content__top__top
+    p {
+    font-size: 2.566rem;
   }
 }
 

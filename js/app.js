@@ -55,6 +55,21 @@ textWrappers.forEach((textWrapper) => {
 });
 
 // GSAP SCROLLTRIGGER
+const tlNav = gsap.timeline({
+  scrollTrigger: {
+    trigger: "div.sticky-nav",
+    start: "top bottom-=100px",
+  },
+});
+
+tlNav
+  .from("div.sticky-nav__left a", { yPercent: 100, opacity: 0, delay: 0.25 }, 0)
+  .from(
+    "div.sticky-nav__right a",
+    { yPercent: 100, opacity: 0, delay: 0.5, stagger: 0.25 },
+    0
+  );
+
 const tlAbout = gsap.timeline({
   scrollTrigger: {
     trigger: "section.about ul",
