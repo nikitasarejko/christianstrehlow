@@ -200,7 +200,6 @@ div.sticky-nav {
   left: 0;
   padding: 0.6vw 1.2vw;
   background-color: #fff;
-  border-bottom: 1px solid rgba(0, 0, 0, 1);
   z-index: 666;
   overflow: hidden;
 }
@@ -218,6 +217,15 @@ div.sticky-nav div.sticky-nav__right a {
   text-decoration: none;
   color: var(--font-dark);
   padding-left: 4.8rem;
+  transition: color 0.3s ease;
+}
+
+div.sticky-nav div.sticky-nav__right:hover a {
+  color: rgba(0, 0, 0, 0.25);
+}
+
+div.sticky-nav div.sticky-nav__right a:hover {
+  color: rgba(0, 0, 0, 1);
 }
 
 section.about {
@@ -372,7 +380,7 @@ section.kompetenzen div.subheadline h2 {
 }
 
 section.kompetenzen figure {
-  grid-column: 4 / span 1;
+  grid-column: 5 / span 1;
   grid-row: 2;
 
   padding-top: 125%;
@@ -384,7 +392,7 @@ section.kompetenzen figure {
 }
 
 section.kompetenzen figure.second-image {
-  grid-column: 5 / span 2;
+  grid-column: 6 / span 1;
   grid-row: 2;
 
   padding-top: 125%;
@@ -703,14 +711,35 @@ footer.footer
   text-decoration: none;
   cursor: pointer;
   transition: opacity 0.3s ease-out;
+  display: inline-block;
+  position: relative;
+  transition: width 0.5s ease;
 }
 
 footer.footer
   div.footer__content
   div.footer__content__top
   div.footer__content__top__top
-  a:hover {
-  opacity: 0.6;
+  div.footer__content__cell
+  a::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background-color: var(--font-dark);
+  position: absolute;
+  left: 0;
+  bottom: -0.4rem;
+  transition: width 0.5s;
+}
+
+footer.footer
+  div.footer__content
+  div.footer__content__top
+  div.footer__content__top__top
+  div.footer__content__cell
+  a:hover::after {
+  width: 100%;
 }
 
 footer.footer
@@ -748,15 +777,6 @@ footer.footer
   text-decoration: none;
   color: var(--anthrazit);
   transition: opacity 0.5s ease;
-}
-
-footer.footer
-  div.footer__content
-  div.footer__content__top
-  div.footer__content__top__bottom
-  a:hover {
-  opacity: 1;
-  cursor: pointer;
 }
 
 footer.footer div.footer__content__bottom iframe {
@@ -1144,7 +1164,7 @@ footer.footer div.footer__content__bottom iframe {
 
   section.hero figure {
     grid-column: 4 / -1;
-    margin-top: 4rem;
+    margin-top: 2.4rem;
     padding-top: 150%;
   }
 
@@ -1322,5 +1342,37 @@ footer.footer div.footer__content__bottom iframe {
     div.footer__content__top__top
     p {
     font-size: 2.281rem;
+  }
+
+  footer.footer
+    div.footer__content
+    div.footer__content__top
+    div.footer__content__top__top
+    div.footer__content__cell
+    a {
+    margin-bottom: 2.4rem;
+  }
+}
+
+@media only screen and (max-device-width: 375px) {
+  section.hero div.headline p {
+    font-size: 6.583rem;
+  }
+
+  section.hero div.subheadline h1 {
+    font-size: 1.802rem;
+  }
+
+  section.hero figure {
+    margin-top: 0.8rem;
+  }
+
+  section.about div.section-subheadline h2 {
+    font-size: 1.602rem;
+  }
+
+  section.about ul li span,
+  section.about ul li p {
+    font-size: 1.602rem;
   }
 }
