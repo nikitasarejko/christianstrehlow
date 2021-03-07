@@ -543,6 +543,71 @@ section div.textwrapper.in-view h2 {
   animation: showText 1s 0.4s both cubic-bezier(0.08, 0.82, 0.17, 1);
 }
 
+section.impressum {
+  padding: 0.6vw 1.2vw;
+}
+
+section.impressum div.headline {
+  height: 125%;
+}
+
+section.impressum div.copy {
+  margin-top: 8rem;
+  display: flex;
+}
+
+section.impressum div.copy div.copy__left {
+  width: 33.333vw;
+}
+
+section.impressum div.copy div.copy__left p {
+  font-size: 2.027rem;
+  line-height: 1.35;
+}
+
+section.impressum div.copy div.copy__left h5 {
+  font-size: 1.424rem;
+  letter-spacing: 0.25px;
+  line-height: 1.35;
+  text-transform: uppercase;
+  margin-top: 1.6rem;
+  opacity: 0.25;
+}
+
+section.impressum div.copy div.copy__right {
+  width: 66.667vw;
+  margin-top: 8rem;
+  margin-bottom: 12rem;
+}
+
+section.impressum div.copy div.copy__right h5 {
+  font-size: 4.11rem;
+  margin-bottom: 2.4rem;
+}
+
+section.impressum div.copy div.copy__right h6 {
+  font-size: 1.424rem;
+  letter-spacing: 0.25px;
+  line-height: 1.35;
+  text-transform: uppercase;
+  margin-top: 1.6rem;
+  opacity: 0.25;
+}
+
+section.impressum div.copy div.copy__right {
+  font-size: 2.027rem;
+  line-height: 1.35;
+}
+
+section.impressum div.headline h2 {
+  font-size: 15.014rem;
+  line-height: 1.25;
+  letter-spacing: -0.05em;
+
+  transform: translate(0, 100%);
+  opacity: 0;
+}
+
 footer.footer {
   height: 100vh;
   width: 100vw;
