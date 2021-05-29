@@ -46,7 +46,6 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
-  font-family: "Public Sans";
   font-kerning: normal;
   font-size: 2rem;
   line-height: 1.5;
@@ -133,6 +132,7 @@ section.hero {
   padding: 1.2vw;
   padding-top: 12.5vh;
   margin-bottom: 12rem;
+  background-color: #fff;
 }
 
 section.hero div.headline {

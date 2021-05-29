@@ -2,7 +2,6 @@ const runScripts = function () {
   let currentScroll = 0;
   let aimScroll = 0;
 
-<<<<<<< HEAD
   const changeScroll = function () {
     currentScroll = currentScroll + (aimScroll - currentScroll) * 0.09;
 
@@ -361,324 +360,334 @@ barba.init({
   ],
   debug: true,
 });
-=======
 const tlHero = gsap.timeline({
-	defaults: {
-		duration: 1,
-		ease: Power4.easeOut,
-	},
+  defaults: {
+    duration: 1,
+    ease: Power4.easeOut,
+  },
 });
 
 tlHero
-	.from(
-		'img.logo',
-		{
-			opacity: 0,
-			y: '300%',
-			delay: 1,
-		},
-		0
-	)
-	.from(
-		'.menu-desktop__right a',
-		{
-			opacity: 0,
-			y: 25,
-			stagger: 0.15,
-			delay: 0.25,
-		},
-		1
-	)
-	.from(
-		'.hero__left__content',
-		{
-			opacity: 0,
-			y: 200,
-			duration: 1.5,
-			delay: 0.75,
-		},
-		1
-	)
-	.to(
-		'.hero__right img',
-		{
-			opacity: 1,
-			y: 0,
-			duration: 1.5,
-			delay: 0.75,
-		},
-		1
-	);
+  .from(
+    "img.logo",
+    {
+      opacity: 0,
+      y: "300%",
+      delay: 1,
+    },
+    0
+  )
+  .from(
+    ".menu-desktop__right a",
+    {
+      opacity: 0,
+      y: 25,
+      stagger: 0.15,
+      delay: 0.25,
+    },
+    1
+  )
+  .from(
+    ".hero__left__content",
+    {
+      opacity: 0,
+      y: 200,
+      duration: 1.5,
+      delay: 0.75,
+    },
+    1
+  )
+  .to(
+    ".hero__right img",
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1.5,
+      delay: 0.75,
+    },
+    1
+  );
 
 // CV TIMELINE
 
 const tlCVImg = gsap.timeline({
-	scrollTrigger: {
-		trigger: 'section.cv',
-		start: 'top center',
-		end: 'center center',
-		toggleActions: 'play none none reverse',
-	},
+  scrollTrigger: {
+    trigger: "section.cv",
+    start: "top center",
+    end: "center center",
+    toggleActions: "play none none reverse",
+  },
 });
 
-tlCVImg.to('.cv__portrait img', {
-	x: 0,
-	duration: 1,
+tlCVImg.to(".cv__portrait img", {
+  x: 0,
+  duration: 1,
 });
 
 const tlCV = gsap.timeline({
-	scrollTrigger: {
-		trigger: '.cv__wrapper',
-		start: 'top center+=300',
-		end: 'center top',
-		toggleActions: 'play none none reverse',
-	},
+  scrollTrigger: {
+    trigger: ".cv__wrapper",
+    start: "top center+=300",
+    end: "center top",
+    toggleActions: "play none none reverse",
+  },
 });
 tlCV.to(
-	'p.hero__left__scroll',
-	{
-		y: '-200%',
-		opacity: 0,
-		duration: 1,
-	},
-	0
+  "p.hero__left__scroll",
+  {
+    y: "-200%",
+    opacity: 0,
+    duration: 1,
+  },
+  0
 );
 tlCV.from(
-	'div.cv__wrapper p.chapter',
-	{
-		y: 200,
-		opacity: 0,
-		duration: 1,
-	},
-	0
+  "div.cv__wrapper p.chapter",
+  {
+    y: 200,
+    opacity: 0,
+    duration: 1,
+  },
+  0
 );
 tlCV.from(
-	'div.cv__wrapper h2.headline',
-	{
-		y: 200,
-		opacity: 0,
-		duration: 1,
-	},
-	0
+  "div.cv__wrapper h2.headline",
+  {
+    y: 200,
+    opacity: 0,
+    duration: 1,
+  },
+  0
 );
 tlCV.from(
-	'div.cv__wrapper p.copy',
-	{
-		y: 200,
-		opacity: 0,
-		duration: 1,
-	},
-	0
+  "div.cv__wrapper p.copy",
+  {
+    y: 200,
+    opacity: 0,
+    duration: 1,
+  },
+  0
 );
 tlCV.from(
-	'.cv__cell',
-	{
-		y: '100%',
-		opacity: 0,
-		stagger: 0.1,
-	},
-	1
+  ".cv__cell",
+  {
+    y: "100%",
+    opacity: 0,
+    stagger: 0.1,
+  },
+  1
 );
 tlCV.from(
-	'.cv__logos img',
-	{
-		y: '100%',
-		opacity: 0,
-		stagger: 0.2,
-	},
-	2
+  ".cv__logos img",
+  {
+    y: "100%",
+    opacity: 0,
+    stagger: 0.2,
+  },
+  2
 );
 
 // KOMPETENZEN TIMELINE
 
 const tlKompetenzenImg = gsap.timeline({
-	scrollTrigger: {
-		trigger: 'section.kompetenzen',
-		start: 'top center',
-		end: 'center center',
-		toggleActions: 'play none none reverse',
-	},
+  scrollTrigger: {
+    trigger: "section.kompetenzen",
+    start: "top center",
+    end: "center center",
+    toggleActions: "play none none reverse",
+  },
 });
 
-tlKompetenzenImg.to('.kompetenzen__portrait img', {
-	x: 0,
-	duration: 1,
+tlKompetenzenImg.to(".kompetenzen__portrait img", {
+  x: 0,
+  duration: 1,
 });
 
 const tlKompetenzen = gsap.timeline({
-	scrollTrigger: {
-		trigger: '.kompetenzen__wrapper',
-		start: 'center bottom',
-		end: 'center center',
-		toggleActions: 'play none none reverse',
-	},
+  scrollTrigger: {
+    trigger: ".kompetenzen__wrapper",
+    start: "center bottom",
+    end: "center center",
+    toggleActions: "play none none reverse",
+  },
 });
 tlKompetenzen.to(
-	'section.wrapper',
-	{
-		backgroundColor: '#cdcac7',
-		duration: 1,
-	},
-	0
+  "section.wrapper",
+  {
+    backgroundColor: "#cdcac7",
+    duration: 1,
+  },
+  0
 );
 tlKompetenzen.from(
-	'div.kompetenzen__wrapper p.chapter',
-	{
-		y: 200,
-		opacity: 0,
-		duration: 1,
-	},
-	0
+  "div.kompetenzen__wrapper p.chapter",
+  {
+    y: 200,
+    opacity: 0,
+    duration: 1,
+  },
+  0
 );
 tlKompetenzen.from(
-	'div.kompetenzen__wrapper h2.headline',
-	{
-		y: 200,
-		opacity: 0,
-		duration: 1,
-	},
-	0
+  "div.kompetenzen__wrapper h2.headline",
+  {
+    y: 200,
+    opacity: 0,
+    duration: 1,
+  },
+  0
 );
 tlKompetenzen.from(
-	'div.kompetenzen__wrapper p.copy',
-	{
-		y: 200,
-		opacity: 0,
-		duration: 1,
-	},
-	0
+  "div.kompetenzen__wrapper p.copy",
+  {
+    y: 200,
+    opacity: 0,
+    duration: 1,
+  },
+  0
 );
 tlKompetenzen.from(
-	'div.kompetenzen__wrapper h3.kompetenzen__headline',
-	{
-		y: 200,
-		opacity: 0,
-		duration: 1,
-	},
-	1
+  "div.kompetenzen__wrapper h3.kompetenzen__headline",
+  {
+    y: 200,
+    opacity: 0,
+    duration: 1,
+  },
+  1
 );
 tlKompetenzen.from(
-	'.kompetenzen__cell',
-	{
-		y: '100%',
-		opacity: 0,
-		stagger: 0.1,
-	},
-	2
+  ".kompetenzen__cell",
+  {
+    y: "100%",
+    opacity: 0,
+    stagger: 0.1,
+  },
+  2
 );
 
 // REFERENZEN TIMELINE
 
 const tlReferenzenImg = gsap.timeline({
-	scrollTrigger: {
-		trigger: 'section.referenzen',
-		start: 'top center',
-		end: 'center center',
-		toggleActions: 'play none none reverse',
-	},
+  scrollTrigger: {
+    trigger: "section.referenzen",
+    start: "top center",
+    end: "center center",
+    toggleActions: "play none none reverse",
+  },
 });
 
-tlReferenzenImg.to('.referenzen__portrait img', {
-	x: 0,
-	duration: 1,
+tlReferenzenImg.to(".referenzen__portrait img", {
+  x: 0,
+  duration: 1,
 });
 
 const tlReferenzen = gsap.timeline({
-	defaults: {
-		ease: Power4.easeOut,
-		duration: 1,
-	},
-	scrollTrigger: {
-		trigger: 'section.referenzen',
-		start: 'top center',
-		end: 'center center',
-		toggleActions: 'play none none reverse',
-	},
+  defaults: {
+    ease: Power4.easeOut,
+    duration: 1,
+  },
+  scrollTrigger: {
+    trigger: "section.referenzen",
+    start: "top center",
+    end: "center center",
+    toggleActions: "play none none reverse",
+  },
 });
 
 tlReferenzen
-	.to(
-		'section.wrapper',
-		{
-			backgroundColor: '#aeaaa7',
-			duration: 1,
-		},
-		0
-	)
-	.from('div.referenzen__content p.chapter.chapter-dark', { opacity: 0, y: 200, duration: 1 }, 0)
-	.from('div.referenzen__content h2.headline', { opacity: 0, y: 200, duration: 1 }, 0)
-	.from('div.referenzen__content p.copy', { opacity: 0, y: 200, duration: 1 }, 0)
-	.from(
-		'div.referenzen__cell',
-		{
-			opacity: 0,
-			y: '100%',
-			stagger: 0.1,
-			duration: 1,
-		},
-		1
-	);
+  .to(
+    "section.wrapper",
+    {
+      backgroundColor: "#aeaaa7",
+      duration: 1,
+    },
+    0
+  )
+  .from(
+    "div.referenzen__content p.chapter.chapter-dark",
+    { opacity: 0, y: 200, duration: 1 },
+    0
+  )
+  .from(
+    "div.referenzen__content h2.headline",
+    { opacity: 0, y: 200, duration: 1 },
+    0
+  )
+  .from(
+    "div.referenzen__content p.copy",
+    { opacity: 0, y: 200, duration: 1 },
+    0
+  )
+  .from(
+    "div.referenzen__cell",
+    {
+      opacity: 0,
+      y: "100%",
+      stagger: 0.1,
+      duration: 1,
+    },
+    1
+  );
 
 // FOOTER TIMELINE
 
 const tlFooter = gsap.timeline({
-	scrollTrigger: {
-		trigger: 'section.referenzen',
-		start: 'bottom center',
-		end: 'bottom 300px',
-		toggleActions: 'play none none reverse',
-	},
+  scrollTrigger: {
+    trigger: "section.referenzen",
+    start: "bottom center",
+    end: "bottom 300px",
+    toggleActions: "play none none reverse",
+  },
 });
 
 tlFooter
-	.to(
-		'.referenzen__portrait',
-		{
-			y: '-125%',
-			duration: 1,
-		},
-		0
-	)
-	.to(
-		'.kompetenzen__portrait',
-		{
-			y: '-125%',
-			duration: 1,
-			delay: 0.15,
-		},
-		0
-	)
-	.to(
-		'.cv__portrait',
-		{
-			y: '-125%',
-			duration: 1,
-			delay: 0.3,
-		},
-		0
-	)
-	.to(
-		'.hero__right',
-		{
-			y: '-125%',
-			duration: 1,
-			delay: 0.45,
-		},
-		0
-	)
-	.to(
-		'.menu-desktop__right a',
-		{
-			color: '#ffffff',
-		},
-		1
-	)
-	.to(
-		'footer.footer',
-		{
-			zIndex: 0,
-			duration: 1,
-		},
-		1
-	);
->>>>>>> main
+  .to(
+    ".referenzen__portrait",
+    {
+      y: "-125%",
+      duration: 1,
+    },
+    0
+  )
+  .to(
+    ".kompetenzen__portrait",
+    {
+      y: "-125%",
+      duration: 1,
+      delay: 0.15,
+    },
+    0
+  )
+  .to(
+    ".cv__portrait",
+    {
+      y: "-125%",
+      duration: 1,
+      delay: 0.3,
+    },
+    0
+  )
+  .to(
+    ".hero__right",
+    {
+      y: "-125%",
+      duration: 1,
+      delay: 0.45,
+    },
+    0
+  )
+  .to(
+    ".menu-desktop__right a",
+    {
+      color: "#ffffff",
+    },
+    1
+  )
+  .to(
+    "footer.footer",
+    {
+      zIndex: 0,
+      duration: 1,
+    },
+    1
+  );
