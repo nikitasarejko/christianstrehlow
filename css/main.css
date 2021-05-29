@@ -1,3 +1,34 @@
+<<<<<<< HEAD
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+@keyframes showImage {
+  0% {
+    opacity: 0;
+    transform: translate(0, 24px) scale(0.95);
+    clip-path: polygon(100% 0%, 100% 0, 100% 100%, 100% 100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+    clip-path: polygon(100% 0%, 0 0, 0 100%, 100% 100%);
+  }
+}
+
+@keyframes showText {
+  0% {
+    opacity: 0;
+    transform: translate(0, 100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0%);
+  }
+}
+
+:root {
+  --font-dark: #1a1a21;
+  --anthrazit: #575763;
+=======
 @font-face {
   font-family: "Public Sans";
   src: url(../fonts/PublicSans-Regular.woff2),
@@ -6,6 +37,7 @@
 
 :root {
   --font-dark: #232323;
+>>>>>>> main
 }
 
 * {
@@ -19,7 +51,12 @@ html {
 }
 
 body {
+<<<<<<< HEAD
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+=======
   font-family: "Public Sans";
+>>>>>>> main
   font-kerning: normal;
   font-size: 2rem;
   line-height: 1.5;
@@ -28,6 +65,1332 @@ body {
   padding-bottom: 100vh;
 }
 
+<<<<<<< HEAD
+body.is-loading {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+section.wrapper {
+  position: relative;
+  z-index: 777;
+  background-color: #ffffff;
+}
+
+div.wiper {
+  background-color: var(--font-dark);
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.wiper div.wiper__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div.wiper div.wiper__content div.wiper__logo {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin-bottom: 8rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.wiper div.wiper__content div.wiper__logo svg {
+  height: 160px;
+}
+
+div.wiper div.wiper__content div.wiper__text {
+  overflow: hidden;
+  height: 12rem;
+}
+
+div.wiper div.wiper__content div.wiper__text p {
+  color: #ffffff;
+  text-align: center;
+  font-size: 4.624rem;
+  line-height: 1.025;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+
+  opacity: 0;
+  transform: translate(0%, 100%);
+}
+
+div.textwrapper {
+  height: 125%;
+  overflow: hidden;
+}
+
+section.hero {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-row-gap: 7.5vh;
+  width: 100%;
+  padding: 1.2vw;
+  padding-top: 12.5vh;
+  margin-bottom: 12rem;
+}
+
+section.hero div.headline {
+  grid-column: 1 / span 3;
+  height: 100%;
+  overflow: hidden;
+}
+
+section.hero div.headline p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 19.003rem;
+  line-height: 0.82;
+  letter-spacing: -0.075em;
+  color: var(--font-dark);
+  margin-top: 1.5rem;
+}
+
+section.hero div.subheadline {
+  grid-column: 4 / span 3;
+  grid-row: 2;
+  height: 100%;
+  overflow: hidden;
+}
+
+section.hero div.subheadline h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 4.624rem;
+  line-height: 1.125;
+  letter-spacing: -0.0375em;
+  color: var(--font-dark);
+}
+
+section.hero div.subheadline div.section-accordion {
+  margin-top: 2.4rem;
+}
+
+section.hero div.subheadline div.section-accordion div.section-logos {
+  margin-top: 4.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+section.hero figure {
+  grid-column: 1 / span 2;
+  position: relative;
+  height: 0;
+  padding-top: 133%;
+  overflow: hidden;
+}
+
+section.hero figure img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  clip-path: polygon(100% 0%, 100% 0, 100% 100%, 100% 100%);
+}
+
+div.sticky-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  padding: 0.6vw 1.2vw;
+  background-color: #fff;
+  z-index: 666;
+  overflow: hidden;
+}
+
+div.sticky-nav div.sticky-nav__left a {
+  display: inline-block;
+  font-size: 2.027rem;
+  text-decoration: none;
+  color: var(--font-dark);
+}
+
+div.sticky-nav div.sticky-nav__right a {
+  display: inline-block;
+  font-size: 2.027rem;
+  text-decoration: none;
+  color: var(--font-dark);
+  padding-left: 4.8rem;
+  transition: color 0.3s ease;
+}
+
+div.sticky-nav div.sticky-nav__right:hover a {
+  color: rgba(0, 0, 0, 0.25);
+}
+
+div.sticky-nav div.sticky-nav__right a:hover {
+  color: rgba(0, 0, 0, 1);
+}
+
+section.about {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 2.4rem;
+  padding: 1.2vw;
+  background-color: #1a1a21;
+  color: #fff;
+
+  padding-top: 12.5vh;
+  padding-bottom: 8rem;
+}
+
+section.about div.section-headline {
+  grid-column: 1 / span 2;
+}
+
+section.about div.section-headline p {
+  font-size: 15.014rem;
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  margin-top: 1.5rem;
+  transform: translate(0, 100%);
+}
+
+section.about div.section-subheadline {
+  grid-column: 4 / span 3;
+  grid-row: 2;
+}
+
+section.about div.section-subheadline h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 2.887rem;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  transform: translate(0, 100%);
+}
+
+section.about figure {
+  grid-column: 1 / span 2;
+  grid-row: 3;
+
+  height: 0;
+  padding-top: 133%;
+  position: relative;
+  overflow: hidden;
+}
+
+section.about figure img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+section.about ul {
+  grid-column: 4 / span 4;
+  grid-row: 3;
+
+  padding-top: 12rem;
+}
+
+section.about ul li {
+  display: grid;
+  grid-template-columns: 0.5fr 3fr;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 1vh 0;
+}
+
+section.about ul li span,
+section.about ul li p {
+  font-size: 3.653rem;
+  line-height: 1.15;
+}
+
+section.about ul li span {
+  grid-column: 1;
+  letter-spacing: -0.05em;
+}
+
+section.about ul li p {
+  grid-column: 2;
+}
+
+section.auszeichnungen {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  align-content: center;
+  grid-gap: 2.4rem;
+  padding: 1.2vw;
+  background-color: #fff;
+  color: #1a1a21;
+
+  padding-top: 7.5vh;
+  padding-bottom: 7.5vh;
+}
+
+section.auszeichnungen figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.auszeichnungen figure img {
+  width: 75%;
+  opacity: 0;
+  transform: translate(0, 24px) scale(0.95);
+  clip-path: polygon(100% 0%, 100% 0, 100% 100%, 100% 100%);
+}
+
+section.kompetenzen {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 2.4rem;
+  padding: 1.2vw;
+  background-color: #eaeaea;
+  color: var(--font-dark);
+
+  padding-top: 12.5vh;
+  padding-bottom: 12rem;
+}
+
+section.kompetenzen div.headline {
+  grid-column: 1 / span 4;
+}
+
+section.kompetenzen div.headline p {
+  font-size: 15.014rem;
+  line-height: 0.8;
+  letter-spacing: -0.05em;
+
+  opacity: 0;
+  transform: translate(0, 100%);
+}
+
+section.kompetenzen div.subheadline {
+  grid-column: 1 / span 3;
+  grid-row: 2;
+}
+
+section.kompetenzen div.subheadline h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 3.653rem;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+
+  padding-top: 8rem;
+}
+
+section.kompetenzen figure {
+  grid-column: 5 / span 1;
+  grid-row: 2;
+
+  padding-top: 125%;
+  height: 0;
+  position: relative;
+  z-index: 1;
+
+  overflow: hidden;
+}
+
+section.kompetenzen figure.second-image {
+  grid-column: 6 / span 1;
+  grid-row: 2;
+
+  padding-top: 125%;
+  height: 0;
+  position: relative;
+  z-index: 1;
+
+  overflow: hidden;
+}
+
+section.kompetenzen figure img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+section.kompetenzen div.table {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 8rem;
+  grid-column-gap: 4rem;
+  margin-top: 1.6rem;
+}
+
+section.kompetenzen div.table div.table-column h4 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.802rem;
+  margin-bottom: 2.4rem;
+  font-weight: 500;
+}
+
+section.kompetenzen div h4::before {
+  content: "";
+  width: 1.4rem;
+  height: 1.4rem;
+  background-color: black;
+  border-radius: 0.7rem;
+  margin-right: 0.8rem;
+  display: inline-block;
+}
+
+section.kompetenzen div ul li {
+  font-size: 2.887rem;
+  line-height: 1.275;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  padding-bottom: 1.6rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+section.kompetenzen div ul li:last-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+section.referenzen {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 24px;
+  padding: 1.2vw;
+  background-color: var(--font-dark);
+  color: #fff;
+
+  padding-top: 12.5vh;
+  padding-bottom: 6.4rem;
+}
+
+section.referenzen div.headline {
+  grid-column: 1 / span 3;
+}
+
+section.referenzen div.headline p {
+  font-size: 15.014rem;
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+
+  transform: translate(0, 100%);
+  opacity: 0;
+}
+
+section.referenzen div.subheadline {
+  grid-column: 4 / span 2;
+  grid-row: 2;
+}
+
+section.referenzen div.subheadline h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 2.887rem;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+
+  transform: translate(0, 100%);
+  opacity: 0;
+}
+
+section.referenzen figure {
+  grid-column: 1 / span 2;
+  grid-row: 3;
+
+  height: 0;
+  padding-top: 125%;
+  position: relative;
+
+  overflow: hidden;
+}
+
+section.referenzen figure img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+section.referenzen ul {
+  grid-column: 4 / span 4;
+  grid-row: 3;
+
+  padding-top: 12rem;
+}
+
+section.referenzen ul li {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  padding: 1vh 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+section.referenzen ul li span,
+section.referenzen ul li p {
+  font-size: 3.653rem;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+section.referenzen ul li span {
+  grid-column: 1;
+  letter-spacing: -0.05em;
+}
+
+section.referenzen ul li p {
+  grid-column: 2;
+}
+
+section figure.in-view img {
+  animation: showImage 1s 0.4s both cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+section div.textwrapper.in-view p {
+  animation: showText 1s 0.4s both cubic-bezier(0.08, 0.82, 0.17, 1);
+}
+
+section div.textwrapper.in-view h2 {
+  animation: showText 1s 0.4s both cubic-bezier(0.08, 0.82, 0.17, 1);
+}
+
+section.impressum {
+  padding: 0.6vw 1.2vw;
+}
+
+section.impressum div.headline {
+  height: 125%;
+}
+
+section.impressum div.copy {
+  margin-top: 8rem;
+  display: flex;
+}
+
+section.impressum div.copy div.copy__left {
+  width: 33.333vw;
+}
+
+section.impressum div.copy div.copy__left p {
+  font-size: 2.027rem;
+  line-height: 1.35;
+}
+
+section.impressum div.copy div.copy__left h5 {
+  font-size: 1.424rem;
+  letter-spacing: 0.25px;
+  line-height: 1.35;
+  text-transform: uppercase;
+  margin-top: 1.6rem;
+  opacity: 0.25;
+}
+
+section.impressum div.copy div.copy__right {
+  width: 66.667vw;
+  margin-top: 8rem;
+  margin-bottom: 12rem;
+}
+
+section.impressum div.copy div.copy__right h5 {
+  font-size: 4.11rem;
+  margin-bottom: 2.4rem;
+}
+
+section.impressum div.copy div.copy__right h6 {
+  font-size: 1.424rem;
+  letter-spacing: 0.25px;
+  line-height: 1.35;
+  text-transform: uppercase;
+  margin-top: 1.6rem;
+  opacity: 0.25;
+}
+
+section.impressum div.copy div.copy__right {
+  font-size: 2.027rem;
+  line-height: 1.35;
+}
+
+section.impressum div.headline h2 {
+  font-size: 15.014rem;
+  line-height: 1.25;
+  letter-spacing: -0.05em;
+
+  transform: translate(0, 100%);
+  opacity: 0;
+}
+
+footer.footer {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 666;
+  background-color: #fff;
+  color: var(--anthrazit);
+  display: flex;
+  flex-direction: column;
+}
+
+footer.footer div.footer__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100vw;
+  color: var(--font-dark);
+}
+
+footer.footer div.footer__content div.footer__content__bottom {
+  width: 100vw;
+}
+
+footer.footer div.footer__content div.footer__content__top {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+footer.footer
+  div.footer__content
+  div.footer__content__top
+  div.footer__content__top__top {
+  padding: 1.2vw;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+footer.footer
+  div.footer__content
+  div.footer__content__top
+  div.footer__content__top__top
+  h4.small-headline {
+  font-size: 1.424rem;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.0075em;
+  margin-bottom: 1.6rem;
+}
+
+footer.footer
+  div.footer__content
+  div.footer__content__top
+  div.footer__content__top__top
+  h4.small-headline::before {
+  content: "";
+  display: inline-block;
+  background-color: var(--font-dark);
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 0.6rem;
+  margin-right: 0.8rem;
+  transform: translateY(1px);
+}
+
+footer.footer
+  div.footer__content
+  div.footer__content__top
+  div.footer__content__top__top
+  p {
+  margin-bottom: 2.4rem;
+  font-size: 3.653rem;
+  line-height: 1.15;
+}
+
+footer.footer
+  div.footer__content
+  div.footer__content__top
+  div.footer__content__top__top
+  div.footer__content__cell
+  a {
+  color: var(--anthrazit);
+  margin-bottom: 2.4rem;
+  font-size: 3.653rem;
+  line-height: 1.15;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease-out;
+  display: inline-block;
+  position: relative;
+  transition: width 0.5s ease;
+}
+
+footer.footer
+  div.footer__content
+  div.footer__content__top
+  div.footer__content__top__top
+  div.footer__content__cell
+  a::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background-color: var(--font-dark);
+  position: absolute;
+  left: 0;
+  bottom: -0.4rem;
+  transition: width 0.5s;
+}
+
+footer.footer
+  div.footer__content
+  div.footer__content__top
+  div.footer__content__top__top
+  div.footer__content__cell
+  a:hover::after {
+  width: 100%;
+}
+
+footer.footer
+  div.footer__content
+  div.footer__content__top
+  div.footer__content__top__bottom {
+  padding: 1.2vw;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+footer.footer
+  div.footer__content
+  div.footer__content__top
+  div.footer__content__top__bottom
+  p,
+footer.footer
+  div.footer__content
+  div.footer__content__top
+  div.footer__content__top__bottom
+  a {
+  font-size: 1.125rem;
+  font-weight: 500;
+  opacity: 0.4;
+}
+
+footer.footer
+  div.footer__content
+  div.footer__content__top
+  div.footer__content__top__bottom
+  a {
+  text-decoration: none;
+  color: var(--anthrazit);
+  transition: opacity 0.5s ease;
+}
+
+footer.footer div.footer__content__bottom iframe {
+  width: 100vw;
+}
+
+@media screen and (max-width: 1920px) {
+  section.hero {
+    margin-bottom: 4.8rem;
+  }
+
+  section.hero div.headline p {
+    font-size: 15.014rem;
+  }
+
+  section.hero div.subheadline h1 {
+    font-size: 3.653rem;
+  }
+
+  div.sticky-nav div.sticky-nav__left a,
+  div.sticky-nav div.sticky-nav__right a {
+    font-size: 1.802rem;
+  }
+
+  section.about div.section-headline p {
+    font-size: 13.346rem;
+  }
+
+  section.about div.section-subheadline h2 {
+    font-size: 2.281rem;
+  }
+
+  section.about ul li span,
+  section.about ul li p {
+    font-size: 2.281rem;
+  }
+
+  section.kompetenzen div.headline p {
+    font-size: 13.346rem;
+  }
+
+  section.kompetenzen div.subheadline h2 {
+    font-size: 2.281rem;
+  }
+
+  section.kompetenzen div.table {
+    margin-top: 1.6rem;
+  }
+
+  section.kompetenzen div.table div.table-column h4 {
+    margin-bottom: 1.6rem;
+  }
+
+  section.kompetenzen div ul li {
+    font-size: 2.281rem;
+    padding: 1vh 0;
+  }
+
+  section.referenzen {
+    padding-bottom: 4rem;
+  }
+
+  section.referenzen div.headline p {
+    font-size: 13.346rem;
+  }
+
+  section.referenzen ul li span,
+  section.referenzen ul li p {
+    font-size: 2.281rem;
+  }
+
+  footer.footer
+    div.footer__content
+    div.footer__content__top
+    div.footer__content__top__top
+    p {
+    font-size: 3.247rem;
+  }
+
+  footer.footer
+    div.footer__content
+    div.footer__content__top
+    div.footer__content__top__top
+    div.footer__content__cell
+    a {
+    font-size: 3.247rem;
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  section.hero {
+    padding-top: 7.5vh;
+    grid-row-gap: 5vh;
+  }
+
+  section.hero div.headline {
+    grid-column: 1 / span 4;
+  }
+
+  section.hero div.headline p {
+    font-size: 13.346rem;
+  }
+
+  section.hero div.subheadline h1 {
+    font-size: 3.247rem;
+  }
+
+  section.about {
+    padding-top: 7.5vh;
+    padding-bottom: 7.5vh;
+  }
+
+  section.about div.section-headline p {
+    font-size: 10.545rem;
+  }
+
+  section.about ul {
+    padding-top: 6.4rem;
+  }
+
+  section.auszeichnungen {
+    padding-top: 6.5vh;
+    padding-bottom: 6.5vh;
+  }
+
+  section.auszeichnungen figure img {
+    width: 50%;
+  }
+
+  section.kompetenzen {
+    padding-top: 7.5vh;
+    padding-bottom: 7.5vh;
+  }
+
+  section.kompetenzen div.headline p {
+    font-size: 10.545rem;
+  }
+
+  section.kompetenzen div.subheadline h2 {
+    padding-top: 4rem;
+  }
+
+  section.referenzen {
+    padding-top: 7.5vh;
+    padding-bottom: 7.5vh;
+  }
+
+  section.referenzen ul {
+    padding-top: 6.4rem;
+  }
+
+  footer.footer
+    div.footer__content
+    div.footer__content__top
+    div.footer__content__top__top
+    h4.small-headline {
+    font-size: 1.266rem;
+  }
+
+  footer.footer
+    div.footer__content
+    div.footer__content__top
+    div.footer__content__top__top
+    p,
+  footer.footer
+    div.footer__content
+    div.footer__content__top
+    div.footer__content__top__top
+    a {
+    font-size: 2.887rem;
+  }
+
+  footer.footer
+    div.footer__content
+    div.footer__content__top
+    div.footer__content__top__top
+    h4.small-headline::before {
+    width: 1rem;
+    height: 1rem;
+    transform: none;
+    border-radius: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  div.wiper div.wiper__content div.wiper__text p {
+    font-size: 4.11rem;
+  }
+
+  section.hero {
+    margin-bottom: 2.4rem;
+  }
+
+  section.hero div.headline p {
+    font-size: 11.863rem;
+  }
+
+  section.hero div.subheadline h1 {
+    font-size: 2.887rem;
+  }
+
+  div.sticky-nav nav a {
+    font-size: 1.602rem;
+  }
+
+  section.about {
+    grid-gap: 1.6rem;
+  }
+
+  section.about div.section-headline p {
+    font-size: 9.373rem;
+  }
+
+  section.about div.section-subheadline h2 {
+    font-size: 1.802rem;
+    line-height: 1.25;
+  }
+
+  section.about ul li span,
+  section.about ul li p {
+    font-size: 2.027rem;
+    line-height: 1.25;
+  }
+
+  section.about ul {
+    padding-top: 4.8rem;
+  }
+
+  section.auszeichnungen {
+    padding-top: 7.5vh;
+    padding-bottom: 7.5vh;
+  }
+
+  section.auszeichnungen figure img {
+    width: 50%;
+  }
+
+  section.kompetenzen div.headline p {
+    font-size: 9.373rem;
+  }
+
+  section.kompetenzen div.subheadline h2 {
+    font-size: 1.802rem;
+    padding-top: 2.4rem;
+  }
+
+  section.kompetenzen figure {
+    z-index: 1;
+  }
+
+  section.kompetenzen div.table {
+    grid-column-gap: 2.4rem;
+    margin-top: 0;
+  }
+
+  section.kompetenzen div.table div.table-column h4 {
+    font-size: 1.424rem;
+    margin-bottom: 1.6rem;
+  }
+
+  section.kompetenzen div h4::before {
+    width: 1.2rem;
+    height: 1.2rem;
+    transform: translateY(1px);
+    background-color: var(--font-dark);
+  }
+
+  section.kompetenzen div ul li {
+    font-size: 1.802rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+  }
+
+  section.referenzen div.headline p {
+    font-size: 9.373rem;
+  }
+
+  section.referenzen div.subheadline h2 {
+    font-size: 1.802rem;
+    line-height: 1.25;
+  }
+
+  section.referenzen ul {
+    padding-top: 4rem;
+  }
+
+  section.referenzen ul li span,
+  section.referenzen ul li p {
+    font-size: 2.027rem;
+    line-height: 1.25;
+  }
+
+  footer.footer
+    div.footer__content
+    div.footer__content__top
+    div.footer__content__top__top
+    h4.small-headline {
+    margin-bottom: 0.8rem;
+  }
+
+  footer.footer
+    div.footer__content
+    div.footer__content__top
+    div.footer__content__top__top
+    div.footer__content__cell
+    a,
+  footer.footer
+    div.footer__content
+    div.footer__content__top
+    div.footer__content__top__top
+    p {
+    font-size: 2.566rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  section.hero div.headline p {
+    font-size: 9.373rem;
+  }
+
+  section.hero div.subheadline h1 {
+    font-size: 2.566rem;
+    line-height: 1.15;
+  }
+
+  section.about div.section-headline p {
+    font-size: 7.406rem;
+  }
+
+  div.sticky-nav div.sticky-nav__left a,
+  div.sticky-nav div.sticky-nav__right a {
+    font-size: 1.602rem;
+  }
+
+  div.sticky-nav div.sticky-nav__right a {
+    padding-left: 4rem;
+  }
+
+  section.about ul li span,
+  section.about ul li p {
+    font-size: 1.602rem;
+  }
+
+  section.kompetenzen {
+    grid-gap: 1.6rem;
+  }
+
+  section.kompetenzen div.headline p {
+    font-size: 7.406rem;
+  }
+
+  section.kompetenzen div.subheadline h2 {
+    font-size: 1.602rem;
+  }
+}
+
+@media only screen and (max-width: 808px) {
+  div.wiper div.wiper__content div.wiper__text p {
+    font-size: 2.566rem;
+  }
+
+  section.hero {
+    padding: 2.4vw;
+    padding-top: 5vh;
+    grid-row-gap: 1.6rem;
+    margin-bottom: 0;
+  }
+
+  section.hero div.headline {
+    grid-column: 1 / -1;
+  }
+
+  section.hero div.headline p {
+    font-size: 7.406rem;
+  }
+
+  section.hero div.subheadline {
+    grid-column: 1 / -1;
+    height: 105%;
+  }
+
+  section.hero div.subheadline h1 {
+    font-size: 2.027rem;
+  }
+
+  section.hero figure {
+    grid-column: 4 / -1;
+    margin-top: 2.4rem;
+    padding-top: 150%;
+  }
+
+  div.sticky-nav {
+    display: none;
+  }
+
+  section.auszeichnungen {
+    grid-template-columns: 1fr 1fr;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+  }
+
+  section.auszeichnungen figure img {
+    width: 33.333%;
+  }
+
+  section.about {
+    padding: 2.4vw;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+  }
+
+  section.about div.section-headline {
+    grid-column: 1 / -1;
+  }
+
+  section.about div.section-headline p {
+    font-size: 5.852rem;
+  }
+
+  section.about div.section-subheadline {
+    grid-column: 1 / -1;
+  }
+
+  section.about figure {
+    grid-column: 3 / -1;
+    z-index: 1;
+  }
+
+  section.about ul {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    padding-top: 0.8rem;
+  }
+
+  section.about ul li span,
+  section.about ul li p {
+    font-size: 1.602rem;
+  }
+
+  section.kompetenzen {
+    padding: 5vh 2.4vw;
+  }
+
+  section.kompetenzen div.headline {
+    grid-column: 1 / -1;
+  }
+
+  section.kompetenzen div.headline p {
+    font-size: 4.624rem;
+  }
+
+  section.kompetenzen div.subheadline {
+    grid-column: 1 / -1;
+  }
+
+  section.kompetenzen div.subheadline h2 {
+    padding-top: 0.8rem;
+  }
+
+  section.kompetenzen figure {
+    grid-column: 2 / span 2;
+    grid-row: 3;
+  }
+
+  section.kompetenzen figure.second-image {
+    grid-column: 4 / span 3;
+    grid-row: 3;
+  }
+
+  section.kompetenzen div.table {
+    grid-template-columns: 1fr;
+    grid-row-gap: 2.4rem;
+    grid-row: 4;
+  }
+
+  section.kompetenzen div.table div.table-column {
+    margin-bottom: 1.6rem;
+  }
+
+  section.kompetenzen div.table div.table-column h4 {
+    font-size: 1.266rem;
+    line-height: 1.05;
+    margin-bottom: 0.8rem;
+  }
+
+  section.kompetenzen div ul li {
+    font-size: 1.602rem;
+  }
+
+  section.referenzen {
+    padding: 5vh 2.4vw;
+  }
+
+  section.referenzen div.headline {
+    grid-column: 1 / -1;
+  }
+
+  section.referenzen div.headline p {
+    font-size: 4.624rem;
+  }
+
+  section.referenzen figure {
+    grid-column: 4 / -1;
+    grid-row: 2;
+  }
+
+  section.referenzen ul {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    padding-top: 0;
+  }
+
+  section.referenzen ul li span,
+  section.referenzen ul li p {
+    font-size: 1.602rem;
+  }
+
+  section.impressum {
+    padding: 2.4vw;
+  }
+
+  section.impressum div.headline h2 {
+    font-size: 5.852rem;
+  }
+
+  section.impressum div.copy {
+    flex-direction: column;
+    margin-top: 2.4rem;
+  }
+
+  section.impressum div.copy div.copy__left {
+    width: 100vw;
+  }
+
+  section.impressum div.copy div.copy__left p {
+    font-size: 1.802rem;
+  }
+
+  section.impressum div.copy div.copy__right {
+    width: 100vw;
+    margin-top: 2.4rem;
+    margin-bottom: 2.4rem;
+  }
+
+  section.impressum div.copy div.copy__right h5 {
+    font-size: 2.566rem;
+    margin-bottom: 1.6rem;
+  }
+
+  section.impressum div.copy div.copy__right p {
+    font-size: 1.82rem;
+  }
+
+  footer.footer
+    div.footer__content
+    div.footer__content__top
+    div.footer__content__top__top
+    div.footer__content__cell
+    a,
+  footer.footer
+    div.footer__content
+    div.footer__content__top
+    div.footer__content__top__top
+    p {
+    font-size: 2.281rem;
+  }
+
+  footer.footer
+    div.footer__content
+    div.footer__content__top
+    div.footer__content__top__top
+    div.footer__content__cell
+    a {
+    margin-bottom: 2.4rem;
+  }
+}
+
+@media only screen and (max-device-width: 375px) {
+  section.hero div.headline p {
+    font-size: 6.583rem;
+  }
+
+  section.hero div.subheadline h1 {
+    font-size: 1.802rem;
+  }
+
+  section.hero figure {
+    margin-top: 0.8rem;
+  }
+
+  section.about div.section-subheadline h2 {
+    font-size: 1.602rem;
+  }
+
+  section.about ul li span,
+  section.about ul li p {
+    font-size: 1.602rem;
+=======
 header.header {
   width: 100%;
 }
@@ -499,5 +1862,6 @@ footer.footer div.footer__links p {
   section.cv div.cv__wrapper div.cv__logos img {
     max-width: 12rem;
     mix-blend-mode: darken;
+>>>>>>> main
   }
 }
