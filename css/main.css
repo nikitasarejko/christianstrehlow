@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
 @keyframes showImage {
@@ -28,16 +27,10 @@
 :root {
   --font-dark: #1a1a21;
   --anthrazit: #575763;
-=======
-@font-face {
-  font-family: "Public Sans";
-  src: url(../fonts/PublicSans-Regular.woff2),
-    url(../fonts/PublicSans-Regular.woff);
 }
 
 :root {
   --font-dark: #232323;
->>>>>>> main
 }
 
 * {
@@ -51,12 +44,9 @@ html {
 }
 
 body {
-<<<<<<< HEAD
   font-family: "Poppins", sans-serif;
   font-weight: 400;
-=======
   font-family: "Public Sans";
->>>>>>> main
   font-kerning: normal;
   font-size: 2rem;
   line-height: 1.5;
@@ -65,7 +55,6 @@ body {
   padding-bottom: 100vh;
 }
 
-<<<<<<< HEAD
 body.is-loading {
   height: 100vh;
   width: 100vw;
@@ -1862,6 +1851,5 @@ footer.footer div.footer__links p {
   section.cv div.cv__wrapper div.cv__logos img {
     max-width: 12rem;
     mix-blend-mode: darken;
->>>>>>> main
   }
 }
