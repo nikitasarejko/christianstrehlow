@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
-
 @keyframes showImage {
   0% {
     opacity: 0;
@@ -27,10 +25,8 @@
 :root {
   --font-dark: #1a1a21;
   --anthrazit: #575763;
-}
-
-:root {
-  --font-dark: #232323;
+  --text-dark-color: #202020;
+  --bcg-loaderblue: #758A94;
 }
 
 * {
@@ -44,7 +40,7 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Switzer-Regular", Helvetica, Helvetica Neue, Arial, sans-serif;
   font-weight: 400;
   font-kerning: normal;
   font-size: 2rem;
@@ -54,11 +50,27 @@ body {
   padding-bottom: 100vh;
 }
 
-body.is-loading {
+/* hide page content by default */
+.is-loading #main,
+.is-loading .logo,
+.is-loading .burger,
+.is-loading .main-nav,
+.is-loading .fill-background {
+  display: none; 
+}
+.is-loading {
+  background-color: var(--bcg-loaderblue);
+}
+.is-transitioning {
+  pointer-events: none;
+  cursor: progress;
+}
+
+/* body.is-loading {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-}
+} */
 
 section.wrapper {
   position: relative;
@@ -108,12 +120,13 @@ div.wiper div.wiper__content div.wiper__text {
 }
 
 div.wiper div.wiper__content div.wiper__text p {
-  color: #ffffff;
+  font-family: "Switzer-Medium", sans-serif;
   text-align: center;
   font-size: 4.624rem;
   line-height: 1.025;
   font-weight: 500;
   letter-spacing: -0.025em;
+  color: #fff;
 
   opacity: 0;
   transform: translate(0%, 100%);
@@ -142,27 +155,27 @@ section.hero div.headline {
 }
 
 section.hero div.headline p {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
+  font-family: "Switzer-Bold", sans-serif;
+  font-weight: 700;
   font-size: 19.003rem;
   line-height: 0.82;
-  letter-spacing: -0.075em;
+  letter-spacing: -0.0375em;
   color: var(--font-dark);
   margin-top: 1.5rem;
 }
 
 section.hero div.subheadline {
-  grid-column: 4 / span 3;
+  grid-column: 4 / span 2;
   grid-row: 2;
   height: 100%;
   overflow: hidden;
 }
 
 section.hero div.subheadline h1 {
-  font-family: "Poppins", sans-serif;
+  font-family: "Switzer-Regular", sans-serif;
   font-weight: 400;
-  font-size: 4.624rem;
-  line-height: 1.125;
+  font-size: 4.11rem;
+  line-height: 1.225;
   letter-spacing: -0.0375em;
   color: var(--font-dark);
 }
@@ -210,6 +223,8 @@ div.sticky-nav {
 }
 
 div.sticky-nav div.sticky-nav__left a {
+  font-family: 'Switzer-Regular', sans-serif;
+  font-weight: 400;
   display: inline-block;
   font-size: 2.027rem;
   text-decoration: none;
@@ -217,6 +232,8 @@ div.sticky-nav div.sticky-nav__left a {
 }
 
 div.sticky-nav div.sticky-nav__right a {
+  font-family: 'Switzer-Regular', sans-serif;
+  font-weight: 400;
   display: inline-block;
   font-size: 2.027rem;
   text-decoration: none;
@@ -242,16 +259,18 @@ section.about {
   color: #fff;
 
   padding-top: 12.5vh;
-  padding-bottom: 8rem;
+  padding-bottom: 12.5vh;
 }
 
 section.about div.section-headline {
-  grid-column: 1 / span 2;
+  grid-column: 1 / span 3;
 }
 
 section.about div.section-headline p {
+  font-family: 'Switzer-Regular', sans-serif;
+  font-weight: 400;
   font-size: 15.014rem;
-  line-height: 0.85;
+  line-height: 0.95;
   letter-spacing: -0.05em;
   margin-top: 1.5rem;
   transform: translate(0, 100%);
@@ -263,11 +282,11 @@ section.about div.section-subheadline {
 }
 
 section.about div.section-subheadline h2 {
-  font-family: "Poppins", sans-serif;
+  font-family: "Switzer-Regular", sans-serif;
   font-weight: 400;
   font-size: 2.887rem;
-  line-height: 1.15;
-  letter-spacing: -0.035em;
+  line-height: 1.375;
+  letter-spacing: -0.0175em;
   transform: translate(0, 100%);
 }
 
@@ -302,13 +321,18 @@ section.about ul li {
   padding: 1vh 0;
 }
 
-section.about ul li span,
 section.about ul li p {
-  font-size: 3.653rem;
+  font-family: 'Switzer-Regular', sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  font-size: 4.11rem;
   line-height: 1.15;
 }
 
 section.about ul li span {
+  font-family: 'Switzer-Regular', sans-serif;
+  font-weight: 400;
+  font-size: 2.281rem;
   grid-column: 1;
   letter-spacing: -0.05em;
 }
@@ -329,6 +353,8 @@ section.auszeichnungen {
 
   padding-top: 7.5vh;
   padding-bottom: 7.5vh;
+
+  border-bottom: 1px solid var(--font-dark);
 }
 
 section.auszeichnungen figure {
@@ -344,115 +370,74 @@ section.auszeichnungen figure img {
   clip-path: polygon(100% 0%, 100% 0, 100% 100%, 100% 100%);
 }
 
-section.kompetenzen {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-gap: 2.4rem;
+section.leistungen {
+  display: flex;
   padding: 1.2vw;
-  background-color: #eaeaea;
-  color: var(--font-dark);
-
   padding-top: 12.5vh;
-  padding-bottom: 12rem;
+  padding-bottom: 12.5vh;
+  background-color: #fff;
+  color: var(--font-dark);
 }
 
-section.kompetenzen div.headline {
-  grid-column: 1 / span 4;
+section.leistungen div.leistungen__nav {
+  width: 33.333%;
 }
 
-section.kompetenzen div.headline p {
+section.leistungen div.leistungen__nav div.textwrapper {
+  height: unset;
+  padding-bottom: 2.7rem;
+  margin-bottom: 4rem;
+}
+
+section.leistungen div.leistungen__nav div.headline p {
+  font-family: 'Switzer-Regular', sans-serif;
+  font-weight: 400;
   font-size: 15.014rem;
-  line-height: 0.8;
+  line-height: 0.85;
   letter-spacing: -0.05em;
 
-  opacity: 0;
   transform: translate(0, 100%);
+  opacity: 0;
 }
 
-section.kompetenzen div.subheadline {
-  grid-column: 1 / span 3;
-  grid-row: 2;
+section.leistungen div.leistungen__fixed {
+  width: 33.333vw;
+  flex: 1;
 }
 
-section.kompetenzen div.subheadline h2 {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-size: 3.653rem;
-  line-height: 1.15;
-  letter-spacing: -0.035em;
-
-  padding-top: 8rem;
-}
-
-section.kompetenzen figure {
-  grid-column: 5 / span 1;
-  grid-row: 2;
-
-  padding-top: 125%;
-  height: 0;
-  position: relative;
-  z-index: 1;
-
-  overflow: hidden;
-}
-
-section.kompetenzen figure.second-image {
-  grid-column: 6 / span 1;
-  grid-row: 2;
-
-  padding-top: 125%;
-  height: 0;
-  position: relative;
-  z-index: 1;
-
-  overflow: hidden;
-}
-
-section.kompetenzen figure img {
+section.leistungen div.leistungen__fixed div.fixed-image {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  opacity: 0;
+  transition: opacity .3s ease;
+  transform: translateY(120px);
 }
 
-section.kompetenzen div.table {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-row-gap: 8rem;
-  grid-column-gap: 4rem;
-  margin-top: 1.6rem;
+section.leistungen div.leistungen__fixed div.fixed-image.is-active {
+  opacity: 1;
 }
 
-section.kompetenzen div.table div.table-column h4 {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.802rem;
-  margin-bottom: 2.4rem;
-  font-weight: 500;
+section.leistungen div.leistungen__content {
+  padding-top: 12.5vh;
+  width: 66.667vw;
+  flex: 1;
 }
 
-section.kompetenzen div h4::before {
-  content: "";
-  width: 1.4rem;
-  height: 1.4rem;
-  background-color: black;
-  border-radius: 0.7rem;
-  margin-right: 0.8rem;
-  display: inline-block;
+section.leistungen div.leistungen__content div.leistungen__section {
+  padding: 10vh 5vw;
+  padding-top: 17vh;
 }
 
-section.kompetenzen div ul li {
-  font-size: 2.887rem;
-  line-height: 1.275;
-  font-weight: 500;
+section.leistungen div.leistungen__content div.leistungen__section li {
+  font-family: 'Switzer-Regular', sans-serif;
+  font-weight: 400;
   letter-spacing: -0.025em;
+  font-size: 2.4vw;
+  line-height: 1.25;
   padding-bottom: 1.6rem;
-  padding-top: 1.6rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.5);
-}
-
-section.kompetenzen div ul li:last-child {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  padding-top: 1rem;
+  border-bottom: 1px solid var(--font-dark);
 }
 
 section.referenzen {
@@ -464,7 +449,7 @@ section.referenzen {
   color: #fff;
 
   padding-top: 12.5vh;
-  padding-bottom: 6.4rem;
+  padding-bottom: 12.5vh;
 }
 
 section.referenzen div.headline {
@@ -486,7 +471,7 @@ section.referenzen div.subheadline {
 }
 
 section.referenzen div.subheadline h2 {
-  font-family: "Poppins", sans-serif;
+  font-family: "Switzer-Regular", sans-serif;
   font-weight: 400;
   font-size: 2.887rem;
   line-height: 1.15;
@@ -519,12 +504,13 @@ section.referenzen ul {
   grid-row: 3;
 
   padding-top: 12rem;
+  margin-right: 2.4vw;
 }
 
 section.referenzen ul li {
   display: grid;
-  grid-template-columns: 0.75fr 1.25fr;
-  padding: 1vh 0;
+  grid-template-columns: 2fr 0.75fr;
+  padding: 1.6vh 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
 
@@ -535,9 +521,14 @@ section.referenzen ul li p {
   letter-spacing: -0.025em;
 }
 
+section.referenzen ul li p {
+  justify-self: end;
+  align-self: end;
+}
+
 section.referenzen ul li span {
   grid-column: 1;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.025em;
 }
 
 section.referenzen ul li p {
@@ -654,6 +645,7 @@ footer.footer div.footer__content div.footer__content__top {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border-bottom: 1px solid var(--font-dark);
 }
 
 footer.footer
@@ -665,6 +657,7 @@ footer.footer
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  border-bottom: 1px solid var(--font-dark);
 }
 
 footer.footer
@@ -673,7 +666,8 @@ footer.footer
   div.footer__content__top__top
   h4.small-headline {
   font-size: 1.424rem;
-  font-family: "Poppins", sans-serif;
+  font-family: "Switzer-Regular", sans-serif;
+  font-weight: 400;
   letter-spacing: 0.0075em;
   margin-bottom: 1.6rem;
 }
@@ -698,6 +692,9 @@ footer.footer
   div.footer__content__top
   div.footer__content__top__top
   p {
+  font-family: "Switzer-Regular", sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.0175em;
   margin-bottom: 2.4rem;
   font-size: 3.653rem;
   line-height: 1.15;
@@ -709,6 +706,8 @@ footer.footer
   div.footer__content__top__top
   div.footer__content__cell
   a {
+  font-family: "Switzer-Regular", sans-serif;
+  font-weight: 400;
   color: var(--anthrazit);
   margin-bottom: 2.4rem;
   font-size: 3.653rem;
