@@ -1,35 +1,36 @@
 function initPinSteps() {
+  ScrollTrigger.create({
+    trigger: ".leistungen__images",
+    start: "top top",
+    endTrigger: ".leistungen__content",
+    end: "bottom+=150 bottom",
+    pin: true,
+  });
 
-	ScrollTrigger.create({
-		trigger: '.leistungen__images',
-		start: 'top top',
-		endTrigger: '.leistungen__content',
-		end: 'bottom+=150 bottom',
-		pin: true,
-	})
+  const getVh = () => {
+    const vh = Math.max(
+      document.documentElement.clientHeight || 0,
+      window.innerHeight || 0
+    );
+    return vh;
+  };
 
-	const getVh = () => {
-		const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
-		return vh;
-	}
+  gsap.utils.toArray(".leistungen__section").forEach((section, index) => {
+    const navLinks = gsap.utils.toArray(".leistungen__images div.fixed-image");
 
-	gsap.utils.toArray('.leistungen__section').forEach((section, index) => {
-		const navLinks = gsap.utils.toArray('.leistungen__images div.fixed-image');
-
-		ScrollTrigger.create({
-			trigger: section, 
-			start: 'top+=150 center',
-			end: `+=${section.clientHeight+getVh()/10}`,
-			toggleClass: {
-				targets: navLinks[index],
-				className: 'is-active'
-			},
-		})
-	})
-
+    ScrollTrigger.create({
+      trigger: section,
+      start: "top+=150 center",
+      end: `+=${section.clientHeight + getVh() / 10}`,
+      toggleClass: {
+        targets: navLinks[index],
+        className: "is-active",
+      },
+    });
+  });
 }
 
-initPinSteps()
+initPinSteps();
 
 const runScripts = function () {
   let currentScroll = 0;
@@ -48,7 +49,7 @@ const runScripts = function () {
       const images = caption.querySelectorAll("img");
 
       images.forEach((image) => {
-        const speed = 0.35 + 0.25 * (index / 4);
+        const speed = 0.35 + 0.15 * (index / 5);
         image.style.top = diff * speed + "px";
       });
     });

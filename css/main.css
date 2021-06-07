@@ -26,7 +26,7 @@
   --font-dark: #1a1a21;
   --anthrazit: #575763;
   --text-dark-color: #202020;
-  --bcg-loaderblue: #758A94;
+  --bcg-loaderblue: #758a94;
 }
 
 * {
@@ -56,7 +56,7 @@ body {
 .is-loading .burger,
 .is-loading .main-nav,
 .is-loading .fill-background {
-  display: none; 
+  display: none;
 }
 .is-loading {
   background-color: var(--bcg-loaderblue);
@@ -223,7 +223,7 @@ div.sticky-nav {
 }
 
 div.sticky-nav div.sticky-nav__left a {
-  font-family: 'Switzer-Regular', sans-serif;
+  font-family: "Switzer-Regular", sans-serif;
   font-weight: 400;
   display: inline-block;
   font-size: 2.027rem;
@@ -232,7 +232,7 @@ div.sticky-nav div.sticky-nav__left a {
 }
 
 div.sticky-nav div.sticky-nav__right a {
-  font-family: 'Switzer-Regular', sans-serif;
+  font-family: "Switzer-Regular", sans-serif;
   font-weight: 400;
   display: inline-block;
   font-size: 2.027rem;
@@ -267,7 +267,7 @@ section.about div.section-headline {
 }
 
 section.about div.section-headline p {
-  font-family: 'Switzer-Regular', sans-serif;
+  font-family: "Switzer-Regular", sans-serif;
   font-weight: 400;
   font-size: 15.014rem;
   line-height: 0.95;
@@ -322,7 +322,7 @@ section.about ul li {
 }
 
 section.about ul li p {
-  font-family: 'Switzer-Regular', sans-serif;
+  font-family: "Switzer-Regular", sans-serif;
   font-weight: 400;
   letter-spacing: -0.015em;
   font-size: 4.11rem;
@@ -330,7 +330,7 @@ section.about ul li p {
 }
 
 section.about ul li span {
-  font-family: 'Switzer-Regular', sans-serif;
+  font-family: "Switzer-Regular", sans-serif;
   font-weight: 400;
   font-size: 2.281rem;
   grid-column: 1;
@@ -390,7 +390,7 @@ section.leistungen div.leistungen__nav div.textwrapper {
 }
 
 section.leistungen div.leistungen__nav div.headline p {
-  font-family: 'Switzer-Regular', sans-serif;
+  font-family: "Switzer-Regular", sans-serif;
   font-weight: 400;
   font-size: 15.014rem;
   line-height: 0.85;
@@ -410,12 +410,16 @@ section.leistungen div.leistungen__fixed div.fixed-image {
   top: 0;
   left: 0;
   opacity: 0;
-  transition: opacity .3s ease;
+  transition: opacity 0.3s ease;
   transform: translateY(120px);
 }
 
 section.leistungen div.leistungen__fixed div.fixed-image.is-active {
   opacity: 1;
+}
+
+section.leistungen div.leistungen__fixed div.fixed-image img {
+  max-height: 80vh;
 }
 
 section.leistungen div.leistungen__content {
@@ -426,11 +430,16 @@ section.leistungen div.leistungen__content {
 
 section.leistungen div.leistungen__content div.leistungen__section {
   padding: 10vh 5vw;
+}
+
+section.leistungen
+  div.leistungen__content
+  div.leistungen__section:first-of-type {
   padding-top: 17vh;
 }
 
 section.leistungen div.leistungen__content div.leistungen__section li {
-  font-family: 'Switzer-Regular', sans-serif;
+  font-family: "Switzer-Regular", sans-serif;
   font-weight: 400;
   letter-spacing: -0.025em;
   font-size: 2.4vw;
@@ -754,7 +763,7 @@ footer.footer
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   flex-wrap: wrap;
 }
 
@@ -770,7 +779,7 @@ footer.footer
   a {
   font-size: 1.125rem;
   font-weight: 500;
-  opacity: 0.4;
+  line-height: 1;
 }
 
 footer.footer
@@ -818,25 +827,14 @@ footer.footer div.footer__content__bottom iframe {
     font-size: 2.281rem;
   }
 
-  section.kompetenzen div.headline p {
+  section.leistungen div.leistungen__nav div.headline p {
     font-size: 13.346rem;
   }
 
-  section.kompetenzen div.subheadline h2 {
-    font-size: 2.281rem;
-  }
-
-  section.kompetenzen div.table {
-    margin-top: 1.6rem;
-  }
-
-  section.kompetenzen div.table div.table-column h4 {
-    margin-bottom: 1.6rem;
-  }
-
-  section.kompetenzen div ul li {
-    font-size: 2.281rem;
-    padding: 1vh 0;
+  section.leistungen
+    div.leistungen__content
+    div.leistungen__section:first-of-type {
+    padding-top: 26vh;
   }
 
   section.referenzen {
@@ -915,7 +913,7 @@ footer.footer div.footer__content__bottom iframe {
     padding-bottom: 7.5vh;
   }
 
-  section.kompetenzen div.headline p {
+  section.leistungen div.leistungen__nav div.headline p {
     font-size: 10.545rem;
   }
 
@@ -1018,40 +1016,29 @@ footer.footer div.footer__content__bottom iframe {
     width: 50%;
   }
 
-  section.kompetenzen div.headline p {
+  section.leistungen div.leistungen__nav div.textwrapper {
+    margin-bottom: 2.4rem;
+    padding-bottom: 2.4rem;
+  }
+
+  section.leistungen div.leistungen__nav div.headline p {
     font-size: 9.373rem;
   }
 
-  section.kompetenzen div.subheadline h2 {
+  section.leistungen div.leistungen__nav div.subheadline h2 {
     font-size: 1.802rem;
-    padding-top: 2.4rem;
   }
 
-  section.kompetenzen figure {
-    z-index: 1;
+  section.leistungen
+    div.leistungen__content
+    div.leistungen__section
+    div.table-column
+    h4 {
+    font-size: 1.602rem;
   }
 
-  section.kompetenzen div.table {
-    grid-column-gap: 2.4rem;
-    margin-top: 0;
-  }
-
-  section.kompetenzen div.table div.table-column h4 {
-    font-size: 1.424rem;
-    margin-bottom: 1.6rem;
-  }
-
-  section.kompetenzen div h4::before {
-    width: 1.2rem;
-    height: 1.2rem;
-    transform: translateY(1px);
-    background-color: var(--font-dark);
-  }
-
-  section.kompetenzen div ul li {
-    font-size: 1.802rem;
-    padding-top: 0.8rem;
-    padding-bottom: 0.8rem;
+  section.leistungen div.leistungen__content div.leistungen__section li {
+    font-size: 1.8vw;
   }
 
   section.referenzen div.headline p {
@@ -1124,16 +1111,18 @@ footer.footer div.footer__content__bottom iframe {
     font-size: 1.602rem;
   }
 
-  section.kompetenzen {
-    grid-gap: 1.6rem;
-  }
-
-  section.kompetenzen div.headline p {
+  section.leistungen div.leistungen__nav div.headline p {
     font-size: 7.406rem;
   }
 
-  section.kompetenzen div.subheadline h2 {
-    font-size: 1.602rem;
+  section.leistungen
+    div.leistungen__content
+    div.leistungen__section:first-of-type {
+    padding-top: 38vh;
+  }
+
+  section.referenzen div.headline p {
+    font-size: 7.406rem;
   }
 }
 
