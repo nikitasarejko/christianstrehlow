@@ -1156,6 +1156,10 @@ footer.footer div.footer__content__bottom iframe {
 }
 
 @media only screen and (max-width: 808px) {
+  body {
+    padding-bottom: unset;
+  }
+
   div.wiper div.wiper__content div.wiper__text p {
     font-size: 2.566rem;
   }
@@ -1344,6 +1348,29 @@ footer.footer div.footer__content__bottom iframe {
     font-size: 1.82rem;
   }
 
+  footer.footer {
+    position: relative;
+  }
+
+  footer.footer div.footer__content div.footer__content__top {
+    height: auto;
+  }
+
+  footer.footer
+    div.footer__content
+    div.footer__content__top
+    div.footer__content__top__top {
+    padding: 4vw;
+    flex-direction: column;
+  }
+
+  footer.footer
+    div.footer__content
+    div.footer__content__top
+    div.footer__content__top__bottom {
+    padding: 1.6vw 4vw;
+  }
+
   footer.footer
     div.footer__content
     div.footer__content__top
@@ -1362,9 +1389,21 @@ footer.footer div.footer__content__bottom iframe {
     div.footer__content
     div.footer__content__top
     div.footer__content__top__top
+    p {
+    margin-bottom: 2.4vh;
+  }
+
+  footer.footer
+    div.footer__content
+    div.footer__content__top
+    div.footer__content__top__top
     div.footer__content__cell
     a {
     margin-bottom: 2.4rem;
+  }
+
+  footer.footer div.footer__content__bottom iframe {
+    height: 66.666vh;
   }
 }
 
