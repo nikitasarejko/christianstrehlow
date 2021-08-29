@@ -115,20 +115,31 @@ div.wiper div.wiper__content div.wiper__logo svg {
 
 div.wiper div.wiper__content div.wiper__text {
   overflow: hidden;
-  height: 12rem;
+  height: 32rem;
+  max-width: 180rem;
 }
 
 div.wiper div.wiper__content div.wiper__text p {
+  display: flex;
+  flex-direction: column;
   font-family: "Switzer-Medium", sans-serif;
   text-align: center;
-  font-size: 4.624rem;
-  line-height: 1.025;
-  font-weight: 500;
-  letter-spacing: -0.025em;
+  font-size: 19.003rem;
+  line-height: 0.85;
+  letter-spacing: -0.0375em;
+  font-weight: 700;
   color: #fff;
 
   opacity: 0;
   transform: translate(0%, 100%);
+}
+
+div.wiper div.wiper__content div.wiper__text p span {
+  font-size: 4.802rem;
+  line-height: 1;
+  margin-top: 4rem;
+  font-weight: 500;
+  letter-spacing: -0.011em;
 }
 
 div.textwrapper {
@@ -342,7 +353,8 @@ section.about ul li p {
 
 section.auszeichnungen {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  /* grid-template-columns: repeat(4, 1fr); */
+  grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   align-content: center;
   grid-gap: 2.4rem;
@@ -588,6 +600,7 @@ section.impressum div.copy div.copy__left h5 {
 
 section.impressum div.copy div.copy__right {
   width: 66.667vw;
+  max-width: 90rem;
   margin-top: 8rem;
   margin-bottom: 12rem;
 }
@@ -603,6 +616,7 @@ section.impressum div.copy div.copy__right h6 {
   line-height: 1.35;
   text-transform: uppercase;
   margin-top: 1.6rem;
+  margin-bottom: 0.8rem;
   opacity: 0.25;
 }
 
@@ -635,7 +649,6 @@ footer.footer {
 
 footer.footer div.footer__content {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   height: 100vh;
@@ -644,16 +657,56 @@ footer.footer div.footer__content {
 }
 
 footer.footer div.footer__content div.footer__content__bottom {
-  width: 100vw;
-  height: 50vh;
+  width: 50%;
+  height: 100%;
 }
 
 footer.footer div.footer__content div.footer__content__top {
-  width: 100%;
-  height: 50vh;
+  width: 50%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+footer.footer
+  div.footer__content
+  div.footer__content__top
+  div.footer__content__top__row {
+  width: 100%;
+}
+
+footer.footer
+  div.footer__content
+  div.footer__content__top
+  div.footer__content__top__row
+  div.footer__headline {
+  width: 100%;
+  border-bottom: 1px solid var(--text-dark-color);
+  padding-bottom: 1.6rem;
+  margin-bottom: 2.4rem;
+}
+
+footer.footer
+  div.footer__content
+  div.footer__content__top
+  div.footer__content__top__row
+  div.footer__content__top__row__inner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+footer.footer
+  div.footer__content
+  div.footer__content__top
+  div.footer__content__top__row
+  div.footer__content__top__row__inner
+  div.footer__content__cell {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
 }
 
 footer.footer
@@ -703,7 +756,7 @@ footer.footer
   font-family: "Switzer-Regular", sans-serif;
   font-weight: 400;
   letter-spacing: -0.0175em;
-  margin-bottom: 8vh;
+  margin-bottom: 4vh;
   font-size: 3.653rem;
   line-height: 1.15;
 }
@@ -716,16 +769,13 @@ footer.footer
   a {
   font-family: "Switzer-Regular", sans-serif;
   font-weight: 400;
-  color: var(--anthrazit);
+  color: var(--text-dark-color);
   margin-bottom: 2.4rem;
   font-size: 3.653rem;
   line-height: 1.15;
-  text-decoration: none;
+  text-decoration: underline;
   cursor: pointer;
-  transition: opacity 0.3s ease-out;
   display: inline-block;
-  position: relative;
-  transition: width 0.5s ease;
 }
 
 footer.footer
@@ -733,25 +783,9 @@ footer.footer
   div.footer__content__top
   div.footer__content__top__top
   div.footer__content__cell
-  a::after {
-  content: "";
-  display: block;
-  width: 0%;
-  height: 2px;
-  background-color: var(--font-dark);
-  position: absolute;
-  left: 0;
-  bottom: -0.4rem;
-  transition: width 0.5s;
-}
-
-footer.footer
-  div.footer__content
-  div.footer__content__top
-  div.footer__content__top__top
-  div.footer__content__cell
-  a:hover::after {
-  width: 100%;
+  a:hover {
+  text-decoration: none;
+  opacity: 0.8;
 }
 
 footer.footer
@@ -792,7 +826,7 @@ footer.footer
 }
 
 footer.footer div.footer__content__bottom iframe {
-  width: 100vw;
+  width: 50vw;
 }
 
 @media screen and (max-width: 1920px) {
@@ -965,6 +999,13 @@ footer.footer div.footer__content__bottom iframe {
 @media screen and (max-width: 1440px) {
   div.wiper div.wiper__content div.wiper__text p {
     font-size: 4.11rem;
+    letter-spacing: 0;
+  }
+
+  div.wiper div.wiper__content div.wiper__text p span {
+    font-size: 3.247rem;
+    line-height: 1.075;
+    margin-top: 2.4rem;
   }
 
   section.hero {
@@ -1083,6 +1124,10 @@ footer.footer div.footer__content__bottom iframe {
 }
 
 @media only screen and (max-width: 1024px) {
+  body {
+    padding-bottom: 0;
+  }
+
   section.hero div.headline p {
     font-size: 9.373rem;
   }
@@ -1153,6 +1198,30 @@ footer.footer div.footer__content__bottom iframe {
   section.referenzen div.headline p {
     font-size: 7.406rem;
   }
+
+  footer.footer {
+    position: relative;
+    z-index: 0;
+  }
+
+  footer.footer div.footer__content {
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  footer.footer div.footer__content div.footer__content__top {
+    width: 100%;
+    padding: 5vh 2.4vw;
+  }
+
+  footer.footer div.footer__content div.footer__content__bottom {
+    width: 100%;
+  }
+
+  footer.footer div.footer__content__bottom iframe {
+    width: 100vw;
+  }
 }
 
 @media only screen and (max-width: 808px) {
@@ -1162,6 +1231,12 @@ footer.footer div.footer__content__bottom iframe {
 
   div.wiper div.wiper__content div.wiper__text p {
     font-size: 2.566rem;
+  }
+
+  div.wiper div.wiper__content div.wiper__text p span {
+    font-size: 2.027rem;
+    line-height: 1.15;
+    margin-top: 1.6rem;
   }
 
   section.hero {
@@ -1360,8 +1435,35 @@ footer.footer div.footer__content__bottom iframe {
     div.footer__content
     div.footer__content__top
     div.footer__content__top__top {
-    padding: 4vw;
     flex-direction: column;
+  }
+
+  footer.footer
+    div.footer__content
+    div.footer__content__top
+    div.footer__content__top__row
+    div.footer__content__top__row__inner
+    div.footer__content__cell {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  footer.footer
+    div.footer__content
+    div.footer__content__top
+    div.footer__content__top__row
+    div.footer__headline {
+    padding-bottom: 0.8rem;
+    margin-bottom: 1.6rem;
+  }
+
+  footer.footer
+    div.footer__content
+    div.footer__content__top
+    div.footer__content__top__row
+    div.footer__headline
+    h3 {
+    font-size: 1.602rem;
   }
 
   footer.footer

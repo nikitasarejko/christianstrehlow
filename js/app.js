@@ -190,9 +190,9 @@ const enterOnceIndex = function (container) {
     .to(bodyTag, { opacity: 1, duration: 0.25 }, 1)
     .to(wiper, { height: "100%", duration: 1.25 }, 1)
     .to(wiperText, { y: 0, opacity: 1, delay: 0.8 }, 1)
-    .to(wiperText, { y: "-100%", opacity: 0, delay: 1.6 }, 2)
-    .set(wiper, { top: 0, bottom: "none", duration: 0 }, 3)
-    .to(wiper, { height: "0%", duration: 0.75 }, 4)
+    .to(wiperText, { y: "-100%", opacity: 0, delay: 3 }, 3)
+    .set(wiper, { top: 0, bottom: "none", duration: 0 }, 4)
+    .to(wiper, { height: "0%", duration: 0.75 }, 5)
     .to(
       heroImg,
       {
@@ -201,7 +201,7 @@ const enterOnceIndex = function (container) {
         duration: 1,
         delay: 1.2,
       },
-      4
+      5
     )
     .from(title, { y: 200, opacity: 0, delay: 0.8 }, 4)
     .from(
@@ -215,9 +215,9 @@ const enterOnceIndex = function (container) {
         onComplete: () =>
           document.querySelector("body").classList.remove("is-loading"),
       },
-      4
+      5
     )
-    .set(wiper, { clearProps: "all" }, 5);
+    .set(wiper, { clearProps: "all" }, 6);
 
   return timeline;
   runScripts();
