@@ -391,7 +391,7 @@ section.leistungen {
 }
 
 section.leistungen div.leistungen__nav {
-  width: 33.333%;
+  width: 50%;
 }
 
 section.leistungen div.leistungen__nav div.textwrapper {
@@ -414,6 +414,7 @@ section.leistungen div.leistungen__nav div.headline p {
 section.leistungen div.leistungen__fixed {
   width: 33.333vw;
   flex: 1;
+  position: relative;
 }
 
 section.leistungen div.leistungen__fixed div.fixed-image {
@@ -1212,7 +1213,7 @@ footer.footer div.footer__content__bottom iframe {
 
   footer.footer div.footer__content div.footer__content__top {
     width: 100%;
-    padding: 5vh 2.4vw;
+    padding: 2.4vh 2.4vw;
   }
 
   footer.footer div.footer__content div.footer__content__bottom {
@@ -1470,7 +1471,7 @@ footer.footer div.footer__content__bottom iframe {
     div.footer__content
     div.footer__content__top
     div.footer__content__top__bottom {
-    padding: 1.6vw 4vw;
+    padding: 1.6vw 0;
   }
 
   footer.footer
