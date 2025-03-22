@@ -230,6 +230,8 @@ div.sticky-nav {
   background-color: #fff;
   z-index: 666;
   overflow: hidden;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+
 }
 
 div.sticky-nav div.sticky-nav__left a {
@@ -329,6 +331,10 @@ section.about ul li {
   grid-template-columns: 0.5fr 3fr;
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
   padding: 0.5vh 0;
+}
+
+section.about ul li:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 section.about ul li p {
@@ -450,15 +456,22 @@ section.leistungen
   padding-top: 17vh;
 }
 
+section.leistungen div.leistungen__content div.leistungen__section div.table-column h4 {
+  padding-bottom: 1.5vh;
+}
+
 section.leistungen div.leistungen__content div.leistungen__section li {
   font-family: "Switzer-Regular", sans-serif;
   font-weight: 400;
   letter-spacing: -0.025em;
   font-size: 2.4vw;
-  line-height: 1.25;
-  padding-bottom: 1.6rem;
-  padding-top: 1rem;
+  line-height: 1.175;
+  padding: 0.5vh 0;
   border-bottom: 1px solid var(--font-dark);
+}
+
+section.leistungen div.leistungen__content div.leistungen__section li:first-child {
+  border-top: 1px solid var(--font-dark);
 }
 
 section.referenzen {
@@ -531,8 +544,12 @@ section.referenzen ul {
 section.referenzen ul li {
   display: grid;
   grid-template-columns: 2fr 0.75fr;
-  padding: 1.6vh 0;
+  padding: 1vh 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+section.referenzen ul li:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 section.referenzen ul li span,
