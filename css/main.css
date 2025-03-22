@@ -353,8 +353,7 @@ section.about ul li p {
 
 section.auszeichnungen {
   display: grid;
-  /* grid-template-columns: repeat(4, 1fr); */
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   justify-items: center;
   align-content: center;
   grid-gap: 2.4rem;
@@ -377,6 +376,7 @@ section.auszeichnungen figure {
 section.auszeichnungen figure img {
   width: 75%;
   opacity: 0;
+  filter: grayscale(1);
   transform: translate(0, 24px) scale(0.95);
   clip-path: polygon(100% 0%, 100% 0, 100% 100%, 100% 100%);
 }
