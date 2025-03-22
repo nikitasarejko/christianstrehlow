@@ -328,14 +328,14 @@ section.about ul li {
   display: grid;
   grid-template-columns: 0.5fr 3fr;
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-  padding: 1vh 0;
+  padding: 0.5vh 0;
 }
 
 section.about ul li p {
   font-family: "Switzer-Regular", sans-serif;
   font-weight: 400;
-  letter-spacing: -0.015em;
-  font-size: 4.11rem;
+  letter-spacing: -0.05em;;
+  font-size: 2.281rem;
   line-height: 1.15;
 }
 
